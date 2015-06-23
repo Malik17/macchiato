@@ -1,23 +1,23 @@
 <%= form_for @corporation do |f| %>
   <%= t('corp_name') %>
   <br>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true %>
   <br>
   <%= t('division') %>
   <br>
-  <%= f.text_field :division %>
+  <%= f.text_field :division, required: true %>
   <br>
   <%= t('first_name') %>
   <br>
-  <%= f.text_field :contact_first %>
+  <%= f.text_field :contact_first, required: true %>
   <br>
   <%= t('last_name') %>
   <br>
-  <%= f.text_field :contact_last %>
+  <%= f.text_field :contact_last, required: true %>
   <br>
   <%= f.label :email %>
   <br>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, required: true %>
   <br>
   <br>
   <%= f.submit t('enroll') %>

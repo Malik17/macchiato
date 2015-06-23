@@ -6,18 +6,19 @@ class CorporationsController < ApplicationController
 
   def create
     @corporation = Corporation.create(corporation_params)
-    @corporation[:token] = SecureRandom.urlsafe_base64(32, true)
+    @corporation[:token] = SecureRandom.urlsafe_base64(16, true)
 
     if @corporation.save
-      redirect_to thank_you_path, notice: 'Castle was successfully created.'
+      UserMailer.welcome(@corporation).deliver_now
+      redirect_to thank_you_path, notice: 'Corporation was successfully created.'
     else
       render :new
     end
-    # mail_to
   end
 
   def show
-    @corporation = Corporation.find(params[:id])
+    @corporation = Corporation.find_by_token(params[:token])
+    @user = User.new
   end
 
   def update

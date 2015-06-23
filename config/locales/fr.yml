@@ -1,4 +1,7 @@
 fr:
+  en: "Rosbiff!"
+  nl: "Neuken in de keuken"
+  fr: "La langue de Moliere"
   hello: "Bonjour Monde!"
   new_manager: "Creer un nouveau manager"
   thank_you_registration: "Merci, veuillez ouvrir votre boite e-mails"
@@ -6,6 +9,21 @@ fr:
   division: "Division"
   first_name: "Prénom"
   last_name: "Nom"
+  thanks: "Merci"
   welcome: "Bienvenue %{first_name}"
   home: "Page d'accueil"
   enroll: "Enregistrez votre société"
+  mailer_corporate_header: "Bienvenue sur Macchiato, %{first_name}"
+  mailer_corporate: "Merci d'avoir rejoint l'aventure, voici votre lien vers l'interface admin:"
+  mailer_thank_you: "Merci et à bientôt"
+  mailer_signature: "L'Equipe Macchiato"
+  mailer_user_header: "Bienvenue sur Macchiato"
+  mailer_user: "Votre manager souhaite que vous passiez un petit test psychologique afin de definir votre potentiel en tant qu'entrepreneur, suivez le lien"
+  link_corporate: "Super lien!"
+  new_emails_box: "Merci d'ajouter les emails des employes qui doivent passer le test"
+
+  user_mailer:
+    welcome:
+      subject: "Bienvenue sur Macchiato"
+    new_user:
+      subject: "Bienvenue sur Macchiato"

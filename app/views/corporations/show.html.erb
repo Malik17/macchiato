@@ -1,6 +1,26 @@
 <div class="show">
-  <%= t('welcome', first_name: @corporation.contact_first)  %>
+  <h2><%= t('welcome', first_name: @corporation.contact_first)  %></h2>
   </br>
-
+  <b><%= t('corp_name') %></b>
+  </br>
+  <%= @corporation.name %>
+  </br>
+  </br>
+  <b><%= t('division') %></b>
+  </br>
+  <%= @corporation.division %>
+  </br>
+  </br>
+  <b><%= t('new_emails_box') %></b>
+  <br>
+  <%= form_for [@corporation, @user] do |f| %>
+    <!-- Don't use f. and define it as text_area emails -->
+    <%= f.text_area :email %>
+    <br>
+    <br>
+    <%= f.submit t('thanks') %>
+  <% end %>
+  </br>
+  </br>
   <%= link_to t('home'), root_path  %>
 </div>

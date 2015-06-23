@@ -1,0 +1,19 @@
+<h1><%= t('mailer_corporate_header', first_name: @user.contact_first) %></h1>
+
+<p>
+  <%= t('mailer_corporate')  %>
+</p>
+
+<p>
+  <a href = 'http://localhost:3000/corporation/<%= @user.token %>' target="_blank">
+  <%= t('link_corporate')  %>
+  </a>
+</p>
+
+<p>
+  <%= t('mailer_thank_you') %>
+</p>
+<p>
+  <%= t('mailer_signature') %>
+</p>
+
