@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|nl/ do
 
 
+    post "corporation", to: "corporations#create", as: "corporations"
+    get  "thank_you",   to: "home#thank_you"
 
-
-
-
+    resources :corporations, only: [:new, :show, :edit, :update] do
+      resources :users,      only: [:new, :show, :edit, :update, :create]
+    end
 
     root "home#home"
   end

@@ -21,3 +21,13 @@
 
 en:
   hello: "Hello world"
+  new_manager: "Create a new manger"
+  thank_you_registration: "Thanks, please check your emails"
+  corp_name: "Company Name"
+  division: "Division"
+  first_name: "First Name"
+  last_name: "Last Name"
+  welcome: "Welcome %{first_name}"
+  home: "Home Page"
+  enroll: "Enroll your company"
+

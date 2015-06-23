@@ -1,0 +1,25 @@
+<%= form_for @corporation do |f| %>
+  <%= t('corp_name') %>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+  <%= t('division') %>
+  <br>
+  <%= f.text_field :division %>
+  <br>
+  <%= t('first_name') %>
+  <br>
+  <%= f.text_field :contact_first %>
+  <br>
+  <%= t('last_name') %>
+  <br>
+  <%= f.text_field :contact_last %>
+  <br>
+  <%= f.label :email %>
+  <br>
+  <%= f.text_field :email %>
+  <br>
+  <br>
+  <%= f.submit t('enroll') %>
+<% end %>
+

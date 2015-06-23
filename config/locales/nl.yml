@@ -1,2 +1,11 @@
 nl:
   hello: "Gutten tag World"
+  new_manager: "Create a new manager"
+  thank_you_registration: "Dank u, please check your emails"
+  corp_name: "Korp"
+  division: "Divizion"
+  first_name: "First Name"
+  last_name: "Last Name"
+  welcome: "Wilkommen %{first_name}"
+  home: "Wilkommen page"
+  enroll: "Enroll your company"

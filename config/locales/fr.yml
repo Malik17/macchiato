@@ -1,2 +1,11 @@
 fr:
   hello: "Bonjour Monde!"
+  new_manager: "Creer un nouveau manager"
+  thank_you_registration: "Merci, veuillez ouvrir votre boite e-mails"
+  corp_name: "Société"
+  division: "Division"
+  first_name: "Prénom"
+  last_name: "Nom"
+  welcome: "Bienvenue %{first_name}"
+  home: "Page d'accueil"
+  enroll: "Enregistrez votre société"
