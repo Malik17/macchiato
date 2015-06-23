@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :users,      only: [:new, :show, :edit, :update, :create]
     end
 
-    root "home#home"
+    root "home#index"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
