@@ -14,6 +14,6 @@ corporation_list = [
 ]
 
 corporation_list.each do |name, division, contact_first, contact_last, email|
-  token = SecureRandom.urlsafe_base64(32, true)
+  token = SecureRandom.urlsafe_base64(16, true)
   Corporation.create(name: name, division: division, contact_first: contact_first, contact_last: contact_last, email: email, token: token)
 end
