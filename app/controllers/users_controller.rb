@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       @user[:email] = email
       @user[:token] = SecureRandom.urlsafe_base64(16, true)
       @user.save
-      UserMailer.new_user(@user).deliver_now
+      link =  locale_link
+      UserMailer.new_user(@user, link).deliver_now
     end
     redirect_to root_path
     # change to corporation show path if possible
@@ -41,5 +42,16 @@ class UsersController < ApplicationController
     emails = params[:user][:email]
     emails.scan /([a-zA-Z0-9\-_]+@[a-zA-Z0-9\-_]+.\w+)/
   end
+
+  def locale_link
+    if  locale == :nl
+      return "nl/"
+    elsif  locale == :fr
+      return "fr/"
+    else
+      return ""
+    end
+  end
+  # option to send in different language?!
 
 end
