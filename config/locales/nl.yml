@@ -21,6 +21,8 @@ nl:
   mailer_user: "Your manager would like you to pass our little test to pre-assess your potential as an entrepreneur. Follow the link (no virus my friend!):"
   link_corporate: "Uber link!"
   new_emails_box: "Bitte enter the emails of the employees who should be invitazion to pass the test"
+  user_welcome: "Wilkommen"
+  user_details: "Please enter your name - Dank U!"
 
   user_mailer:
     welcome:

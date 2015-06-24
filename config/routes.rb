@@ -6,8 +6,13 @@ Rails.application.routes.draw do
     get  "corporation/:token", to: "corporations#show"
     post "corporation/:token", to: "users#create",        as: "new_corporation_user"
 
-    resources :corporations, only: [:new, :edit, :update] do
-      resources :users,      only: [:new, :show, :edit, :update, :create]
+
+    # if adding edit and update to corpdon't use resources but use :token
+    resources :corporations, only: [:new] do
+      get   "users/:token",        to: "users#show",   as: "user_show"
+      get   "users/:token/edit",   to: "users#edit",   as: "user_edit"
+      patch "users/:token/update", to: "users#update", as: "user_update"
+      resources :users,      only: [:new, :create]
     end
 
     get '/fr', to: "home#index", locale: "fr"

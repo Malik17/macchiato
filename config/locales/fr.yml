@@ -21,6 +21,8 @@ fr:
   mailer_user: "Votre manager souhaite que vous passiez un petit test psychologique afin de definir votre potentiel en tant qu'entrepreneur, suivez le lien"
   link_corporate: "Super lien!"
   new_emails_box: "Merci d'ajouter les emails des employes qui doivent passer le test"
+  user_welcome: "Bienvenue"
+  user_details: "Merci d'indiquer votre nom"
 
   user_mailer:
     welcome:

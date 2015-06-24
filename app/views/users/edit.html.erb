@@ -1,0 +1,16 @@
+<div class="personnailty">
+  <%= t('user_details') %>
+  <br>
+  <br>
+  <%= form_for @user, url: corporation_user_update_path do |f| %>
+    <%= t('first_name') %>
+    <br>
+    <%= f.text_field :first_name, required: true %>
+    <br>
+    <%= t('last_name') %>
+    <br>
+    <%= f.text_field :last_name, required: true %>
+    <br>
+    <%= f.submit t('thanks') %>
+  <% end %>
+</div>
