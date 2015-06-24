@@ -1,12 +1,26 @@
 <div class="personnality">
   <h2>
-    <%= t('user_welcome') %>
+    <%= t('user_welcome') %> <%= @user.first_name %> <%= @user.last_name %>
   </h2>
   <br>
   <%= @user.email %>
   <br>
-  <%= @user.first_name %>
+
   <br>
-  <%= @user.last_name %>
   <br>
+  <br>
+
+  <% @questions.each do |question| %>
+    <%= question.text %><br>
+    agree  disagree
+    <% @answer = Answer.new %>
+    <% @answer[:user_id] = @user.id %>
+    <% @answer[:question_id] = question.id %>
+    <% @answer[:question_result] = rand(-6..6) %>
+    <% @answer.save %>
+    <!-- save_answer -->
+    <br>
+    <br>
+  <% end %>
+
 </div>
