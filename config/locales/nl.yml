@@ -24,6 +24,6 @@ nl:
 
   user_mailer:
     welcome:
-      subject: "Wilkommen on Macchiato"
+      subject: "Wilkommen to Macchiato"
     new_user:
-      subject: "Wilkommen on Macchiato"
+      subject: "Wilkommen to Macchiato"

@@ -46,8 +46,8 @@ en:
 
   user_mailer:
     welcome:
-      subject: "Welcome on Macchiato"
+      subject: "Welcome to Macchiato"
     new_user:
-      subject: "Welcome on Macchiato"
+      subject: "Welcome to Macchiato"
 
 

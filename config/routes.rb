@@ -10,11 +10,13 @@ Rails.application.routes.draw do
       resources :users,      only: [:new, :show, :edit, :update, :create]
     end
 
-    get '/fr', to: "home#home", locale: "fr"
-    get '/nl', to: "home#home", locale: "nl"
-    get '/',   to: "home#home", locale: "en", as: "en"
+    get '/fr', to: "home#index", locale: "fr"
+    get '/nl', to: "home#index", locale: "nl"
+    get '/',   to: "home#index", locale: "en", as: "en"
 
-    root "home#home"
+    get 'home', to: "home#home"
+
+    root "home#index"
 
   end
 
