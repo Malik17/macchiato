@@ -148,7 +148,10 @@ body {
   line-height: 1.5;
   letter-spacing: 0.05em;
   height: 100%;
-  background-color: transparent;
+
+  /*was transparent but switched to something else*/
+  background-color: #6B2D00;
+
 }
 
 img {
@@ -1300,4 +1303,12 @@ address span {
 
 .static-bg .overlay{
   display: none;
+}
+
+
+.personnality{
+  color: #fff;
+}
+.personnality input {
+  color: #000000;
 }
