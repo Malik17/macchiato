@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     if @user.first_name == nil
       redirect_to corporation_user_edit_path(@corporation, @user.token)
     end
+    @questions = Question.all
   end
 
   def edit
@@ -38,6 +39,14 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to corporation_user_show_path(@corporation, @user.token)
     end
+  end
+
+  def save_answer
+    answer = Answer.new
+    answer[:user_id] = @user.id
+    answer[:question_id] = question.id
+    answer[:question_result] = rand(-6..6)
+    answer.save
   end
 
   private
