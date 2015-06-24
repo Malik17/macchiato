@@ -85,7 +85,11 @@ basic
 ========================================*/
 
 body {
-  color: #fff; /* font color */
+  /* color: #fff; font color */
+}
+
+.gutter {
+  color: #fff;
 }
 
 a {
