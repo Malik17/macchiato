@@ -1,4 +1,12 @@
-<%= @users.each do |user| %>
-  <%= user.email %>
+<div class="personnality">
+  <h2>
+    <%= t('user_welcome') %>
+  </h2>
   <br>
-<% end %>
+  <%= @user.email %>
+  <br>
+  <%= @user.first_name %>
+  <br>
+  <%= @user.last_name %>
+  <br>
+</div>

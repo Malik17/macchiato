@@ -9,29 +9,45 @@ class UsersController < ApplicationController
     array = email_array.flatten
     array.each do |email|
       @user =  @corporation.users.new(user_params)
-      @user[:email] = email
       @user[:token] = SecureRandom.urlsafe_base64(16, true)
       @user.save
       link =  locale_link
       UserMailer.new_user(@user, link).deliver_now
     end
-    redirect_to root_path
+    redirect_to(:back)
     # change to corporation show path if possible
   end
 
-  def update
-  end
-
   def show
+    @user = User.find_by_token(params[:token])
+    @corporation = Corporation.find(params[:corporation_id])
+    if @user.first_name == nil
+      redirect_to corporation_user_edit_path(@corporation, @user.token)
+    end
   end
 
   def edit
+    @user = User.find_by_token(params[:token])
+    @corporation = Corporation.find(params[:corporation_id])
+  end
+
+  def update
+    @user = User.find_by_token(params[:token])
+    @corporation = Corporation.find(params[:corporation_id])
+    @user.update_attributes(update_user_params)
+    if @user.save
+      redirect_to corporation_user_show_path(@corporation, @user.token)
+    end
   end
 
   private
 
+  def update_user_params
+    params.require(:user).permit(:first_name, :last_name)
+  end
+
   def user_params
-    params.require(:user).permit(:corporation_id, :first_name, :last_name, :email)
+    params.require(:user).permit(:corporation_id, :email)
   end
 
   def find_corporation
