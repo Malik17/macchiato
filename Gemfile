@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'gibbon'
+gem "figaro"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

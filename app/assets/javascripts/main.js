@@ -24,7 +24,7 @@ detect
 
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     var isIE9;
-    
+
     function _platformDetect() {
 
       if (isMobile) {
@@ -153,7 +153,7 @@ fullpage
         });
 
       },
-      
+
       afterRender: function(index) {
 
         $('.animate').addClass('up');
@@ -578,7 +578,7 @@ youtube video background header
       $body.backstretch('img/bg/video-desktop.jpg'); // before video start, set a background image for desktop
       $bgVideo.attr('data-property', "{videoURL: __youtubeUrl, showControls: false, autoPlay: true, loop: true, mute: __videoMute, startAt: __videoStartTime, stopAt: __videoEndTime, quality: 'default', containment: 'body'}");
       $bgVideo.YTPlayer();
-      
+
       if (__videoMute) {
         $volume.addClass('fa-volume-off');
       } else {
@@ -591,7 +591,7 @@ youtube video background header
           ($this.hasClass('fa-play')) ? $bgVideo.pauseYTP() : $bgVideo.playYTP();
         });
       });
-      
+
       $volume.on('click', function() {
         var $this = $(this);
         $this.toggleClass('fa-volume-off fa-volume-up', function() {

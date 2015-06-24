@@ -76,7 +76,7 @@ countdown
 
 var __countdown = true; // countdown toggle
 var __countdownDate = '07/03/2015 17:59:59'; // countdown date
-var __countdownTimezone = '+1'; // timezone
+var __countdownTimezone = '+2'; // timezone
 
 /*=================================================
 progress bar

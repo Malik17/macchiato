@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get  "corporation/:token", to: "corporations#show"
     post "corporation/:token", to: "users#create",        as: "new_corporation_user"
 
+    resource 'subscriber', only: :create
+
     resources :corporations, only: [:new, :edit, :update] do
       resources :users,      only: [:new, :show, :edit, :update, :create]
     end

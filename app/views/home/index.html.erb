@@ -12,7 +12,16 @@
     <nav class="nav-menu">
       <div class="menu-wrapper">
 
-        <!-- subscribe form -->
+        <!-- menu -->
+        <ul id="menu">
+          <li data-menuanchor="home-section"><a href="#home-section">Home</a></li> <!-- home -->
+          <li data-menuanchor="about-section"><a href="#about-section">About</a></li> <!-- about -->
+          <li data-menuanchor="service-section"><a href="#service-section">Service</a></li> <!-- service -->
+          <li data-menuanchor="work-section"><a href="#work-section">Work</a></li> <!-- work -->
+          <li data-menuanchor="pricing-section"><a href="#pricing-section">Pricing</a></li> <!-- pricing -->
+          <li data-menuanchor="contact-section"><a href="#contact-section">Contact</a></li> <!-- contact -->
+        </ul>
+        <!-- /menu -->
         <form id="subscribe-form">
           <p class="subscribe-heading">subscribe to be notified</p>
           <div class="form-group">
@@ -27,18 +36,19 @@
           </div>
           <label class="subscribe-notice" for="subscribe-email"></label>
         </form>
+        <!-- subscribe form -->
+        <%= form_tag(subscriber_path, :id => 'subscribe-form', :class => 'form-group input-group') do %>
+          <%= email_field_tag :email%>
+          <span class="input-group-btn">
+          <%= button_tag(type: "submit", class: "btn btn-subscribe") do %>
+            <i class="fa fa-fw fa-paper-plane submit"></i>
+          <% end %>
+          </span>
+        <% end %>
+        <label class="subscribe-notice" for="subscribe-email"></label>
+        <br>
+        <p class="subscribe-heading">subscribe to be notified</p>
         <!-- /subscribe-form -->
-
-        <!-- menu -->
-        <ul id="menu">
-          <li data-menuanchor="home-section"><a href="#home-section">Home</a></li> <!-- home -->
-          <li data-menuanchor="about-section"><a href="#about-section">About</a></li> <!-- about -->
-          <li data-menuanchor="service-section"><a href="#service-section">Service</a></li> <!-- service -->
-          <li data-menuanchor="work-section"><a href="#work-section">Work</a></li> <!-- work -->
-          <li data-menuanchor="pricing-section"><a href="#pricing-section">Pricing</a></li> <!-- pricing -->
-          <li data-menuanchor="contact-section"><a href="#contact-section">Contact</a></li> <!-- contact -->
-        </ul>
-        <!-- /menu -->
 
       </div>
     </nav>
@@ -48,7 +58,7 @@
 
     <!-- nav toggle -->
     <div id="nav-toggle">
-      <i class="fa fa-bars"></i>
+      <i class="fa fa-coffee"></i>
     </div>
     <!-- /nav toggle -->
 
@@ -218,7 +228,7 @@
                 <div class="service-grid">
                   <div class="service-icon">
                     <i class="fa fa-star-o"></i>
-                  </div>T
+                  </div>
                   <h3 class="service-title">
                     Responsive
                   </h3>
@@ -269,123 +279,6 @@
       </div>
     </div>
     <!-- service end -->
-
-    <!-- work start -->
-    <div class="section" id="work">
-      <div class="section-entry">
-        <div class="section-heading">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h2 class="section-title animate"
-                data-delay="0">
-                  Works
-                </h2>
-              </div>
-              <div class="col-md-6">
-                <p class="section-sub-title animate"
-                data-delay="50">
-                  Quisque elementum est massa, eu sodales velit commodo id. Aliquam orci magna, feugiat et interdum.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-content">
-          <div class="container">
-            <div class="row work-row gutter-row">
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-01.jpg" title="title" class="animate"
-                data-delay="100"> <!-- work large image -->
-                  <%= image_tag("/assets/images/work/work-01.jpg") %>
-                  <!-- <img src="img/work/work-01-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-01</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-02.jpg" title="title" class="animate"
-                data-delay="150"> <!-- work large image -->
-                  <%= image_tag "work/work-02-thumb.jpg" %>
-                  <!-- <img src="img/work/work-02-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-02</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-03.jpg" title="title" class="animate"
-                data-delay="200"> <!-- work large image -->
-                  <%= image_tag "work/work-03-thumb.jpg" %>
-                  <!-- <img src="img/work/work-03-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-03</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-04.jpg" title="title" class="animate"
-                data-delay="250"> <!-- work large image -->
-                  <%= image_tag "work/work-04-thumb.jpg" %>
-                  <!-- <img src="img/work/work-04-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-04</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-05.jpg" title="title" class="animate"
-                data-delay="300"> <!-- work large image -->
-                  <%= image_tag "work/work-05-thumb.jpg" %>
-                  <!-- <img src="img/work/work-05-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-05</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-06.jpg" title="title" class="animate"
-                data-delay="350"> <!-- work large image -->
-                  <%= image_tag "work/work-06-thumb.jpg" %>
-                  <!-- <img src="img/work/work-06-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-06</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- work end -->
 
     <!-- pricing start -->
     <div class="section" id="pricing">
@@ -501,7 +394,9 @@
               <div class="col-md-6">
                 <p class="section-sub-title animate"
                 data-delay="50">
-                  Quisque elementum est massa, eu sodales velit commodo id. Aliquam orci magna, feugiat et interdum.
+                  We're here for you, and we're wearing our thinking caps.
+                  <br>
+                  So let's get in touch !
                 </p>
               </div>
             </div>
@@ -513,27 +408,27 @@
             <div class="row gutter-row">
               <div class="col-md-6 contact-info">
                 <p class="animate"
-                data-delay="100">Vestibulum eu nisi eget libero dapibus maximus. Nulla scelerisque lorem a neque placerat maximus. Maecenas vitae faucibus.</p>
-                <address class="animate"
-                data-delay="150">
-                  <i class="fa fa-mobile"></i>
-                  <span>(00) 123-4567890</span>
-                </address>
+                data-delay="100">You can also send us some love letters...</p>
                 <address class="animate"
                 data-delay="200">
                   <i class="fa fa-map-marker"></i>
-                  <span>123 Street, City</span>
+                  <span>Chemin 't cortenbosch, 20 - 1180 Bruxelles</span>
+                </address>
+                <address class="animate"
+                data-delay="150">
+                  <i class="fa fa-mobile"></i>
+                  <span>+ 32 485 733 206</span>
                 </address>
                 <address class="animate"
                 data-delay="250">
                   <i class="fa fa-envelope-o"></i>
-                  <span>email@example.com</span>
+                  <span>info@macchiatoinnovation.com</span>
                 </address>
 
                 <!-- social link -->
                 <p class="animate"
                 data-delay="300">
-                  You can reach us on our social networks.
+                  Or you can reach us on our social networks.
                 </p>
                 <ul class="social-icon animate"
                 data-delay="350">
@@ -571,7 +466,7 @@
                 <!-- copyright -->
                 <p class="copyright animate"
                 data-delay="350">
-                  @2015 bonefishcode template
+                  @2015 Antoine 'Macchina' Magny !
                 </p>
                 <!-- /copyright -->
               </div>
