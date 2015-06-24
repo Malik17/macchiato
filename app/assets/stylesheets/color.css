@@ -27,7 +27,7 @@ for example : background: rgba(255, 255, 255, 0);
 }
 
 .static-bg #home{
-  background: #000 url("bg/home.jpg") no-repeat center; /* home background */
+  background: #000 url("bg/home.png") no-repeat center; /* home background */
   background-size: cover;
 }
 
