@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  en: "God save the Queen!"
+  nl: "Neuken in de keuken"
+  fr: "Cheese eaters language"
   hello: "Hello world"
   new_manager: "Create a new manger"
   thank_you_registration: "Thanks, please check your emails"
@@ -27,7 +30,24 @@ en:
   division: "Division"
   first_name: "First Name"
   last_name: "Last Name"
+  thanks: "Thank you"
   welcome: "Welcome %{first_name}"
   home: "Home Page"
   enroll: "Enroll your company"
+  mailer_corporate_header: "Welcome on Macchiato, %{first_name}"
+  mailer_corporate: "Thank you for joining, here is your link to log into Macchiato's Admin interface:"
+  mailer_thank_you: "Thank you and see you soon"
+  mailer_signature: "Macchiato Team"
+  mailer_user_header: "Welcome on Macchiato"
+  mailer_user: "Your manager would like you to pass our little test to pre-assess your potential as an entrepreneur. Follow the link (no virus my friend!):"
+  link_corporate: "Great link!"
+  new_emails_box: "Please enter the emails of the employees who should be invited to pass the test"
+
+
+  user_mailer:
+    welcome:
+      subject: "Welcome to Macchiato"
+    new_user:
+      subject: "Welcome to Macchiato"
+
 

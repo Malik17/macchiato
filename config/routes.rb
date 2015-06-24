@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|nl/ do
 
+    post "corporation",        to: "corporations#create", as: "corporations"
+    get  "thank_you",          to: "home#thank_you"
+    get  "corporation/:token", to: "corporations#show"
+    post "corporation/:token", to: "users#create",        as: "new_corporation_user"
 
-    post "corporation", to: "corporations#create", as: "corporations"
-    get  "thank_you",   to: "home#thank_you"
-
-    resources :corporations, only: [:new, :show, :edit, :update] do
+    resources :corporations, only: [:new, :edit, :update] do
       resources :users,      only: [:new, :show, :edit, :update, :create]
     end
 
+    get '/fr', to: "home#index", locale: "fr"
+    get '/nl', to: "home#index", locale: "nl"
+    get '/',   to: "home#index", locale: "en", as: "en"
+
+    get 'home', to: "home#home"
+
     root "home#index"
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
