@@ -24,6 +24,9 @@ nl:
   user_welcome: "Wilkommen"
   user_details: "Please enter your name - Dank U!"
   new_corp_intro: "After filling this form you will receive an access for your company and will be able to start inviting your employees to take our personnality test"
+  emails_placeholder: "test-email1@me.com, test-email2@me.com, test-email3@me.com ..."
+  invite: "Invite"
+  user_do_the_test: "Please answer these questions sincerely. We will show you your personnality test once you are done."
 
   user_mailer:
     welcome:

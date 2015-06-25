@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'answers/create'
+
   scope '(:locale)', locale: /fr|nl/ do
 
     post "corporation",        to: "corporations#create", as: "corporations"
@@ -13,11 +15,8 @@ Rails.application.routes.draw do
       get   "users/:token",        to: "users#show",   as: "user_show"
       get   "users/:token/edit",   to: "users#edit",   as: "user_edit"
       patch "users/:token/update", to: "users#update", as: "user_update"
-      get   "users/:token/answers/create",  to: "answer#create",   as: "answer_create"
-      resources :users,      only: [:new, :create] do
-
-        resources :answers,  only: [:new]
-      end
+      post   "users/:token/answers/create",  to: "answers#create",   as: "answer_create"
+      resources :users,      only: [ :new, :create ]
     end
 
     get '/fr', to: "home#index", locale: "fr"

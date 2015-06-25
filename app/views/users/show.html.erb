@@ -1,34 +1,61 @@
-<div class="personnality">
-  <h2>
-    <%= t('user_welcome') %> <%= @user.first_name %> <%= @user.last_name %>
-  </h2>
-  <br>
-  <%= @user.email %>
-  <br>
+<%= image_tag "logo.png", :class => "logo" %>
 
-  <br>
-  <br>
-  <br>
-  <%= form_for @answer, url: ccorporation_answer_create_path do |f| %>
-    <% @questions.each do |question| %>
-      <%= question.text %><br>
-      <div class = "row">
-        <div class = "col-md-3 col-xs-3">
-          agree
-        </div>
-        <div class = "col-md-3 col-xs-3">
-          <%= f.select :question_answer, [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5],[6,6]] %>
-        </div>
-        <div class = "col-md-3 col-xs-3">
-          disagree
-        </div>
-      </div>
 
-      <!-- save_answer -->
-      <br>
-      <br>
-    <% end %>
-    <%= f.submit %>
-  <% end %>
+<div id="new-corp" class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+        <h2><%= t('user_welcome') %> <%= @user.first_name %> <%= @user.last_name %></h2>
+        </br>
+        <p><%= @user.email %></p>
+        <p><b><%= t('user_do_the_test') %></b></p>
+        <hr>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <%= form_for Answer.new, url: corporation_answer_create_path do |f| %>
+        <% @questions.each do |question, id| %>
+
+          <div class = "row">
+            <div class = "col-md-12 col-xs-12">
+              <p><b>Question #<%= question.id %></b>
+              <br>
+              <%= question.text %></p>
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "col-md-4 col-xs-4" style="color:red" >
+              disagree
+            </div>
+            <div class = "col-md-4 col-xs-4">
+              <%= f.select :question_result, [[0,0],[-2,-2],[-1,-1],[1,1],[2,2]] %>
+            </div>
+            <div class = "col-md-4 col-xs-4" style="color:green">
+              agree
+            </div>
+          </div>
+          <!-- save_answer -->
+          <br>
+          <br>
+        <% end %>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+  </div>
 
 </div>
+

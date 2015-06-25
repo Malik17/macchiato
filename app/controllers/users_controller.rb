@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     array = email_array.flatten
     array.each do |email|
       @user =  @corporation.users.new(user_params)
+      @user[:email] = email
       @user[:token] = SecureRandom.urlsafe_base64(16, true)
       @user.save
       link =  locale_link
@@ -25,7 +26,6 @@ class UsersController < ApplicationController
       redirect_to corporation_user_edit_path(@corporation, @user.token)
     end
     @questions = Question.all
-
   end
 
   def edit
@@ -42,13 +42,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def save_answer
-    answer = Answer.new
-    answer[:user_id] = @user.id
-    answer[:question_id] = question.id
-    answer[:question_result] = rand(-6..6)
-    answer.save
-  end
+  # def save_answer
+  #   answer = Answer.new
+  #   answer[:user_id] = @user.id
+  #   answer[:question_id] = question.id
+  #   answer[:question_result] = rand(-6..6)
+  #   answer.save
+  # end
 
   private
 
