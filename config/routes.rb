@@ -12,7 +12,11 @@ Rails.application.routes.draw do
       get   "users/:token",        to: "users#show",   as: "user_show"
       get   "users/:token/edit",   to: "users#edit",   as: "user_edit"
       patch "users/:token/update", to: "users#update", as: "user_update"
-      resources :users,      only: [:new, :create]
+      get   "users/:token/answers/create",  to: "answer#create",   as: "answer_create"
+      resources :users,      only: [:new, :create] do
+
+        resources :answers,  only: [:new]
+      end
     end
 
     get '/fr', to: "home#index", locale: "fr"

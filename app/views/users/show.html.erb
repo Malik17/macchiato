@@ -9,18 +9,26 @@
   <br>
   <br>
   <br>
+  <%= form_for @answer, url: ccorporation_answer_create_path do |f| %>
+    <% @questions.each do |question| %>
+      <%= question.text %><br>
+      <div class = "row">
+        <div class = "col-md-3 col-xs-3">
+          agree
+        </div>
+        <div class = "col-md-3 col-xs-3">
+          <%= f.select :question_answer, [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5],[6,6]] %>
+        </div>
+        <div class = "col-md-3 col-xs-3">
+          disagree
+        </div>
+      </div>
 
-  <% @questions.each do |question| %>
-    <%= question.text %><br>
-    agree  disagree
-    <% @answer = Answer.new %>
-    <% @answer[:user_id] = @user.id %>
-    <% @answer[:question_id] = question.id %>
-    <% @answer[:question_result] = rand(-6..6) %>
-    <% @answer.save %>
-    <!-- save_answer -->
-    <br>
-    <br>
+      <!-- save_answer -->
+      <br>
+      <br>
+    <% end %>
+    <%= f.submit %>
   <% end %>
 
 </div>

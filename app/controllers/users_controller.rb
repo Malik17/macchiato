@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       redirect_to corporation_user_edit_path(@corporation, @user.token)
     end
     @questions = Question.all
+
   end
 
   def edit
