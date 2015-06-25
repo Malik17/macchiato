@@ -25,8 +25,8 @@ var __scrollingSpeed = 1000; // page scroll speed
 background style, set only one of below to true
 =================================================*/
 
-var __staticBackground = true; // set background image by css
-var __videoHeader = false; // video background toggle
+var __staticBackground = false; // set background image by css
+var __videoHeader = true; // video background toggle
 var __slideshowHeader = false; // image background toggle
 
 /*=================================================
@@ -39,7 +39,7 @@ var __overlay = true; // overlay
 youtube video background
 =================================================*/
 
-var __youtubeUrl = 'https://www.youtube.com/watch?v=ZBVZAeGHIv8'; // youtube video url
+var __youtubeUrl = 'http://youtu.be/YJ4f5Gnl_rg'; // youtube video url
 var __videoStartTime = 1; // video start time, 70 mean 70 seconds
 var __videoEndTime = 0; // video end time, 180 mean 180 seconds, 0 mean play to end
 var __videoMute = false; // mute video on start
@@ -76,7 +76,7 @@ countdown
 
 var __countdown = true; // countdown toggle
 var __countdownDate = '07/03/2015 17:59:59'; // countdown date
-var __countdownTimezone = '+1'; // timezone
+var __countdownTimezone = '+2'; // timezone
 
 /*=================================================
 progress bar
@@ -84,34 +84,6 @@ progress bar
 
 var __progressBarSpeed = 2000; // progress bar speed
 
-/*=================================================
-mailchimp
-=================================================*/
-
-var __mailChimpVersion = false; // mailchimp toggle, if disable, php version will enable
-var __mailChimpUrl = 'MAILCHIMP_POST_URL_HERE'; // mailchimp post url
-
-$.ajaxChimp.translations.eng = { // custom mailchimp message
-  'submit': 'please wait',
-  0: '<i class="fa fa-check"></i> we have sent you a confirmation email',
-  1: '<i class="fa fa-close"></i> enter a valid e-mail address',
-  2: '<i class="fa fa-close"></i> e-mail address is not valid',
-  3: '<i class="fa fa-close"></i> e-mail address is not valid',
-  4: '<i class="fa fa-close"></i> e-mail address is not valid',
-  5: '<i class="fa fa-close"></i> e-mail address is not valid'
-}
-
-// dedault message for reference
-
-// Submit Message
-// 'submit': 'Submitting...'
-// Mailchimp Responses
-// 0: 'We have sent you a confirmation email'
-// 1: 'Please enter a value'
-// 2: 'An email address must contain a single @'
-// 3: 'The domain portion of the email address is invalid (the portion after the @: )'
-// 4: 'The username portion of the email address is invalid (the portion before the @: )'
-// 5: 'This email address looks fake or invalid. Please enter a real email address'
 
 /*=================================================
 ***do not edit below code***

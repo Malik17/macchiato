@@ -12,43 +12,41 @@
     <nav class="nav-menu">
       <div class="menu-wrapper">
 
-        <!-- subscribe form -->
-        <form id="subscribe-form">
-          <p class="subscribe-heading">subscribe to be notified</p>
-          <div class="form-group">
-            <div class="input-group">
-              <input type="email" name="email" class="form-control" id="subscribe-email" placeholder="enter email address">
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-subscribe">
-                  <i class="fa fa-fw fa-paper-plane submit"></i>
-                </button>
-              </span>
-            </div>
-          </div>
-          <label class="subscribe-notice" for="subscribe-email"></label>
-        </form>
-        <!-- /subscribe-form -->
-
         <!-- menu -->
         <ul id="menu">
           <li data-menuanchor="home-section"><a href="#home-section">Home</a></li> <!-- home -->
-          <li data-menuanchor="about-section"><a href="#about-section">About</a></li> <!-- about -->
-          <li data-menuanchor="service-section"><a href="#service-section">Service</a></li> <!-- service -->
-          <li data-menuanchor="work-section"><a href="#work-section">Work</a></li> <!-- work -->
+          <li data-menuanchor="about-section"><a href="#about-section">About us</a></li> <!-- about -->
+          <li data-menuanchor="service-section"><a href="#service-section">Services</a></li> <!-- service -->
           <li data-menuanchor="pricing-section"><a href="#pricing-section">Pricing</a></li> <!-- pricing -->
           <li data-menuanchor="contact-section"><a href="#contact-section">Contact</a></li> <!-- contact -->
         </ul>
         <!-- /menu -->
 
+        <!-- subscribe form -->
+        <%= form_tag(subscriber_path) do %>
+          <div class="form-group">
+            <div class="input-group">
+              <%= email_field_tag :email, nil, class: "form-control" %>
+              <span class="input-group-btn">
+                <%= button_tag(type: "submit", class: "btn btn-subscribe") do %>
+                  <i class="fa fa-fw fa-paper-plane submit"></i>
+                <% end %>
+              </span>
+            </div>
+          </div>
+          <label class="subscribe-notice" for="email"></label>
+        <% end %>
+        <p class="subscribe-heading">subscribe to be notified</p>
+        <!-- /subscribe-form -->
+
       </div>
     </nav>
 
     <%= image_tag "logo.png", :class => "logo" %>
-    <!-- <img src="/assets/img/logo.png" alt="logo" class="logo"> --> <!-- logo image -->
 
     <!-- nav toggle -->
     <div id="nav-toggle">
-      <i class="fa fa-bars"></i>
+      <i class="fa fa-coffee"></i>
     </div>
     <!-- /nav toggle -->
 
@@ -120,15 +118,13 @@
               <div class="col-md-6">
                 <h2 class="section-title animate"
                 data-delay="0">
-                  <%= link_to t('enroll'), new_corporation_path %>
-                  <br>
-                  About Us
+                  About
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate"
                 data-delay="50">
-                  Quisque elementum est massa, eu sodales velit commodo id. Aliquam orci magna, feugiat et interdum.
+                  We bring together the essential assets to ignite creativity, efficiency and professionalism
                 </p>
               </div>
             </div>
@@ -142,7 +138,7 @@
                 <blockquote class="animate"
                 data-delay="100">
                   <p>
-                    Etiam elementum posuere lorem, massa amet mattis eros ullamcorper sed. Donec eget vehicula placerat purus a semper.
+                    Macchiato innovation has an amazing team of expert espicially their lead developer Antoine Magny that was wonderful on our project. We are now multi-billionaires.
                   </p>
                   <footer>
                     Jose C. McKinzie
@@ -152,7 +148,7 @@
               <div class="col-md-4">
                 <p class="animate"
                 data-delay="150">
-                  Aliquam erat volutpat. Curabitur vel mi eget nibh varius rhoncus. Nunc accumsan lorem lorem, a semper erat vehicula eu. Praesent consectetur, est vitae molestie semper, purus sapien molestie felis.
+                  With a team mixing entrepreneurs, engineers and consultants we provide you with the full package. The interactions with our network of experts and advisors give us a outside perspective at key moment of the project.
                 </p>
               </div>
               <div class="col-md-4 animate"
@@ -161,23 +157,22 @@
                 <!-- pregress bar -->
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                    <h6>HTML <span>90%</span></h6>
+                    <h6>TEAM <span>90%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    <h6>PHP <span>80%</span></h6>
+                    <h6>NETWORK <span>85%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                    <h6>Javascript <span>85%</span></h6>
+                    <h6>METHODOLOGIES <span>95%</span></h6>
                   </div>
                 </div>
                 <!-- /pregress bar -->
-
               </div>
             </div>
           </div>
@@ -201,7 +196,7 @@
               <div class="col-md-6">
                 <p class="section-sub-title animate"
                 data-delay="50">
-                  Quisque elementum est massa, eu sodales velit commodo id. Aliquam orci magna, feugiat et interdum.
+                  Macchiato is a spinoff factory that helps companies rediscover the fire of their early days and reinvent their world !
                 </p>
               </div>
             </div>
@@ -218,9 +213,9 @@
                 <div class="service-grid">
                   <div class="service-icon">
                     <i class="fa fa-star-o"></i>
-                  </div>T
+                  </div>
                   <h3 class="service-title">
-                    Responsive
+                    New product development
                   </h3>
                   <p class="service-content">
                     Donec non metus at lectus maximus sodales. Pellen dapibus neque ac tellus sodales, laoreet congue neque volutpat. Etiam odio ante, porta eu mattis in.
@@ -237,7 +232,7 @@
                     <i class="fa fa-code"></i>
                   </div>
                   <h3 class="service-title">
-                    Valid Code
+                    New business model
                   </h3>
                   <p class="service-content">
                     Donec non metus at lectus maximus sodales. Pellen dapibus neque ac tellus sodales, laoreet congue neque volutpat. Etiam odio ante, porta eu mattis in.
@@ -254,7 +249,7 @@
                     <i class="fa fa-gear"></i>
                   </div>
                   <h3 class="service-title">
-                    Easy Customize
+                    Switch to digital
                   </h3>
                   <p class="service-content">
                     Donec non metus at lectus maximus sodales. Pellen dapibus neque ac tellus sodales, laoreet congue neque volutpat. Etiam odio ante, porta eu mattis in.
@@ -270,123 +265,6 @@
     </div>
     <!-- service end -->
 
-    <!-- work start -->
-    <div class="section" id="work">
-      <div class="section-entry">
-        <div class="section-heading">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h2 class="section-title animate"
-                data-delay="0">
-                  Works
-                </h2>
-              </div>
-              <div class="col-md-6">
-                <p class="section-sub-title animate"
-                data-delay="50">
-                  Quisque elementum est massa, eu sodales velit commodo id. Aliquam orci magna, feugiat et interdum.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-content">
-          <div class="container">
-            <div class="row work-row gutter-row">
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-01.jpg" title="title" class="animate"
-                data-delay="100"> <!-- work large image -->
-                  <%= image_tag("/assets/images/work/work-01.jpg") %>
-                  <!-- <img src="img/work/work-01-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-01</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-02.jpg" title="title" class="animate"
-                data-delay="150"> <!-- work large image -->
-                  <%= image_tag "work/work-02-thumb.jpg" %>
-                  <!-- <img src="img/work/work-02-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-02</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-03.jpg" title="title" class="animate"
-                data-delay="200"> <!-- work large image -->
-                  <%= image_tag "work/work-03-thumb.jpg" %>
-                  <!-- <img src="img/work/work-03-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-03</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-04.jpg" title="title" class="animate"
-                data-delay="250"> <!-- work large image -->
-                  <%= image_tag "work/work-04-thumb.jpg" %>
-                  <!-- <img src="img/work/work-04-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-04</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-05.jpg" title="title" class="animate"
-                data-delay="300"> <!-- work large image -->
-                  <%= image_tag "work/work-05-thumb.jpg" %>
-                  <!-- <img src="img/work/work-05-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-05</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-              <!-- work list -->
-              <div class="col-md-4 work-col">
-                <a href="work/work-06.jpg" title="title" class="animate"
-                data-delay="350"> <!-- work large image -->
-                  <%= image_tag "work/work-06-thumb.jpg" %>
-                  <!-- <img src="img/work/work-06-thumb.jpg" alt="work"> --> <!-- work thumb image -->
-                  <div class="meta">
-                    <h6><span>work-06</span></h6> <!-- work name -->
-                    <span>velit massa</span> <!-- work desc -->
-                  </div>
-                </a>
-              </div>
-              <!-- /work list -->
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- work end -->
-
     <!-- pricing start -->
     <div class="section" id="pricing">
       <div class="section-entry">
@@ -396,13 +274,13 @@
               <div class="col-md-6">
                 <h2 class="section-title animate"
                 data-delay="0">
-                  Our Plan
+                  Pricing
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate"
                 data-delay="50">
-                  Quisque elementum est massa, eu sodales velit commodo id. Aliquam orci magna, feugiat et interdum.
+                  We offer flexible financial solutions, adapted to every situation to ensure the appropriate level of encentivization to all stakeholders.
                 </p>
               </div>
             </div>
@@ -418,18 +296,18 @@
                 <div class="pricing-table animate"
                 data-delay="100">
                   <div class="pricing-heading">
-                    <span class="plan">Standard</span>
-                    <span class="price">$29</span>
-                    <span class="sub">/ mo</span>
+                    <span class="plan">Stimulate</span>
+                    <span class="price">Free</span>
                   </div>
                   <ul>
-                    <li>20 Pages</li>
-                    <li>Personal Support</li>
-                    <li>Map Your Domain</li>
-                    <li>Fully Customize</li>
+                    <li>Up to 100 employees</li>
+                    <li>Access to personality test</li>
+                    <li>Find your intrapreneurs</li>
+                    <li>Innovation report</li>
                   </ul>
                   <div class="pricing-footer">
                     <a href="#" class="btn btn-cs btn-pricing">More Info</a>
+                    <%= link_to t('enroll'), new_corporation_path %>
                   </div>
                 </div>
               </div>
@@ -440,15 +318,14 @@
                 <div class="pricing-table active animate"
                 data-delay="150">
                   <div class="pricing-heading">
-                    <span class="plan">Premium</span>
-                    <span class="price">$39</span>
-                    <span class="sub">/ mo</span>
+                    <span class="plan">Ideation</span>
+                    <span class="price">$10.000</span>
                   </div>
                   <ul>
-                    <li>30 Pages</li>
-                    <li>Personal Support</li>
-                    <li>Map Your Domain</li>
-                    <li>Fully Customize</li>
+                    <li>8 sessions of training</li>
+                    <li>Up to 20 employees</li>
+                    <li>Creation of inovatives projects</li>
+                    <li>Pitches to the management</li>
                   </ul>
                   <div class="pricing-footer">
                     <a href="#" class="btn btn-cs btn-pricing">More Info</a>
@@ -462,9 +339,8 @@
                 <div class="pricing-table animate"
                 data-delay="200">
                   <div class="pricing-heading">
-                    <span class="plan">Unlimited</span>
-                    <span class="price">$59</span>
-                    <span class="sub">/ mo</span>
+                    <span class="plan">Spin-off Creation</span>
+                    <span class="price">$100.000</span>
                   </div>
                   <ul>
                     <li>80 Pages</li>
@@ -501,7 +377,9 @@
               <div class="col-md-6">
                 <p class="section-sub-title animate"
                 data-delay="50">
-                  Quisque elementum est massa, eu sodales velit commodo id. Aliquam orci magna, feugiat et interdum.
+                  We're here for you, and we're wearing our thinking caps.
+                  <br>
+                  So let's get in touch !
                 </p>
               </div>
             </div>
@@ -513,27 +391,27 @@
             <div class="row gutter-row">
               <div class="col-md-6 contact-info">
                 <p class="animate"
-                data-delay="100">Vestibulum eu nisi eget libero dapibus maximus. Nulla scelerisque lorem a neque placerat maximus. Maecenas vitae faucibus.</p>
-                <address class="animate"
-                data-delay="150">
-                  <i class="fa fa-mobile"></i>
-                  <span>(00) 123-4567890</span>
-                </address>
+                data-delay="100">You can also send us some love letters...</p>
                 <address class="animate"
                 data-delay="200">
                   <i class="fa fa-map-marker"></i>
-                  <span>123 Street, City</span>
+                  <span>Chemin 't cortenbosch, 20 - 1180 Bruxelles</span>
+                </address>
+                <address class="animate"
+                data-delay="150">
+                  <i class="fa fa-mobile"></i>
+                  <span>+ 32 485 733 206</span>
                 </address>
                 <address class="animate"
                 data-delay="250">
                   <i class="fa fa-envelope-o"></i>
-                  <span>email@example.com</span>
+                  <span>info@macchiatoinnovation.com</span>
                 </address>
 
                 <!-- social link -->
                 <p class="animate"
                 data-delay="300">
-                  You can reach us on our social networks.
+                  Or you can reach us on our social networks.
                 </p>
                 <ul class="social-icon animate"
                 data-delay="350">
@@ -571,7 +449,7 @@
                 <!-- copyright -->
                 <p class="copyright animate"
                 data-delay="350">
-                  @2015 bonefishcode template
+                  @2015 Antoine 'Macchina' Magny !
                 </p>
                 <!-- /copyright -->
               </div>

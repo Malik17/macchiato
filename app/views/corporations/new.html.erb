@@ -1,28 +1,33 @@
-<div class= "personnality">
-<%= form_for @corporation do |f| %>
-  <%= t('corp_name') %>
-  <br>
-  <%= f.text_field :name, required: true %>
-  <br>
-  <%= t('division') %>
-  <br>
-  <%= f.text_field :division, required: true %>
-  <br>
-  <%= t('first_name') %>
-  <br>
-  <%= f.text_field :contact_first, required: true %>
-  <br>
-  <%= t('last_name') %>
-  <br>
-  <%= f.text_field :contact_last, required: true %>
-  <br>
-  <%= f.label :email %>
-  <br>
-  <%= f.text_field :email, required: true %>
-  <br>
-  <br>
-  <%= f.submit t('enroll') %>
-<% end %>
+<%= image_tag "logo.png", :class => "logo" %>
+
+
+<div id="new-corp" class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <p>After filling this form you will receive an access for your company and will be able to start inviting your employees to take our personnality test</p>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <%= form_for @corporation, :html => {:id => "contact-form", :class => "line-form"} do |f| %>
+    <div class="col-md-6">
+        <%= f.text_field :name, required: true, :placeholder => t('corp_name'), :class => "form-control" %>
+        <%= f.text_field :division, :placeholder => t('division'), :class => "form-control" %>
+    </div>
+    <div class="col-md-6">
+        <%= f.text_field :contact_first, required: true, :placeholder => t('first_name'), :class => "form-control" %>
+        <%= f.text_field :contact_last, required: true, :placeholder => t('last_name'), :class => "form-control" %>
+        <%= f.text_field :email, required: true, :placeholder => "Email", :class => "form-control" %>
+    <br><br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <%= f.submit t('enroll'), :class => "btn btn-block btn-contact btn-cs"%>
+      <% end %>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
 </div>
-
-
