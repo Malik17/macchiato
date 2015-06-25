@@ -4,13 +4,15 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome(user)
+  def welcome(user, link)
     @user = user  # Instance variable => available in view
+    @link = link
     mail(to: @user.email, subject: t('.subject'))
   end
 
-  def new_user(user)
+  def new_user(user, link)
     @user = user  # Instance variable => available in view
+    @link = link
     mail(to: @user.email, subject: t('.subject'))
   end
 

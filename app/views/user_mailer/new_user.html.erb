@@ -5,9 +5,7 @@
 </p>
 
 <p>
-  <a href = 'http://localhost:3000/user/<%= @user.token %>' target="_blank">
-  <%= t('link_corporate')  %>
-  </a>
+  <%= link_to t('link_corporate'), "http://localhost:3000/#{@link}corporations/#{@user.corporation_id}/users/#{@user.token}", :target => '_blank' %>
 </p>
 
 <p>
