@@ -23,6 +23,7 @@ fr:
   new_emails_box: "Merci d'ajouter les emails des employes qui doivent passer le test"
   user_welcome: "Bienvenue"
   user_details: "Merci d'indiquer votre nom"
+  new_corp_intro: "After filling this form you will receive an access for your company and will be able to start inviting your employees to take our personnality test"
 
   user_mailer:
     welcome:
