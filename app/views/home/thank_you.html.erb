@@ -1,3 +1,23 @@
-<%= t('thank_you_registration') %>
-<br>
-<%= link_to t('home'), root_path %>
+<%= image_tag "logo.png", :class => "logo" %>
+
+
+<div id="new-corp" class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <p><%= t('thank_you_registration') %></p>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="btn btn-block btn-contact btn-cs">
+        <%= link_to t('home'), root_path %>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>

@@ -23,7 +23,10 @@ fr:
   new_emails_box: "Merci d'ajouter les emails des employes qui doivent passer le test"
   user_welcome: "Bienvenue"
   user_details: "Merci d'indiquer votre nom"
-  new_corp_intro: "After filling this form you will receive an access for your company and will be able to start inviting your employees to take our personnality test"
+  new_corp_intro: "Apres avoir rempli cette page, vous recevrez un lien vers la page admin de votre societe et pourrez inviter vos employés à passer notre test de personnalité"
+  emails_placeholder: "test-email1@me.com, test-email2@me.com, test-email3@me.com ..."
+  invite: "Inviter"
+  user_do_the_test: "Veuillez répondre à ces questions de manière sincère. Une fois fini, nous vous montrerons votre personnalité entrepreunariale."
 
   user_mailer:
     welcome:

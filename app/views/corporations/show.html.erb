@@ -1,29 +1,61 @@
-<div class="personnality">
-  <h2><%= t('welcome', first_name: @corporation.contact_first)  %></h2>
-  </br>
-  <b><%= t('corp_name') %></b>
-  </br>
-  <%= @corporation.name %>
-  </br>
-  </br>
-  <b><%= t('division') %></b>
-  </br>
-  <%= @corporation.division %>
-  </br>
-  </br>
-  <b><%= t('new_emails_box') %></b>
+<%= image_tag "logo.png", :class => "logo" %>
+
+
+<div id="new-corp" class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+        <h2><%= t('welcome', first_name: @corporation.contact_first)  %></h2>
+        </br>
+        <p><b><%= t('corp_name') %> :</b> <%= @corporation.name %></p>
+        <p><b><%= t('division') %> :</b> <%= @corporation.division %></p>
+        </br>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <p><b><%= t('new_emails_box') %></b></p>
+      <%= form_for [@corporation, @user] do |f| %>
+        <!-- Don't use f. and define it as text_area emails -->
+        <%= f.text_area :email, :placeholder => t('emails_placeholder'), :class => "form-control" %>
+        <br>
+        <br>
+        <%= f.submit t('invite'), :class => "btn btn-block btn-contact btn-cs" %>
+      <% end %>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
   <br>
-  <%= form_for [@corporation, @user] do |f| %>
-    <!-- Don't use f. and define it as text_area emails -->
-    <%= f.text_area :email %>
-    <br>
-    <br>
-    <%= f.submit t('thanks') %>
-  <% end %>
-  </br>
-  </br>
-  <%= link_to t('home'), root_path  %>
+  <br>
+
+  <div class="row ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-center">
+      <p>Here, we will have company's stats for the personnality test</p>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+  </div>
+
+
+  <div class="row ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="btn btn-block btn-contact btn-cs">
+        <%= link_to t('home'), root_path %>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+  </div>
+
 </div>
+
 
 
 
