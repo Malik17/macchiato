@@ -1,6 +1,7 @@
 require "subscribe_to_newsletter"
 
 class SubscribersController < ApplicationController
+
   def create
     begin
       SubscribeToNewsletter.new.run(params[:email])
@@ -11,4 +12,5 @@ class SubscribersController < ApplicationController
     end
     redirect_to root_path
   end
+
 end
