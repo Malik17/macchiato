@@ -42,7 +42,7 @@ youtube video background
 var __youtubeUrl = 'http://youtu.be/YJ4f5Gnl_rg'; // youtube video url
 var __videoStartTime = 1; // video start time, 70 mean 70 seconds
 var __videoEndTime = 0; // video end time, 180 mean 180 seconds, 0 mean play to end
-var __videoMute = false; // mute video on start
+var __videoMute = true; // mute video on start
 
 /*=================================================
 slideshow background
