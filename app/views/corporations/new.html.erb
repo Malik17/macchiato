@@ -10,7 +10,7 @@
     <div class="col-md-2"></div>
   </div>
   <div class="row">
-    <%= form_for @corporation, :html => {:id => "contact-form", :class => "line-form"} do |f| %>
+    <%= form_for @corporation, :html => {:class => "line-form"} do |f| %>
     <div class="col-md-6">
         <%= f.text_field :name, required: true, :placeholder => t('corp_name'), :class => "form-control" %>
         <%= f.text_field :division, :placeholder => t('division'), :class => "form-control" %>
