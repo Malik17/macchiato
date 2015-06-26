@@ -19,7 +19,7 @@ init config
 
 var __navigationToggle = true; // side nav toggle
 var __recordHistory = false; // browser's history
-var __scrollingSpeed = 1000; // page scroll speed
+var __scrollingSpeed = 800; // page scroll speed
 
 /*=================================================
 background style, set only one of below to true
@@ -63,12 +63,6 @@ var __slideshowAnimationSet = [ // animation effect set
 var __slideshowTransitionSet = [ // transition effect set
         'fade'
       ];
-
-/*=================================================
-background music
-=================================================*/
-
-var __audio = false; // audio background toggle
 
 /*=================================================
 countdown

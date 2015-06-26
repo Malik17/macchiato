@@ -19,8 +19,7 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body>
-
+<body style="<%= 'overflow:hidden' if on_homepage? %>">
 
 <%= yield %>
 
