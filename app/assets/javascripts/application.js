@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require snap.svg-min
 //= require variable
+
 //= require_tree .
