@@ -2,6 +2,7 @@ class AnswersController < ApplicationController
   def create
     # redirect_to(:back)
     @user = User.find_by_token(params[:token])
+
     params[:question_result].each do |key, value|
       @answer = Answer.new
       @answer[:question_id] = key
@@ -10,10 +11,14 @@ class AnswersController < ApplicationController
       @answer.save
     end
     if @answer[:question_id] == Question.all.length
-      redirect_to(thank_you_path)
+      @corporation = Corporation.find(params[:corporation_id])
+      redirect_to(corporation_answer_show_path(@corporation, @user.token))
     else
       redirect_to(corporation_user_show_path)
     end
+  end
+
+  def show
   end
 
 

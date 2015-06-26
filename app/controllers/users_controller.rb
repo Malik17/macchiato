@@ -24,9 +24,11 @@ class UsersController < ApplicationController
     @corporation = Corporation.find(params[:corporation_id])
     if @user.first_name == nil
       redirect_to corporation_user_edit_path(@corporation, @user.token)
+    else
+      @questions = next_unanswered
     end
 
-    @questions = five_next_unanswered
+
     # if @finish_test
 
     # end
@@ -73,22 +75,33 @@ class UsersController < ApplicationController
     emails.scan /([a-zA-Z0-9\-_]+@[a-zA-Z0-9\-_]+.\w+)/
   end
 
-  def five_next_unanswered
-    answer = Answer.all.last
-    questions = Question.all
-    first_question = questions[answer.question_id].id - 1
-    last_question = questions.last.id
+  def next_unanswered
+    answer = user_answers.last
 
-    if last_question < first_question + 5
-      last_question
-      @finish_test = true
+    if answer
+      first_question = answer.question_id
     else
-      last_question = first_question + 5
+      first_question = 0
     end
 
-    array = questions[first_question,last_question]
+    questions = Question.all
+    last_question = questions.last.id
 
 
+    #plus x gives the number of questions per page
+    if last_question <= first_question + 2
+      last_question
+    else
+      last_question = first_question + 2
+    end
+    byebug
+    questions[first_question,last_question]
+
+  end
+
+  def user_answers
+    user = User.find_by_token(params[:token])
+    Answer.all.select { |ar| ar.user_id == user.id }
   end
 
   def locale_link

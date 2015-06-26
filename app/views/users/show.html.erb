@@ -2,18 +2,6 @@
 
 
 <div id="new-corp" class="container">
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
-        <h2><%= t('user_welcome') %> <%= @user.first_name %> <%= @user.last_name %></h2>
-        </br>
-        <p><%= @user.email %></p>
-        <p><b><%= t('user_do_the_test') %></b></p>
-        <hr>
-    </div>
-    <div class="col-md-2"></div>
-  </div>
-
 
   <div class="row">
     <div class="col-md-2"></div>
@@ -55,6 +43,19 @@
     </div>
     <div class="col-md-4"></div>
   </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+        <h2><%= t('user_welcome') %> <%= @user.first_name %> <%= @user.last_name %></h2>
+        </br>
+        <p><%= @user.email %></p>
+        <p><b><%= t('user_do_the_test') %></b></p>
+        <hr>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
 </div>
 
 
