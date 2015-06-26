@@ -1,0 +1,37 @@
+<%= image_tag "logo.png", :class => "logo" %>
+
+
+<div id="new-corp" class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <p><%= t('user_details') %></p>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <br>
+      <br>
+      <%= form_for @user, url: corporation_user_update_path, :html => { :class => "line-form"} do |f| %>
+        <%= f.text_field :first_name, required: true,  :placeholder => t('first_name'), :class => "form-control" %>
+        <br>
+        <%= f.text_field :last_name, required: true, :placeholder => t('last_name'), :class => "form-control" %>
+        <br>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <%= f.submit t('thanks'), :class => "btn btn-block btn-contact btn-cs" %>
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+  </div>
+</div>

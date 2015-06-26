@@ -1,25 +1,37 @@
-<%= form_for @corporation do |f| %>
-  <%= t('corp_name') %>
-  <br>
-  <%= f.text_field :name %>
-  <br>
-  <%= t('division') %>
-  <br>
-  <%= f.text_field :division %>
-  <br>
-  <%= t('first_name') %>
-  <br>
-  <%= f.text_field :contact_first %>
-  <br>
-  <%= t('last_name') %>
-  <br>
-  <%= f.text_field :contact_last %>
-  <br>
-  <%= f.label :email %>
-  <br>
-  <%= f.text_field :email %>
-  <br>
-  <br>
-  <%= f.submit t('enroll') %>
-<% end %>
+<%= image_tag "logo.png", :class => "logo" %>
 
+
+<div id="new-corp" class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <p><%= t('new_corp_intro') %></p>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="line-form">
+      <%= form_for @corporation do |f| %>
+      <div class="col-md-6">
+          <%= f.text_field :name, required: true, :placeholder => t('corp_name'), :class => "form-control" %>
+          <%= f.text_field :division, :placeholder => t('division'), :class => "form-control" %>
+      </div>
+      <div class="col-md-6">
+          <%= f.text_field :contact_first, required: true, :placeholder => t('first_name'), :class => "form-control" %>
+          <%= f.text_field :contact_last, required: true, :placeholder => t('last_name'), :class => "form-control" %>
+          <%= f.text_field :email, required: true, :placeholder => "Email", :class => "form-control" %>
+      <br><br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <%= f.submit t('enroll'), :class => "btn btn-block btn-contact btn-cs" %>
+      <% end %>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

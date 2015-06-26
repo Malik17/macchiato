@@ -1,0 +1,17 @@
+<h1><%= t('mailer_user_header') %></h1>
+
+<p>
+  <%= t('mailer_user')  %>
+</p>
+
+<p>
+  <%= link_to t('link_corporate'), "http://localhost:3000/#{@link}corporations/#{@user.corporation_id}/users/#{@user.token}", :target => '_blank' %>
+</p>
+
+<p>
+  <%= t('mailer_thank_you') %>
+</p>
+<p>
+  <%= t('mailer_signature') %>
+</p>
+
