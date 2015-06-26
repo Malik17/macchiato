@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'answers/create'
+  # get 'questionnaire/save'
+
+  # get 'answers/create'
 
   scope '(:locale)', locale: /fr|nl/ do
 
@@ -19,11 +21,11 @@ Rails.application.routes.draw do
       resources :users,      only: [ :new, :create ]
     end
 
+    get 'home', to: "home#home"
+
     get '/fr', to: "home#index", locale: "fr"
     get '/nl', to: "home#index", locale: "nl"
     get '/',   to: "home#index", locale: "en", as: "en"
-
-    get 'home', to: "home#home"
 
     root "home#index"
 
