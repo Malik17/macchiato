@@ -25,7 +25,11 @@ class UsersController < ApplicationController
     if @user.first_name == nil
       redirect_to corporation_user_edit_path(@corporation, @user.token)
     end
-    @questions = Question.all
+
+    @questions = five_next_unanswered
+    # if @finish_test
+
+    # end
   end
 
   def edit
@@ -67,6 +71,24 @@ class UsersController < ApplicationController
   def email_array
     emails = params[:user][:email]
     emails.scan /([a-zA-Z0-9\-_]+@[a-zA-Z0-9\-_]+.\w+)/
+  end
+
+  def five_next_unanswered
+    answer = Answer.all.last
+    questions = Question.all
+    first_question = questions[answer.question_id].id - 1
+    last_question = questions.last.id
+
+    if last_question < first_question + 5
+      last_question
+      @finish_test = true
+    else
+      last_question = first_question + 5
+    end
+
+    array = questions[first_question,last_question]
+
+
   end
 
   def locale_link

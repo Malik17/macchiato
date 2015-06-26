@@ -18,9 +18,8 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8 text-center">
-      <%= form_for Answer.new, url: corporation_answer_create_path do |f| %>
-        <% @questions.each do |question, id| %>
-
+      <%= form_tag (corporation_answer_create_path(@corporation, @user, token: @user.token )) do %>
+        <% @questions.each_with_index do |question, index| %>
           <div class = "row">
             <div class = "col-md-12 col-xs-12">
               <p><b>Question #<%= question.id %></b>
@@ -33,7 +32,8 @@
               Disagree
             </div>
             <div class = "col-md-4 col-xs-4">
-              <%= f.select :question_result, [[0,0],[-2,-2],[-1,-1],[1,1],[2,2]] %>
+              <%#= hidden_field_tag "question_id", "#{question.id}" %>
+              <%= select_tag "question_result[#{question.id}]", "<option>-2</option><option selected='selected'>0</option><option>2</option>".html_safe %>
             </div>
             <div class = "col-md-4 col-xs-4" style="color:green">
               Agree
@@ -50,12 +50,12 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <%= f.submit %>
+      <%= submit_tag %>
       <% end %>
     </div>
     <div class="col-md-4"></div>
-    </div>
   </div>
-
 </div>
+
+
 
