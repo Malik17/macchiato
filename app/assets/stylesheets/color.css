@@ -14,7 +14,7 @@ for example : background: rgba(255, 255, 255, 0);
 /* /placeholder color */
 
 .overlay {
-  background: rgba(0, 0, 0, 0.55); /* overlay background color and opacity for non-css background */
+  background: rgba(157, 139, 107, 1); /* overlay background color and opacity for non-css background */
 }
 
 .nav-menu{

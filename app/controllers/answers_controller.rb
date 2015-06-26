@@ -1,6 +1,5 @@
 class AnswersController < ApplicationController
   def create
-    # redirect_to(:back)
     @user = User.find_by_token(params[:token])
     params[:question_result].each do |key, value|
       @answer = Answer.new
