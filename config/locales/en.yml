@@ -48,6 +48,26 @@ en:
   emails_placeholder: "test-email1@me.com, test-email2@me.com, test-email3@me.com ..."
   invite: "Invite"
   user_do_the_test: "Please answer these questions sincerely. We will show you your entrepreneurial profile once you are done."
+  question: "Question"
+  agree: "Agree"
+  disagree: "Disagree"
+  category1: "Champion"
+  category2: "Entrepreneur"
+  category3: "Warrior"
+  category4: "Viking"
+  category5: "lame-ass"
+  category6: "Boring Bitch"
+  category7: "Genius"
+  category8: "Commander"
+  category1_text: "Blabla"
+  category2_text: "Blabla2"
+  category3_text: "Blabla3"
+  category4_text: "Blabla4"
+  category5_text: "Blabla5"
+  category6_text: "Blabla6"
+  category7_text: "Blabla7"
+  category8_text: "Blabla8"
+
 
   user_mailer:
     welcome:

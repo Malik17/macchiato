@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150624152706) do
     t.string   "text"
     t.float    "x_impact"
     t.float    "y_impact"
+    t.float    "z_impact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
