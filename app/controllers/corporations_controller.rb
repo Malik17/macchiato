@@ -19,7 +19,8 @@ class CorporationsController < ApplicationController
 
   def show
     @corporation = Corporation.find_by_token(params[:token])
-    @user = User.new
+    @users = @corporation.users
+    @answers = Answer.joins(:user).where(users:{corporation_id: @corporation})
   end
 
   def update

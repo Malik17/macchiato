@@ -131,7 +131,7 @@ nav toggle
 ========================================*/
 
 #nav-toggle {
-  background: #111; /* nav toggle background color */
+  background: rgba(157, 139, 107, 1); /* nav toggle background color */
 }
 
 /*========================================

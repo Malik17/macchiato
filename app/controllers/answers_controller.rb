@@ -37,6 +37,9 @@ class AnswersController < ApplicationController
     @category = calculate_category(@angle, @result[2])
   end
 
+  def all
+  end
+
 
   private
 
