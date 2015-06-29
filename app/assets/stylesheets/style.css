@@ -33,14 +33,10 @@ Version: 1.0
 ========================================*/
 @charset "UTF-8";
 
-
 /* google font */
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
 @import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700");
 /* /google font
-/*
-@import url("font-awesome.min.css"); /* font awesome */
-
 
 /*========================================
 02. fix ie10 viewport bug
@@ -1315,4 +1311,15 @@ address span {
   margin-top: 120px;
 }
 
+#XMLID_1_ {
+  color: green;
+}
+
+#XMLID_2_ {
+  color: red;
+}
+
+#XMLID_3_ {
+  color: yellow;
+}
 

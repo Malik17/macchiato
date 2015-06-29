@@ -15,9 +15,10 @@
         <!-- menu -->
         <ul id="menu">
           <li data-menuanchor="home-section"><a href="#home-section">Home</a></li> <!-- home -->
-          <li data-menuanchor="about-section"><a href="#about-section">About us</a></li> <!-- about -->
           <li data-menuanchor="service-section"><a href="#service-section">Services</a></li> <!-- service -->
+          <li data-menuanchor="process-section"><a href="#process-section">Process</a></li> <!--process-->
           <li data-menuanchor="pricing-section"><a href="#pricing-section">Pricing</a></li> <!-- pricing -->
+          <li data-menuanchor="about-section"><a href="#about-section">About us</a></li> <!-- about -->
           <li data-menuanchor="contact-section"><a href="#contact-section">Contact</a></li> <!-- contact -->
         </ul>
         <!-- /menu -->
@@ -103,8 +104,6 @@
     </div>
     <!-- home end -->
 
-
-
     <!-- service start -->
     <div class="section" id="service">
       <div class="section-entry">
@@ -183,6 +182,37 @@
       </div>
     </div>
     <!-- service end -->
+
+    <!-- process start -->
+    <div class="section" id="process">
+      <div class="section-entry">
+        <div class="section-heading">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12"> <!-- bootstrap col -->
+                <h2 class="section-title animate" data-delay="0"> <!-- first element delay = 0 -->
+                  Process
+                </h2>
+                <p class="section-sub-title animate" data-delay="50"> <!-- 2nd element delay + 50 = 50 -->
+                  Sexy Spiral
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12"> <!-- bootstrap col -->
+                <%= render "circle_schema" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- promote end -->
 
     <!-- pricing start -->
     <div class="section" id="pricing">
