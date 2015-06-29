@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get  "corporation/:token", to: "corporations#show"
     post "corporation/:token", to: "users#create",        as: "new_corporation_user"
     get  "/answers/all",       to: "answers#all",         as: "all_answers"
+    post "contact_form",       to: "home#contact_form"
+
 
     resource 'subscriber', only: :create
 

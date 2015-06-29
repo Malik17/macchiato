@@ -366,7 +366,7 @@ contact form
 
         $.ajax({
           type: 'POST',
-          url: 'assets/php/contact.php',
+          url: '/contact_form',
           data: {
             name: contactNameVal,
             email: contactEmailVal,

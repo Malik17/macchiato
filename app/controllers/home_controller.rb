@@ -7,10 +7,10 @@ class HomeController < ApplicationController
   end
 
   def contact_form
-    @email = params[:email]
-    @name = params[:name]
-    @message = params[:message]
-    UserMailer.contacter.deliver_now
+    email = params[:email]
+    name = params[:name]
+    message = params[:message]
+    UserMailer.contacter(email, name, message).deliver_now
     redirect_to(:back)
   end
 
