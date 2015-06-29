@@ -46,6 +46,9 @@ fr:
   category6_text: "Blabla6"
   category7_text: "Blabla7"
   category8_text: "Blabla8"
+  intuitive: "Intuitif"
+  thoughtful: "Pensif"
+  user_results_title: "Votre resultat"
 
 
   user_mailer:

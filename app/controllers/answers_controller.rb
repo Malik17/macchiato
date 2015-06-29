@@ -20,14 +20,17 @@ class AnswersController < ApplicationController
   def show
     @answers = Answer.all
     @questions = Question.all
-    x = 0
-    y = 0
+    x = 0 | y = 0 | z = 0 | xmax = 0 | ymax = 0 | zmax =0
     @answers.each do |answer|
       right_question_id = answer.question_id - 1
       x += @questions[right_question_id].x_impact * answer.question_result.to_i
       y += @questions[right_question_id].y_impact * answer.question_result.to_i
       z += @questions[right_question_id].z_impact * answer.question_result.to_i
-      @result = [x,y,z]
+      xmax += @questions[right_question_id].x_impact.abs * 2
+      ymax += @questions[right_question_id].y_impact.abs * 2
+      zmax += @questions[right_question_id].z_impact.abs * 2
+      # to change if ranking goes higher than 2 and -2
+      @result = [x,y,z,xmax,ymax,zmax]
     end
     # angle_calculation(@result[0], @result[1])
     angle_calculation(-1,-1)
