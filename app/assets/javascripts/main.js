@@ -366,7 +366,7 @@ contact form
 
         $.ajax({
           type: 'POST',
-          url: 'php/contact.php',
+          url: 'assets/php/contact.php',
           data: {
             name: contactNameVal,
             email: contactEmailVal,
@@ -585,11 +585,6 @@ document on ready
     _pricingTable();
     _navMenu();
     _clickLink();
-    if (__mailChimpVersion) {
-      _mailChimp();
-    } else {
-      _subscribeForm();
-    }
     _audioPlayer();
 
   });

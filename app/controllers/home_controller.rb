@@ -6,6 +6,14 @@ class HomeController < ApplicationController
   def index
   end
 
+  def contact_form
+    @email = params[:email]
+    @name = params[:name]
+    @message = params[:message]
+    UserMailer.contacter.deliver_now
+    redirect_to(:back)
+  end
+
   def thank_you
   end
 
