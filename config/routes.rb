@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get  "thank_you",          to: "home#thank_you"
     get  "corporation/:token", to: "corporations#show"
     post "corporation/:token", to: "users#create",        as: "new_corporation_user"
+    post "contact_form",       to: "home#contact_form"
 
     resource 'subscriber', only: :create
 
