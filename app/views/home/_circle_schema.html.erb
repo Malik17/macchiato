@@ -57,7 +57,8 @@
 
 
     $('body').click(function() {
-      $(".text").fadeOut("slow")
+      $(".text").fadeOut("slow");
+      $( "#spiral" ).toggleClass("col-lg-8 col-lg-12");
       });
 
     $('#schema').click(function(event){
@@ -130,6 +131,8 @@
       hideOthers("sustain");
       animateIfNoteOpen($( "#sustain" ));
     });
+
+
 
     function initSpiral() {
        if ($( "#spiral" ).hasClass("col-lg-12")) {
