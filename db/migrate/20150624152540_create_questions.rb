@@ -4,6 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :text
       t.float :x_impact
       t.float :y_impact
+      t.float :z_impact
 
       t.timestamps null: false
     end

@@ -1,1 +1,115 @@
-<p>winning<p>
+<h1 class = "text-center"><%= t('user_results_title') %></h1>>
+<!-- <p>score_x: <%#= @result[0] %></p>
+<p>score_y: <%#= @result[1] %></p>
+<p>score_z: <%#= @result[2] %></p>
+<p>angle: <%= @angle %></p>-->
+<p class = "text-center"> Your personnality type: </p>
+<h3 class = "text-center"><%= t('category' + @category.to_s) %></h3>
+
+<!-- <div class= "circle_user" style="background:
+    linear-gradient(36deg, #272b66 42.34%, yellow 42.34%) 0 0;">
+</div> -->
+
+<div class="container" id ="first-row">
+  <div class="row result-row" >
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <div class = "row">
+        <div class = "col-md-3 col-xs-3" style="color:red" >
+          <%= t('intuitive') %>
+        </div>
+        <div class = "col-md-6 col-xs-6">
+          <div class = "col-md-6 col-xs-6 background-bar-left" id="x-left"></div>
+          <div class = "col-md-6 col-xs-6 background-bar-right" id="x-right"></div>
+        </div>
+        <div class = "col-md-3 col-xs-3" style="color:green">
+          <%= t('thoughtful') %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row result-row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <div class = "row">
+        <div class = "col-md-3 col-xs-3" style="color:red" >
+          <%= t('intuitive') %>
+        </div>
+        <div class = "col-md-6 col-xs-6">
+          <div class = "col-md-6 col-xs-6 background-bar-left" id="y-left"></div>
+          <div class = "col-md-6 col-xs-6 background-bar-right" id="y-right"></div>
+        </div>
+        <div class = "col-md-3 col-xs-3" style="color:green">
+          <%= t('thoughtful') %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row result-row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <div class = "row">
+        <div class = "col-md-3 col-xs-3" style="color:red" >
+          <%= t('intuitive') %>
+        </div>
+        <div class = "col-md-6 col-xs-6">
+          <div class = "col-md-6 col-xs-6 background-bar-left" id="z-left"></div>
+          <div class = "col-md-6 col-xs-6 background-bar-right" id="z-right"></div>
+        </div>
+        <div class = "col-md-3 col-xs-3" style="color:green">
+          <%= t('thoughtful') %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+<!--   <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p>score_x_max: <%#= @result[3] %></p>
+      <p>score_y_max: <%#= @result[4] %></p>
+      <p>score_z_max: <%#= @result[5] %></p>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div> -->
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    var background_bar_width = $('.background-bar-right').width()
+    var new_width_x = <%= @result[0] / @result[3] %> * background_bar_width
+    var new_width_y = <%= @result[1] / @result[4] %> * background_bar_width
+    var new_width_z = <%= @result[2] / @result[5] %> * background_bar_width
+
+    if (new_width_x > 0) {
+      $('#x-right').html("<div class='ranking-bar' id='x-result'></div>")
+      $('#x-result').css({"width": new_width_x, "border-radius": "0 5px 5px 0"})
+    } else {
+      $('#x-left').html("<div class='ranking-bar' id='x-result'></div>")
+       new_width_x = new_width_x * -1
+      $('#x-result').css({"width": new_width_x, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+    }
+
+    if (new_width_y > 0) {
+      $('#y-right').html("<div class='ranking-bar' id='y-result'></div>")
+      $('#y-result').css({"width": new_width_y, "border-radius": "0 5px 5px 0"})
+    } else {
+      $('#y-left').html("<div class='ranking-bar' id='y-result'></div>")
+       new_width_y = new_width_y * -1
+      $('#y-result').css({"width": new_width_y, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+    }
+
+    if (new_width_z > 0) {
+      $('#z-right').html("<div class='ranking-bar' id='z-result'></div>")
+      $('#z-result').css({"width": new_width_z, "border-radius": "0 5px 5px 0"})
+    } else {
+      $('#z-left').html("<div class='ranking-bar' id='z-result'></div>")
+       new_width_z = new_width_z * -1
+      $('#z-result').css({"width": new_width_z, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+    }
+  });
+<% end %>
+
+

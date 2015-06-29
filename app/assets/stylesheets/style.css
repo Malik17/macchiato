@@ -1315,4 +1315,65 @@ address span {
   margin-top: 120px;
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.circle_user {
+  background-color: yellow;
+  border-radius: 50em;
+  width: 200px;
+  height:200px;
+
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+}
+
+.circle_owner{
+  background-color: yellow;
+  border-radius: 50em;
+  width: 200px;
+  height:200px;
+
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+
+  animation-name: spin;
+  animation-duration: 3s; /* 3 seconds */
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.result-row{
+  height:100px;
+}
+#first-row{
+  margin-top:100px;
+}
+
+.background-bar-left{
+  height:30px;
+  background-color: red;
+  border-radius: 5px 0 0 5px;
+  padding: 0 0 0 0;
+}
+
+.background-bar-right{
+  height:30px;
+  background-color: green;
+  border-radius: 0 5px 5px 0;
+  padding: 0 0 0 0;
+}
+
+.ranking-bar{
+  z-index:3;
+  background-color: yellow;
+  height:30px;
+}
+
+
+
 

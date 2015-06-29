@@ -94,7 +94,6 @@ class UsersController < ApplicationController
     else
       last_question = first_question + 2
     end
-    byebug
     questions[first_question,last_question]
 
   end
