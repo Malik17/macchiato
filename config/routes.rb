@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get  "thank_you",          to: "home#thank_you"
     get  "corporation/:token", to: "corporations#show"
     post "corporation/:token", to: "users#create",        as: "new_corporation_user"
+    get  "/answers/all",       to: "answers#all",         as: "all_answers"
 
     resource 'subscriber', only: :create
 
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
       get   "users/:token/edit",   to: "users#edit",   as: "user_edit"
       patch "users/:token/update", to: "users#update", as: "user_update"
 
-      post   "users/:token/answers/create", to: "answers#create", as: "answer_create"
+      post  "users/:token/answers/create", to: "answers#create", as: "answer_create"
       get   "users/:token/answers/show",   to: "answers#show",   as: "answer_show"
 
       resources :users,      only: [ :new, :create ]

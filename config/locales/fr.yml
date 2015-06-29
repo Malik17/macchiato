@@ -46,9 +46,14 @@ fr:
   category6_text: "Blabla6"
   category7_text: "Blabla7"
   category8_text: "Blabla8"
+  introverted: "Introverti"
+  extraverted: "Extraverti"
   intuitive: "Intuitif"
-  thoughtful: "Pensif"
+  thoughtful: "Réfléchie"
+  careful: "Prudent"
+  decisive: "Decisif"
   user_results_title: "Votre resultat"
+  all_personnalities: "Voir toutes les personnalites"
 
 
   user_mailer:

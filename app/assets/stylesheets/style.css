@@ -1352,21 +1352,38 @@ address span {
 
 .background-bar-left{
   height:30px;
-  background-color: red;
+  background-color: blue;
   border-radius: 5px 0 0 5px;
   padding: 0 0 0 0;
 }
 
 .background-bar-right{
   height:30px;
-  background-color: green;
+  background-color: red;
   border-radius: 0 5px 5px 0;
   padding: 0 0 0 0;
 }
 
+.black-bar-left{
+  background-color: black;
+  position:absolute;
+  right:0;
+  width:3px;
+  z-index:900;
+  height:30px;
+}
+.black-bar-right{
+  background-color: black;
+  position:absolute;
+  left:0;
+  width:3px;
+  z-index:900;
+  height:30px;
+}
+
 .ranking-bar{
   z-index:3;
-  background-color: yellow;
+  background-color: white;
   height:30px;
 }
 
