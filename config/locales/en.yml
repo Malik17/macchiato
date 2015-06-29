@@ -21,7 +21,7 @@
 
 en:
   en: "God save the Queen!"
-  nl: "Neuken in de keuken"
+  nl: "Netherlandish"
   fr: "Cheese eaters language"
   hello: "Hello world"
   new_manager: "Create a new manger"
@@ -75,6 +75,7 @@ en:
   decisive: "Decisive"
   user_results_title: "Your Results"
   all_personnalities: "See all the personnalities"
+  percentage_taken: "Percentage of employees who have completed the test"
 
 
   user_mailer:
