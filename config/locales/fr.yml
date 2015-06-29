@@ -1,6 +1,6 @@
 fr:
   en: "Rosbiff!"
-  nl: "Neuken in de keuken"
+  nl: "Néerlandais"
   fr: "La langue de Moliere"
   hello: "Bonjour Monde!"
   new_manager: "Creer un nouveau manager"
@@ -54,6 +54,7 @@ fr:
   decisive: "Decisif"
   user_results_title: "Votre resultat"
   all_personnalities: "Voir toutes les personnalites"
+  percentage_taken: "Pourcentage d'employés ayant passé le test"
 
 
   user_mailer:

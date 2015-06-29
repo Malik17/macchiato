@@ -4,9 +4,9 @@
 <p>score_z: <%#= @result[2] %></p>
 <p>angle: <%= @angle %></p>-->
 <p class = "text-center"> Your personnality type: </p>
-<h3 class = "text-center"><%= t('category' + @category.to_s) %></h3>
+<h3 class = "text-center"><%= t("category#{@result.category}") %></h3>
 <br>
-<p class = "text-center"><%= t('category' + @category.to_s + '_text') %></p>
+<p class = "text-center"><%= t("category#{@result.category}_text") %></p>
 
 
 <!-- <div class= "circle_user" style="background:
@@ -92,11 +92,11 @@
   </div> -->
 
   <%= javascript_tag do %>
-    $(document).ready(function(){
+    var callback = function(){
       var background_bar_width = $('.background-bar-right').width()
-      var new_width_x = <%= @result[0] / @result[3] %> * background_bar_width * -1
-      var new_width_y = <%= @result[1] / @result[4] %> * background_bar_width
-      var new_width_z = <%= @result[2] / @result[5] %> * background_bar_width
+      var new_width_x = <%= @result.v.x / @result.vmax.x %> * background_bar_width * -1
+      var new_width_y = <%= @result.v.y / @result.vmax.y %> * background_bar_width
+      var new_width_z = <%= @result.v.z / @result.vmax.z %> * background_bar_width
 
       if (new_width_x > 0) {
         $('#x-right').html("<div class='ranking-bar' id='x-result'></div>")
@@ -124,7 +124,9 @@
          new_width_z = new_width_z * -1
         $('#z-result').css({"width": new_width_z, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
       }
-    });
+    };
+    $(document).ready(callback);
+    $(window).resize(callback);
   <% end %>
 
   <div class="row ">

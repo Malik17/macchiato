@@ -1,6 +1,6 @@
 nl:
   en: "Murica'!"
-  nl: "Neuken in de keuken"
+  nl: "Nederlander"
   fr: "Fransozich"
   hello: "Gutten tag World"
   new_manager: "Create a new manager"
@@ -54,6 +54,7 @@ nl:
   decisive: "Decisive"
   user_results_title: "jefhkjbkbfelqb lkqegf"
   all_personnalities: "See all the personnalities"
+  percentage_taken: "Percentage of employees who have completed the test"
 
 
   user_mailer:
