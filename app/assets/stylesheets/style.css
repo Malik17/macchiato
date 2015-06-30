@@ -1399,4 +1399,11 @@ address span {
   color: yellow;
 }
 
+input[type=range], ::-moz-range-track, ::-ms-track {
+  -webkit-appearance: none;
+  background-color: blue;
+  width: 250px;
+  height:20px;
+}
+
 

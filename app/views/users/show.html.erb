@@ -32,7 +32,7 @@
               <%= t('disagree') %>
             </div>
             <div class = "col-md-4 col-xs-4">
-              <%= select_tag "question_result[#{question.id}]", "<option>-2</option><option selected='selected'>0</option><option>2</option>".html_safe %>
+              <input type="range" min="-2" max="2" <% select_tag "question_result[#{question.id}]".html_safe %>/>
             </div>
             <div class = "col-md-4 col-xs-4" style="color:green">
               <%= t('agree') %>
@@ -57,5 +57,15 @@
 
 </div>
 
+<style>
+  input[type='range']{
+    -webkit-appearance: none;
+    border-radius:3px 3px 3px 3px;
+    /*box-shadow: inset 0 0 5px #333;*/
+    background-color: black ;
+    height: 8px;
+    vertical-align: middle;
+  }
+</style>
 
 
