@@ -15,5 +15,4 @@
 //= require bootstrap-sprockets
 //= require snap.svg-min
 //= require variable
-
 //= require_tree .

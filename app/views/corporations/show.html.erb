@@ -33,26 +33,34 @@
   <br>
 
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10 text-center">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
       <div class="row">
-        <div class="col-md-8"><p><%= t('percentage_taken') %></p></div>
-        <div class="col-md-4"> <p><%= @array.length %> / <%= @users.size %></p> </div>
+        <div class="col-md-8">
+          <p><%= t('percentage_taken') %></p>
+        </div>
+        <div class="col-md-4">
+          <p><%= @array.length %> / <%= @users.size %></p>
+        </div>
       </div>
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8"></div>
-        <div class="col-md-2"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8"></div>
-        <div class="col-md-2"></div>
+        <div class="col-md-12">
+          <% for i in (1..8) do  %>
+            <div class="row">
+              <div class="col-md-8">
+                <p><%= t("category#{i}") %></p>
+              </div>
+              <div class="col-md-4">
+                <p><%= @array.count(i) %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="col-md-1"></div>
-    </div>
+    <div class="col-md-2"></div>
   </div>
+
 
 
   <div class="row ">
@@ -60,6 +68,18 @@
     <div class="col-md-4">
       <div class="btn btn-block btn-contact btn-cs">
         <%= link_to t('all_personnalities'), all_answers_path , :target => "_blank" %>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <br>
+
+  <div class="row ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="btn btn-block btn-contact btn-cs">
+        <%= link_to t('finish_campaign'), corporation_finish_path(@corporation) , :target => "_blank" %>
       </div>
     </div>
     <div class="col-md-4"></div>

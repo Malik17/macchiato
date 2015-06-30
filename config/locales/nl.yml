@@ -55,6 +55,22 @@ nl:
   user_results_title: "jefhkjbkbfelqb lkqegf"
   all_personnalities: "See all the personnalities"
   percentage_taken: "Percentage of employees who have completed the test"
+  finish_campaign: "Finish the campaign"
+  finished_campaign: "The Macchiato Team will process your corporation's data and get back to you very soon."
+  submit: "Submit"
+
+  question_1: "You find it easy to introduce yourself to other people"
+  question_2: "You often get so lost in thoughts that you ignore or forget your surroundings."
+  question_3: "You fin it easy to stay relaxed and focused even when there is some pressure."
+  question_4: "You don't usually initiate conversations"
+  question_5: "You feel a constant need for something new"
+  question_6: "You have numerous and varied interests rather than several specific ones"
+  question_7: “Being adaptable is more important to you than being organised"
+  question_8: “Solving practical problems interests you more than finding answers to existential questions"
+  question_9: “Winning a debate is more important to you than making sure no one gets upset"
+  question_10: “You often feel as if you have to justify yourself to other people"
+  question_11: “Your home and work environments are quite tidy"
+  question_12: “You do not mind being at the center of attention"
 
 
   user_mailer:

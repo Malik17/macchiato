@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20150624152706) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "text"
+    t.string   "textnl"
+    t.string   "textfr"
     t.float    "x_impact"
     t.float    "y_impact"
     t.float    "z_impact"

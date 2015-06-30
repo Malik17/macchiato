@@ -38,6 +38,11 @@ class CorporationsController < ApplicationController
   def edit
   end
 
+  def finish
+    corporation = Corporation.find_by_id(params[:corporation_id])
+    UserMailer.finish(corporation).deliver_now
+  end
+
   private
 
   def corporation_params
