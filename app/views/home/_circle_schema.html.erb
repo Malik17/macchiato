@@ -57,7 +57,8 @@
 
 
     $('body').click(function() {
-      $(".text").fadeOut("slow")
+      $(".text").fadeOut("slow");
+      $( "#spiral" ).toggleClass("col-lg-8 col-lg-12");
       });
 
     $('#schema').click(function(event){
@@ -131,6 +132,8 @@
       animateIfNoteOpen($( "#sustain" ));
     });
 
+
+
     function initSpiral() {
        if ($( "#spiral" ).hasClass("col-lg-12")) {
         $( "#spiral" ).toggleClass("col-lg-12 col-lg-8");
@@ -180,13 +183,6 @@
       }
     };
 
-  //   function animations() {
-  //     var s = Snap.select(".stimulate");
-  //     s.hover();
-
-  //   };
-
-  //   animations.mousemove();
     });
 
 
