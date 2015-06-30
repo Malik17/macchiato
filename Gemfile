@@ -18,6 +18,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'gibbon'
 gem "figaro"
+gem 'kaminari'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -55,6 +55,23 @@ fr:
   user_results_title: "Votre resultat"
   all_personnalities: "Voir toutes les personnalites"
   percentage_taken: "Pourcentage d'employés ayant passé le test"
+  finish_campaign: "Terminer la campagne"
+  finished_campaign: "The Macchiato Team will process your corporation's data and get back to you very soon."
+  submit: "Enregistrer"
+
+
+  question_1: "French question blabla to other people"
+  question_2: "French question blabla you ignore or forget your surroundings."
+  question_3: "French question blablacused even when there is some pressure."
+  question_4: "French question blablans"
+  question_5: "French question blabla new"
+  question_6: "French question blabla rather than several specific ones"
+  question_7: “French question blablaou than being organised"
+  question_8: “French question blablaou more than finding answers to existential questions"
+  question_9: “French question blablayou than making sure no one gets upset"
+  question_10: “French question blablafy yourself to other people"
+  question_11: “French question blablaite tidy"
+  question_12: “French question blabla attention"
 
 
   user_mailer:

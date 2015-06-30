@@ -2,6 +2,8 @@ class Answer < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
 
+  scope :of_user, -> (user) {where(user: user)}
+
   Result = Struct.new(:v, :vmax) do
     def angle
       @angle ||= Math.atan2(v.x,v.y)

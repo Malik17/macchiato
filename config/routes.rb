@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     # if adding edit and update to corpdon't use resources but use :token
     resources :corporations, only: [:new] do
 
+      get   "finish",              to: "corporations#finish"
+
       get   "users/:token",        to: "users#show",   as: "user_show"
       get   "users/:token/edit",   to: "users#edit",   as: "user_edit"
       patch "users/:token/update", to: "users#update", as: "user_update"
