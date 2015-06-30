@@ -131,7 +131,7 @@ nav toggle
 ========================================*/
 
 #nav-toggle {
-  background: rgba(157, 139, 107, 1); /* nav toggle background color */
+  background: transparent; /* nav toggle background color */
 }
 
 /*========================================
@@ -150,10 +150,10 @@ nav menu
 social
 ========================================*/
 
-.social-icon a {
-  background: rgba(255, 255, 255, 0.85); /* social icon background color */
-  color: #000; /* social icon color */
-}
+/*.social-icon a {
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+}*/
 
 .social-icon a:hover {
   background: rgba(255, 255, 255, 0.25); /* social icon hover background color */
@@ -214,7 +214,7 @@ pricing
 }
 
 .btn-pricing.active, .btn-pricing.focus, .btn-pricing:active, .btn-pricing:focus, .btn-pricing:hover {
-  color: #000;
+  color: #000 !important;
   background-color: #fff;
   border-color: #fff;
 }
