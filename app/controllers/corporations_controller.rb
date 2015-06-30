@@ -18,8 +18,18 @@ class CorporationsController < ApplicationController
   end
 
   def show
+    questions_length = Question.all.length
     @corporation = Corporation.find_by_token(params[:token])
-    @user = User.new
+    @users = @corporation.users
+    @array = []
+    @users.each do |user|
+      answers = Answer.all.select { |answer| answer.user_id == user.id }
+      if answers.length == questions_length
+        result = Answer.new_result(user.id)
+        @array << result.category
+      end
+    end
+    @array
   end
 
   def update
@@ -27,8 +37,6 @@ class CorporationsController < ApplicationController
 
   def edit
   end
-
-
 
   private
 

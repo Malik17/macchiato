@@ -27,8 +27,6 @@ class UsersController < ApplicationController
     else
       @questions = next_unanswered
     end
-
-
     # if @finish_test
 
     # end
@@ -94,14 +92,13 @@ class UsersController < ApplicationController
     else
       last_question = first_question + 2
     end
-    byebug
     questions[first_question,last_question]
 
   end
 
   def user_answers
     user = User.find_by_token(params[:token])
-    Answer.all.select { |ar| ar.user_id == user.id }
+    Answer.all.select { |answer| answer.user_id == user.id }
   end
 
   def locale_link

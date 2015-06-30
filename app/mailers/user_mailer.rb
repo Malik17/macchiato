@@ -16,8 +16,11 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: t('.subject'))
   end
 
-  def contacter
-    mail(to: default, subject: "contact")
+  def contacter(email, name, message)
+    @email = email
+    @name = name
+    @message = message
+    mail(to: "m.dauber@me.com", subject: "contact")
   end
 
 end

@@ -6,25 +6,37 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8 text-center">
+        <h2><%= t('user_welcome') %> <%= @user.first_name %> <%= @user.last_name %></h2>
+        </br>
+        <p><%= @user.email %></p>
+        <p><b><%= t('user_do_the_test') %></b></p>
+        <hr>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
       <%= form_tag (corporation_answer_create_path(@corporation, @user, token: @user.token )) do %>
         <% @questions.each_with_index do |question, index| %>
           <div class = "row">
             <div class = "col-md-12 col-xs-12">
-              <p><b>Question #<%= question.id %></b>
+              <p><b><%= t('question') %> <%= question.id %></b>
               <br>
               <%= question.text %></p>
             </div>
           </div>
           <div class = "row">
             <div class = "col-md-4 col-xs-4" style="color:red" >
-              Disagree
+              <%= t('disagree') %>
             </div>
             <div class = "col-md-4 col-xs-4">
               <%#= hidden_field_tag "question_id", "#{question.id}" %>
               <%= select_tag "question_result[#{question.id}]", "<option>-2</option><option selected='selected'>0</option><option>2</option>".html_safe %>
             </div>
             <div class = "col-md-4 col-xs-4" style="color:green">
-              Agree
+              <%= t('agree') %>
             </div>
           </div>
           <!-- save_answer -->
@@ -42,18 +54,6 @@
       <% end %>
     </div>
     <div class="col-md-4"></div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
-        <h2><%= t('user_welcome') %> <%= @user.first_name %> <%= @user.last_name %></h2>
-        </br>
-        <p><%= @user.email %></p>
-        <p><b><%= t('user_do_the_test') %></b></p>
-        <hr>
-    </div>
-    <div class="col-md-2"></div>
   </div>
 
 </div>

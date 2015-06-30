@@ -18,6 +18,11 @@ class AnswersController < ApplicationController
   end
 
   def show
+    user = User.find_by_token(params[:token])
+    @result = Answer.new_result(user.id)
+  end
+
+  def all
   end
 
 
@@ -26,5 +31,8 @@ class AnswersController < ApplicationController
   def answer_params
     params.require(:answer).permit(:question_result, :token)
   end
+
+
+
 
 end
