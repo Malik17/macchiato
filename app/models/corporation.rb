@@ -8,6 +8,5 @@ class Corporation < ActiveRecord::Base
   validates :contact_first, presence: true
   validates :contact_last,  presence: true
   validates :name,          presence: true
-  validates :division,      presence: true
 
 end
