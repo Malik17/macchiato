@@ -42,10 +42,13 @@
 
       </div>
     </nav>
-
-    <%= image_tag "logo.png", :class => "logo" %>
-
+    <%= link_to image_tag("logo.png", :class => "logo"), {:action => 'index', :controller => 'home'}%>
     <!-- nav toggle -->
+    <div class="language">
+      <p><%= link_to_unless I18n.locale == :fr, "fr", fr_path %></p>
+      <p><%= link_to_unless I18n.locale == :en, "en", en_path %></p>
+      <p><%= link_to_unless I18n.locale == :nl, "nl", nl_path %></p>
+    </div>
     <div id="nav-toggle">
       <i class="fa fa-bars"></i>
     </div>
@@ -316,7 +319,7 @@
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate" data-delay="50">
-                  We bring together the essential assets to ignite creativity, efficiency and professionalism
+                  We bring together the essential assets to ignite creativity, efficiency and professionalism in your company
                 </p>
               </div>
             </div>
@@ -346,19 +349,19 @@
                 <!-- pregress bar -->
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                    <h6>TEAM <span>90%</span></h6>
+                    <h6>TEAM <span>92%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    <h6>NETWORK <span>85%</span></h6>
+                    <h6>NETWORK <span>88%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                    <h6>METHODOLOGIES <span>95%</span></h6>
+                    <h6>METHODOLOGIES <span>96%</span></h6>
                   </div>
                 </div>
                 <!-- /pregress bar -->
