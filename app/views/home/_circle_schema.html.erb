@@ -50,18 +50,56 @@
   </div>
 </div>
 
-
 <script>
 
   $(document).ready(function(){
 
+    //color svg arrow by cycle
+    var animationArrow = ["XMLID_48_", "XMLID_42_", "XMLID_101_", "XMLID_100_"]
+    var animationCycle = ["XMLID_90_", "XMLID_84_", "XMLID_41_", "XMLID_40_", "XMLID_30_", "XMLID_29_"]
+    var animationStepCycle = ["XMLID_47_", "XMLID_46_", "XMLID_53_", "XMLID_52_", "XMLID_58_", "XMLID_59_", "XMLID_65_", "XMLID_64_", "XMLID_71_", "XMLID_70_", "XMLID_77_", "XMLID_76_", "XMLID_83_", "XMLID_82_", "XMLID_89_", "XMLID_88_", "XMLID_95_", "XMLID_94_"]
 
+    $(animationArrow).each(function(index, selector){
+      var itemSelector = "#"+selector;
+      var element = $("#Layer_1").find(itemSelector);
+      element.on("mouseover", function(){
+        $(this).css({
+          "stroke": "#9D8B6B"
+        });
+      });
+    })
+
+    $(animationCycle).each(function(index, selector){
+      var itemSelector = "#"+selector;
+      var element = $("#Layer_1").find(itemSelector);
+      element.on("mouseover", function(){
+        $(this).css({
+          "stroke": "#CCAA6D"
+        });
+      });
+    })
+
+    $(animationStepCycle).each(function(index, selector){
+      var itemSelector = "#"+selector;
+      var element = $("#Layer_1").find(itemSelector);
+      element.on("mouseover", function(){
+        $(this).css({
+          "stroke": "#FBBB48"
+        });
+      });
+    })
+
+
+
+
+
+    //init spirale when click on body
     $('body').click(function() {
       $(".text").fadeOut("slow");
       $( "#spiral" ).toggleClass("col-lg-8 col-lg-12");
       });
 
-    $('#schema').click(function(event){
+    $('#spiral').click(function(event){
     event.stopPropagation();
 
     });
@@ -133,7 +171,6 @@
     });
 
 
-
     function initSpiral() {
        if ($( "#spiral" ).hasClass("col-lg-12")) {
         $( "#spiral" ).toggleClass("col-lg-12 col-lg-8");
@@ -183,7 +220,9 @@
       }
     };
 
-    });
+
+});
+
 
 
 </script>

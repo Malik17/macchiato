@@ -86,6 +86,19 @@ fullpage
 
     });
 
+    /// animations for SVG
+
+    var animationList =  ["on_stimulation", "Arrow1", "Business_x5F_Man", "Arrow2", "on_ideation", "Arrow3", "on_business", "Arrow4", "on_build", "Arrow5", "Arrow6", "on_customer", "Arrow7", "Arrow8", "on_validation", "Arrow9", "Arrow10", "on_creation", "Arrow11", "on_building", "Arrow12", "on_market", "Arrow13", "on_sustain", "Arrow14" ];
+
+    $(animationList).each(function(index, selector){
+      var itemSelector = "#"+selector;
+      var element = $("#Layer_1").find(itemSelector);
+      element.hide();
+    })
+
+
+
+
     $('#fullpage').fullpage({
 
       menu: '#menu',
@@ -121,6 +134,24 @@ fullpage
 
           if (index >= 2 && direction == 'up') {
             $('#home').find('.animate.in').removeClass('in');
+          }
+
+          // animations for SVG
+
+          if (index >= 3 && direction == 'up' || direction == 'down') {
+
+            setTimeout(function(){
+
+                $(animationList).each(function(index, selector){
+
+                  var itemSelector = "#"+selector;
+                  var element = $("#Layer_1").find(itemSelector);
+
+                  $(element).delay(index * 500).queue(function(){
+                      $(this).fadeIn(900).dequeue();
+                  });
+                })
+            }, 1000)
           }
 
       },

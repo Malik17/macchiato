@@ -32,8 +32,22 @@
               <%= t('disagree') %>
             </div>
             <div class = "col-md-4 col-xs-4">
-              <%#= hidden_field_tag "question_id", "#{question.id}" %>
-              <%= select_tag "question_result[#{question.id}]", "<option>-2</option><option selected='selected'>0</option><option>2</option>".html_safe %>
+              <div class='slider' id='designQuality'>
+                <ul role='presentation'>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div></div>
+                <input class='answer' type='hidden' <% range_field_tag "question_result[#{question.id}]", nil, in: -2..2 %>/>
+              </div>
             </div>
             <div class = "col-md-4 col-xs-4" style="color:green">
               <%= t('agree') %>
@@ -59,4 +73,31 @@
 </div>
 
 
+<script>
+$(document).ready(function(){
 
+  var tooltipElement = $('<div class="ui-slider-tooltip" aria-hidden="true" />');
+  var tooltip;
+  var slider  = $('.slider > div').slider({
+    range: "min",
+    value: 7,
+    min: 1,
+    max: 10,
+    step: 1,
+    create: function ( event ) {
+      $( event.target ).find('.ui-slider-handle').append( tooltipElement );
+      tooltip = $('.ui-slider-tooltip');
+    },
+    change: function ( event, ui ) {
+      var input = $( event.target ).parent().find('input.answer');
+      input.val( ui.value );
+      window.tooltip.text( ui.value );
+      window.tooltip.attr('aria-hidden', 'false');
+    },
+    slide: function ( event, ui ) {
+      window.tooltip.attr('aria-hidden', 'true');
+    }
+  });
+});
+
+</script>
