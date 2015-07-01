@@ -156,7 +156,7 @@ var labels = ["<%= t('category1') %>",
   for (var i=0; i < labels.length; i++) {
     console.log(series[i])
     if( series[i] !== 0){
-      result.push(labels[i])
+      result.push( series[i] + "x " + labels[i])
     }else{
       result.push("")
     }
