@@ -4,7 +4,7 @@
   <!-- NAME: OCEANIC -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>*|MC:SUBJECT|*</title>
+  <title>On the road to innovation</title>
 
   <style type="text/css">
   body,#bodyTable,#bodyCell{
@@ -65,7 +65,7 @@
     display:block;
   }
   body,.backgroundColor{
-    background-color:#1E1E1E;
+    background-color:#F1F1F1;
     background-position:top left;
     background-repeat:repeat;
   }
@@ -688,7 +688,7 @@
 
                                               <td valign="top" class="mcnTextContent" style="padding: 9px 18px; text-align: center;">
 
-                                                <h1 style="line-height: 20.7999992370605px; text-align: center;"><span style="color:#f9f9f9"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">WELCOME TO MACCHIATO!</span></span></h1>
+                                                <h1 style="line-height: 20.7999992370605px; text-align: center;"><span style="color:#f9f9f9"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><%= t('welcome') %></span></span></h1>
 
                                                 <div>&nbsp;</div>
 
@@ -720,10 +720,9 @@
 
                                               <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
 
-                                                <p class="p1"><span style="font-size:15px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><%= t('mailer_corporate_header', first_name: @user.contact_first) %>,</span><br>
-                                                  <span style="font-family:arial,helvetica neue,helvetica,sans-serif; line-height:22px">Thanks so much for joining us.<br>
-                                                  You’re now on your way to super-innovation !<br>
-                                                  The first step of your journey will be to invite all your colleagues to pass our personality test.</span></span></p>
+                                                <p class="p1"><span style="font-size:15px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><%= t('mailer_corporate_header', first_name: @user.contact_first) %>,<br></span>
+                                                  <span style="font-family:arial,helvetica neue,helvetica,sans-serif; line-height:22px">
+                                                    <%= t('mailer_corporate_1') %></span></span></p>
                                                   <br style="box-sizing: border-box;">
                                                   <span style="font-size:15px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="line-height:22px">To do so you only have to follow your private link below. Do not transmit this link, it is your only way to your account !</span><br>
                                                   <br style="box-sizing: border-box;">
@@ -749,6 +748,9 @@
                                                 <tr>
                                                   <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; padding: 15px;">
                                                     <a class="mcnButton " title="Start Inviting Your Employees" href="http://" target="_self" style="font-weight: normal;letter-spacing: 1px;line-height: 100%;text-align: center;text-decoration: none;color: #FAFAFA;"><%= link_to t('link_corporate'), "http://localhost:3000/#{@link}corporation/#{@user.token}", :target => '_blank' %></a>
+                                                  </td>
+                                                  <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; padding: 15px;">
+                                                    <a class="mcnButton " title="Start Inviting Your Employees" href="http://" target="_self" style="font-weight: normal;letter-spacing: 1px;line-height: 100%;text-align: center;text-decoration: none;color: #FAFAFA;"><%= link_to t('link_corporate'), "http://macchiatoinnovation.herokuapp.com/#{@link}corporation/#{@user.token}", :target => '_blank' %></a>
                                                   </td>
                                                 </tr>
                                               </tbody>
