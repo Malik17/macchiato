@@ -116,24 +116,21 @@
   var intuitive   = "<%= t('intuitive')   %>";
 
   var series = [<%= @array.count(1) %>,
-                         <%= @array.count(2) %>,
-                         <%= @array.count(3) %>,
-                         <%= @array.count(4) %>,
-                         <%= @array.count(5) %>,
-                         <%= @array.count(6) %>,
-                         <%= @array.count(7) %>,
-                         <%= @array.count(8) %>,
-                         <%= @array.count(9) %>,
-                         <%= @array.count(10)%>,
-                         <%= @array.count(11)%>,
-                         <%= @array.count(12)%>,
-                         <%= @array.count(13)%>,
-                         <%= @array.count(14)%>,
-                         <%= @array.count(15)%>,
-                         <%= @array.count(16)%>];
-
-
-
+                <%= @array.count(2) %>,
+                <%= @array.count(3) %>,
+                <%= @array.count(4) %>,
+                <%= @array.count(5) %>,
+                <%= @array.count(6) %>,
+                <%= @array.count(7) %>,
+                <%= @array.count(8) %>,
+                <%= @array.count(9) %>,
+                <%= @array.count(10)%>,
+                <%= @array.count(11)%>,
+                <%= @array.count(12)%>,
+                <%= @array.count(13)%>,
+                <%= @array.count(14)%>,
+                <%= @array.count(15)%>,
+                <%= @array.count(16)%>];
 
 var labels = ["<%= t('category1') %>",
               "<%= t('category2') %>",
@@ -154,17 +151,12 @@ var labels = ["<%= t('category1') %>",
 
   var result =[]
   for (var i=0; i < labels.length; i++) {
-    console.log(series[i])
     if( series[i] !== 0){
       result.push( series[i] + "x " + labels[i])
     }else{
       result.push("")
     }
-
   }
-  console.log(result)
-   console.log(series)
-
 
   var chart = new Chartist.Pie('#pie', {
     series: series,
@@ -173,8 +165,6 @@ var labels = ["<%= t('category1') %>",
     donut: true,
     showLabel: true
   });
-
-
 
 
   chart.on('draw', function(data) {
