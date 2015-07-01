@@ -8,21 +8,31 @@ class Answer < ActiveRecord::Base
     def angle
       @angle ||= Math.atan2(v.x,v.y)
     end
+
     def category
-      if 0 <= angle && angle <= Math::PI/2
+      pi = Math::PI
+      if 0 < angle && angle <= pi/4
         category = 1
-      elsif Math::PI/2 < angle && angle <= Math::PI
+      elsif pi/4 < angle && angle <= pi/2
         category = 2
-      elsif -Math::PI < angle && angle <= -Math::PI/2
+      elsif pi/2 < angle && angle <= 3*pi/4
         category = 3
-      elsif -Math::PI/2 < angle && angle <= -0
+      elsif 3*pi/4 < angle && angle <= pi
         category = 4
+      elsif -pi < angle && angle <= -3*pi/4
+        category = 5
+      elsif -3*pi/4 < angle && angle <= -pi/2
+        category = 6
+      elsif -pi/2 < angle && angle <= -pi/4
+        category = 7
+      elsif -pi/4 < angle && angle <= 0
+        category = 8
       else
         "oops"
       end
 
       if v.z >= 0
-        category += 4
+        category += 8
       end
       category
     end
