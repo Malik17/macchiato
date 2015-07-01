@@ -110,59 +110,65 @@
 
 
 <%= javascript_tag do %>
-  var introverted = "<%= t('introverted') %>"
-  var extraverted = "<%= t('extraverted') %>"
-  var thoughtful  = "<%= t('thoughtful')  %>"
-  var intuitive   = "<%= t('intuitive')   %>"
+  var introverted = "<%= t('introverted') %>";
+  var extraverted = "<%= t('extraverted') %>";
+  var thoughtful  = "<%= t('thoughtful')  %>";
+  var intuitive   = "<%= t('intuitive')   %>";
 
-  var nnw_count        = "<%= @array.count(1) %>"
-  var wnw_count        = "<%= @array.count(2) %>"
-  var wsw_count        = "<%= @array.count(3) %>"
-  var ssw_count        = "<%= @array.count(4) %>"
-  var sse_count        = "<%= @array.count(5) %>"
-  var ese_count        = "<%= @array.count(6) %>"
-  var ene_count        = "<%= @array.count(7) %>"
-  var nne_count        = "<%= @array.count(8) %>"
-  var nnw_z_plus_count = "<%= @array.count(9) %>"
-  var wnw_z_plus_count = "<%= @array.count(10)%>"
-  var wsw_z_plus_count = "<%= @array.count(11)%>"
-  var ssw_z_plus_count = "<%= @array.count(12)%>"
-  var sse_z_plus_count = "<%= @array.count(13)%>"
-  var ese_z_plus_count = "<%= @array.count(14)%>"
-  var ene_z_plus_count = "<%= @array.count(15)%>"
-  var nne_z_plus_count = "<%= @array.count(16)%>"
+  var series = [<%= @array.count(1) %>,
+                         <%= @array.count(2) %>,
+                         <%= @array.count(3) %>,
+                         <%= @array.count(4) %>,
+                         <%= @array.count(5) %>,
+                         <%= @array.count(6) %>,
+                         <%= @array.count(7) %>,
+                         <%= @array.count(8) %>,
+                         <%= @array.count(9) %>,
+                         <%= @array.count(10)%>,
+                         <%= @array.count(11)%>,
+                         <%= @array.count(12)%>,
+                         <%= @array.count(13)%>,
+                         <%= @array.count(14)%>,
+                         <%= @array.count(15)%>,
+                         <%= @array.count(16)%>];
 
 
-  <!-- for (var i=1; i < 16; i++) { -->
-    <!-- if(<%#= @array.count(i) %> === 0){ -->
-      <!-- "<%#= t('category'+i.to_s) %>" = "" -->
-    <!-- } -->
-  <!-- } -->
 
-  console.log(<%#= @array.count(i) %>)
-  console.log(<%#= t('category'+1.to_s) %>)
 
-  var nnw        = "<%= t('category1') %>"
-  var wnw        = "<%= t('category2') %>"
-  var wsw        = "<%= t('category3') %>"
-  var ssw        = "<%= t('category4') %>"
-  var sse        = "<%= t('category5') %>"
-  var ese        = "<%= t('category6') %>"
-  var ene        = "<%= t('category7') %>"
-  var nne        = "<%= t('category8') %>"
-  var nnw_z_plus = "<%= t('category9') %>"
-  var wnw_z_plus = "<%= t('category10')%>"
-  var wsw_z_plus = "<%= t('category11')%>"
-  var ssw_z_plus = "<%= t('category12')%>"
-  var sse_z_plus = "<%= t('category13')%>"
-  var ese_z_plus = "<%= t('category14')%>"
-  var ene_z_plus = "<%= t('category15')%>"
-  var nne_z_plus = "<%= t('category16')%>"
+var labels = ["<%= t('category1') %>",
+              "<%= t('category2') %>",
+              "<%= t('category3') %>",
+              "<%= t('category4') %>",
+              "<%= t('category5') %>",
+              "<%= t('category6') %>",
+              "<%= t('category7') %>",
+              "<%= t('category8') %>",
+              "<%= t('category9') %>",
+              "<%= t('category10')%>",
+              "<%= t('category11')%>",
+              "<%= t('category12')%>",
+              "<%= t('category13')%>",
+              "<%= t('category14')%>",
+              "<%= t('category15')%>",
+              "<%= t('category16')%>"];
+
+  var result =[]
+  for (var i=0; i < labels.length; i++) {
+    console.log(series[i])
+    if( series[i] !== 0){
+      result.push(labels[i])
+    }else{
+      result.push("")
+    }
+
+  }
+  console.log(result)
+   console.log(series)
 
 
   var chart = new Chartist.Pie('#pie', {
-    series: [nnw_count, wnw_count, wsw_count, ssw_count, sse_count, ese_count, ene_count, nne_count, nnw_z_plus_count, wnw_z_plus_count, wsw_z_plus_count, ssw_z_plus_count, sse_z_plus_count, ese_z_plus_count, ene_z_plus_count, nne_z_plus_count],
-    labels: [nnw, wnw, wsw, ssw, sse, ese, ene, nne, nnw_z_plus, wnw_z_plus, wsw_z_plus, ssw_z_plus, sse_z_plus, ese_z_plus, ene_z_plus, nne_z_plus]
+    series: series,
+    labels: result
   }, {
     donut: true,
     showLabel: true

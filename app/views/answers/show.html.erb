@@ -102,6 +102,13 @@
 
   </div>
 
+  <style>
+  svg g text {
+    position: absolute;
+    z-index: 1000;
+  }
+  </style>
+
 
   <%= javascript_tag do %>
     var introverted = "<%= t('introverted') %>"
@@ -125,7 +132,7 @@
     var ene_z_plus = "<%= t('category15')%>"
     var nne_z_plus = "<%= t('category16')%>"
 
-    var category = "<%= t('category' + @result.category.to_s) %>"
+    var category   = "<%= t('category' + @result.category.to_s) %>"
 
 
     if(<%= @result[0][1] %> < 0 ) {
@@ -152,7 +159,7 @@
 
 
 
-    chart.on('draw', function(data) {
+    chart.on('draws', function(data) {
       if(data.type === 'slice') {
         // Get the total path length in order to use for dash array animation
         var pathLength = data.element._node.getTotalLength();
