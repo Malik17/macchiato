@@ -1,5 +1,7 @@
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-
+<br>
+<br>
+<br>
 <h1 class = "text-center"><%= t('user_results_title') %></h1>
 <!-- <p>score_x: <%#= @result[0] %></p>
 <p>score_y: <%#= @result[1] %></p>
@@ -15,10 +17,11 @@
     linear-gradient(36deg, #272b66 42.34%, yellow 42.34%) 0 0;">
 </div> -->
 
-<div class="container" id ="first-row">
+<div class="container">
+
   <div class="row result-row" >
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12 text-center">
       <div class = "row">
         <div class = "col-md-3 col-xs-3" style="color:blue" >
           <%= t('introverted') %>
@@ -36,11 +39,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
+    <!-- <div class="col-md-2"></div> -->
   </div>
+
   <div class="row result-row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12 text-center">
       <div class = "row">
         <div class = "col-md-3 col-xs-3" style="color:blue" >
           <%= t('intuitive') %>
@@ -58,11 +62,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
+    <!-- <div class="col-md-2"></div> -->
   </div>
+
   <div class="row result-row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12 text-center">
       <div class = "row">
         <div class = "col-md-3 col-xs-3" style="color:blue" >
           <%= t('careful') %>
@@ -80,7 +85,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
+    <!-- <div class="col-md-2"></div> -->
   </div>
     <!-- <div class="row">
       <div class="col-md-4"></div>
@@ -92,22 +97,35 @@
       <div class="col-md-4"></div>
     </div> -->
 
-    <div class="row">
-      <!-- <div class="col-md-4"></div> -->
-      <div class="col-md-12">
-        <div id="pie" class="ct-chart" style="height:500px"></div>
-      </div>
-      <!-- <div class="col-md-4"></div> -->
+  <div class="row">
+    <!-- <div class="col-md-4"></div> -->
+    <div class="col-md-12">
+      <div id="pie" class="ct-chart" style="height:500px"></div>
     </div>
-
+    <!-- <div class="col-md-4"></div> -->
   </div>
 
-  <style>
-  svg g text {
-    position: absolute;
-    z-index: 1000;
-  }
-  </style>
+  <br>
+  <br>
+
+  <div class="row">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12">
+      <%= link_to t('all_personnalities'), all_answers_path , :target => "_blank", :class => "btn btn-block btn-contact btn-cs"  %>
+    </div>
+    <!-- <div class="col-md-2"></div> -->
+  </div>
+
+</div>
+
+
+
+<style>
+/*svg g text {
+  position: absolute;
+  z-index: 1000;
+}*/
+</style>
 
 
   <%= javascript_tag do %>
@@ -248,14 +266,5 @@
 
   <% end %>
 
-  <div class="row ">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <div class="btn btn-block btn-contact btn-cs">
-        <%= link_to t('all_personnalities'), all_answers_path , :target => "_blank" %>
-      </div>
-    </div>
-    <div class="col-md-4"></div>
-  </div>
-</div>
+
 
