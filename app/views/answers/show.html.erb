@@ -1,11 +1,14 @@
-<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
 
+<br>
+<br>
+<br>
 <h1 class = "text-center"><%= t('user_results_title') %></h1>
 <!-- <p>score_x: <%#= @result[0] %></p>
 <p>score_y: <%#= @result[1] %></p>
 <p>score_z: <%#= @result[2] %></p>
 <p>angle: <%= @angle %></p>-->
-<p class = "text-center"> Your personnality type: </p>
+<!-- <p class = "text-center"> Your personnality type: </p> -->
 <h3 class = "text-center"><%= t('category' + @result.category.to_s) %></h3>
 <br>
 <p class = "text-center"><%= t('category' + @result.category.to_s + '_text') %></p>
@@ -15,10 +18,11 @@
     linear-gradient(36deg, #272b66 42.34%, yellow 42.34%) 0 0;">
 </div> -->
 
-<div class="container" id ="first-row">
+<div class="container">
+
   <div class="row result-row" >
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12 text-center">
       <div class = "row">
         <div class = "col-md-3 col-xs-3" style="color:blue" >
           <%= t('introverted') %>
@@ -36,11 +40,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
+    <!-- <div class="col-md-2"></div> -->
   </div>
+
   <div class="row result-row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12 text-center">
       <div class = "row">
         <div class = "col-md-3 col-xs-3" style="color:blue" >
           <%= t('intuitive') %>
@@ -58,11 +63,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
+    <!-- <div class="col-md-2"></div> -->
   </div>
+
   <div class="row result-row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12 text-center">
       <div class = "row">
         <div class = "col-md-3 col-xs-3" style="color:blue" >
           <%= t('careful') %>
@@ -80,7 +86,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
+    <!-- <div class="col-md-2"></div> -->
   </div>
     <!-- <div class="row">
       <div class="col-md-4"></div>
@@ -92,163 +98,240 @@
       <div class="col-md-4"></div>
     </div> -->
 
-    <div class="row">
-      <!-- <div class="col-md-4"></div> -->
-      <div class="col-md-12">
-        <div id="pie" class="ct-chart" style="height:500px"></div>
-      </div>
-      <!-- <div class="col-md-4"></div> -->
-    </div>
 
+
+
+  <div class="row">
+  <!-- <div class="col-md-4"></div> -->
+    <div class="col-md-12">
+      <div id="pieChart" class="text-center"></div>
+    </div>
+  <!-- <div class="col-md-4"></div> -->
   </div>
 
+  <br>
+  <br>
 
-  <%= javascript_tag do %>
-    var introverted = "<%= t('introverted') %>"
-    var extraverted = "<%= t('extraverted') %>"
-    var thoughtful  = "<%= t('thoughtful')  %>"
-    var intuitive   = "<%= t('intuitive')   %>"
-    var nnw        = "<%= t('category1') %>"
-    var wnw        = "<%= t('category2') %>"
-    var wsw        = "<%= t('category3') %>"
-    var ssw        = "<%= t('category4') %>"
-    var sse        = "<%= t('category5') %>"
-    var ese        = "<%= t('category6') %>"
-    var ene        = "<%= t('category7') %>"
-    var nne        = "<%= t('category8') %>"
-    var nnw_z_plus = "<%= t('category9') %>"
-    var wnw_z_plus = "<%= t('category10')%>"
-    var wsw_z_plus = "<%= t('category11')%>"
-    var ssw_z_plus = "<%= t('category12')%>"
-    var sse_z_plus = "<%= t('category13')%>"
-    var ese_z_plus = "<%= t('category14')%>"
-    var ene_z_plus = "<%= t('category15')%>"
-    var nne_z_plus = "<%= t('category16')%>"
-
-    var category = "<%= t('category' + @result.category.to_s) %>"
-
-
-    if(<%= @result[0][1] %> < 0 ) {
-
-      var chart = new Chartist.Pie('#pie', {
-        series: [0.5, 12, 12, 1, 12, 12, 1, 12, 12, 1, 12, 12, 0.5],
-        labels: [thoughtful, nnw, wnw, extraverted, wsw, ssw, intuitive, sse, ese, introverted, ene, nne,]
-      }, {
-        donut: true,
-        showLabel: true
-      });
-
-    }else{
-
-      var chart = new Chartist.Pie('#pie', {
-        series: [0.5, 12, 12, 1, 12, 12, 1, 12, 12, 1, 12, 12, 0.5],
-        labels: [thoughtful, nnw_z_plus, wnw_z_plus, extraverted, wsw_z_plus, ssw_z_plus, intuitive, sse_z_plus, ese_z_plus, introverted, ene_z_plus, nne_z_plus,]
-      }, {
-        donut: true,
-        showLabel: true
-      });
-
-    }
-
-
-
-    chart.on('draw', function(data) {
-      if(data.type === 'slice') {
-        // Get the total path length in order to use for dash array animation
-        var pathLength = data.element._node.getTotalLength();
-
-        // Set a dasharray that matches the path length as prerequisite to animate dashoffset
-        data.element.attr({
-          'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
-        });
-
-        // Create animation definition while also assigning an ID to the animation for later sync usage
-        var animationDefinition = {
-          'stroke-dashoffset': {
-            id: 'anim' + data.index,
-            dur: 1000,
-            from: -pathLength + 'px',
-            to:  '0px',
-            easing: Chartist.Svg.Easing.easeOutQuint,
-            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
-            fill: 'freeze'
-          }
-        };
-
-        // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
-        if(data.index !== 0) {
-          animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
-        }
-
-        // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
-        data.element.attr({
-          'stroke-dashoffset': -pathLength + 'px'
-        });
-
-        // We can't use guided mode as the animations need to rely on setting begin manually
-        // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
-        data.element.animate(animationDefinition, false);
-      }
-    });
-
-    // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-    chart.on('created', function() {
-      if(window.__anim21278907124) {
-        clearTimeout(window.__anim21278907124);
-        window.__anim21278907124 = null;
-      }
-      window.__anim21278907124 = setTimeout(chart.update.bind(chart), 13000);
-    });
-
-  <% end %>
-
-  <%= javascript_tag do %>
-    $(document).ready(function(){
-      setTimeout(function() {
-        var background_bar_width = $('.background-bar-right').width()
-        var new_width_x = <%= @result[0][0] / @result[1][0] %> * background_bar_width
-        var new_width_y = <%= @result[0][1] / @result[1][1] %> * background_bar_width
-        var new_width_z = <%= @result[0][2] / @result[1][2] %> * background_bar_width
-
-        if (new_width_x > 0) {
-          $('#x-right').html("<div class='ranking-bar stretchRight' id='x-result'></div>")
-          $('#x-result').css({"width": new_width_x, "border-radius": "0 5px 5px 0"})
-        } else {
-          $('#x-left').html("<div class='ranking-bar stretchLeft' id='x-result'></div>")
-           new_width_x = new_width_x * -1
-          $('#x-result').css({"width": new_width_x, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
-        }
-
-        if (new_width_y > 0) {
-          $('#y-right').html("<div class='ranking-bar stretchRight' id='y-result'></div>")
-          $('#y-result').css({"width": new_width_y, "border-radius": "0 5px 5px 0"})
-        } else {
-          $('#y-left').html("<div class='ranking-bar stretchLeft' id='y-result'></div>")
-           new_width_y = new_width_y * -1
-          $('#y-result').css({"width": new_width_y, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
-        }
-
-        if (new_width_z > 0) {
-          $('#z-right').html("<div class='ranking-bar stretchRight' id='z-result' ></div>")
-          $('#z-result').css({"width": new_width_z, "border-radius": "0 5px 5px 0"})
-        } else {
-          $('#z-left').html("<div class='ranking-bar stretchLeft' id='z-result'></div>")
-           new_width_z = new_width_z * -1
-          $('#z-result').css({"width": new_width_z, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
-        }
-      }, 500);
-    });
-
-  <% end %>
-
-  <div class="row ">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <div class="btn btn-block btn-contact btn-cs">
-        <%= link_to t('all_personnalities'), all_answers_path , :target => "_blank" %>
-      </div>
+  <div class="row">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12">
+      <%= link_to t('all_personnalities'), all_answers_path , :target => "_blank", :class => "btn btn-block btn-contact btn-cs"  %>
     </div>
-    <div class="col-md-4"></div>
+    <!-- <div class="col-md-2"></div> -->
   </div>
+
 </div>
+
+<%= javascript_tag do %>
+var introverted = "<%= t('introverted') %>"
+var extraverted = "<%= t('extraverted') %>"
+var thoughtful  = "<%= t('thoughtful')  %>"
+var intuitive   = "<%= t('intuitive')   %>"
+var z = (<%= @result[0][1] %> < 0 ) ? 0 : 8;
+
+var labels = ["<%= t('category1') %>",
+              "<%= t('category2') %>",
+              "<%= t('category3') %>",
+              "<%= t('category4') %>",
+              "<%= t('category5') %>",
+              "<%= t('category6') %>",
+              "<%= t('category7') %>",
+              "<%= t('category8') %>",
+              "<%= t('category9') %>",
+              "<%= t('category10')%>",
+              "<%= t('category11')%>",
+              "<%= t('category12')%>",
+              "<%= t('category13')%>",
+              "<%= t('category14')%>",
+              "<%= t('category15')%>",
+              "<%= t('category16')%>"];
+
+
+var pie = new d3pie("pieChart", {
+  "header": {
+    "title": {
+      "text": "<%= t('category' + @result.category.to_s) %>",
+      "color": "#ff0000",
+      "fontSize": 34,
+      "font": "cinzel"
+    },
+    "subtitle": {
+      "color": "#999999",
+      "fontSize": 10,
+      "font": "courier"
+    },
+    "location": "pie-center",
+    "titleSubtitlePadding": 10
+  },
+  "footer": {
+    "color": "#999999",
+    "fontSize": 10,
+    "font": "open sans",
+    "location": "bottom-left"
+  },
+  "size": {
+    "canvasWidth": 590,
+    "pieInnerRadius": "68%",
+    "pieOuterRadius": "100%"
+  },
+  "data": {
+    "content": [
+      {
+        "opacity": 0.1,
+        "label": thoughtful,
+        "value": 1,
+        "color": "#ff0000"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[0+z],
+        "value": 12,
+        "color": "#FFCF00"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[1+z],
+        "value": 12,
+        "color": "#FF7D01"
+      },
+      {
+        "opacity": 0.1,
+        "label": extraverted,
+        "value": 1,
+        "color": "#000000"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[2+z],
+        "value": 12,
+        "color": "#F42494"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[3+z],
+        "value": 12,
+        "color": "#8B20BB"
+      },
+      {
+        "opacity": 0.1,
+        "label": intuitive,
+        "value": 1,
+        "color": "#ff0000"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[4+z],
+        "value": 12,
+        "color": "#007AC7"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[5+z],
+        "value": 12,
+        "color": "#00B2D6"
+      },
+      {
+        "opacity": 0.1,
+        "label": introverted,
+        "value": 1,
+        "color": "#000000"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[6+z],
+        "value": 12,
+        "color": "#02B801"
+      },
+      {
+        "opacity": 0.1,
+        "label": labels[7+z],
+        "value": 12,
+        "color": "#84CE00"
+      }
+    ]
+  },
+  "labels": {
+    "outer": {
+      "format": "none",
+      "pieDistance": 10
+    },
+    "inner": {
+      "format": "label"
+    },
+    "mainLabel": {
+      "color": "#ffffff",
+      "font": "cinzel",
+      "fontSize": 17
+    },
+    "percentage": {
+      "color": "#999999",
+      "fontSize": 11,
+      "decimalPlaces": 0
+    },
+    "value": {
+      "color": "#cccc43",
+      "fontSize": 11
+    },
+    "lines": {
+      "enabled": true
+    }
+  },
+  "effects": {
+    "load": {
+      "speed": 1290
+    },
+    "pullOutSegmentOnClick": {
+      "effect": "elastic",
+      "speed": 400,
+      "size": 8
+    }
+  },
+  "misc": {
+    "colors": {
+      "segmentStroke": "#9d8a6b"
+    }
+  }
+});
+<% end %>
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    setTimeout(function() {
+      var background_bar_width = $('.background-bar-right').width()
+      var new_width_x = <%= @result[0][0] / @result[1][0] %> * background_bar_width
+      var new_width_y = <%= @result[0][1] / @result[1][1] %> * background_bar_width
+      var new_width_z = <%= @result[0][2] / @result[1][2] %> * background_bar_width
+
+      if (new_width_x > 0) {
+        $('#x-right').html("<div class='ranking-bar stretchRight' id='x-result'></div>")
+        $('#x-result').css({"width": new_width_x, "border-radius": "0 5px 5px 0"})
+      } else {
+        $('#x-left').html("<div class='ranking-bar stretchLeft' id='x-result'></div>")
+         new_width_x = new_width_x * -1
+        $('#x-result').css({"width": new_width_x, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+      }
+
+      if (new_width_y > 0) {
+        $('#y-right').html("<div class='ranking-bar stretchRight' id='y-result'></div>")
+        $('#y-result').css({"width": new_width_y, "border-radius": "0 5px 5px 0"})
+      } else {
+        $('#y-left').html("<div class='ranking-bar stretchLeft' id='y-result'></div>")
+         new_width_y = new_width_y * -1
+        $('#y-result').css({"width": new_width_y, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+      }
+
+      if (new_width_z > 0) {
+        $('#z-right').html("<div class='ranking-bar stretchRight' id='z-result' ></div>")
+        $('#z-result').css({"width": new_width_z, "border-radius": "0 5px 5px 0"})
+      } else {
+        $('#z-left').html("<div class='ranking-bar stretchLeft' id='z-result'></div>")
+         new_width_z = new_width_z * -1
+        $('#z-result').css({"width": new_width_z, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+      }
+    }, 500);
+  });
+
+<% end %>
+
+
 

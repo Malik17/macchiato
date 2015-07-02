@@ -9,4 +9,11 @@ class Corporation < ActiveRecord::Base
   validates :contact_last,  presence: true
   validates :name,          presence: true
 
+
+  def self.percentage(array,users)
+    a = array.length.to_f
+    b = users.size.to_f
+    c = a/b * 100
+  end
+
 end
