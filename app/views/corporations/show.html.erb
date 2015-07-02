@@ -1,4 +1,9 @@
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+<!-- <script src="liquidFillGauge.js" language="JavaScript"></script> -->
+<style>
+    .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+</style>
 
 <%= image_tag "logo.png", :class => "logo" %>
 
@@ -37,14 +42,14 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8 text-center">
+
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <p><%= t('percentage_taken') %></p>
-        </div>
-        <div class="col-md-4">
-          <p><%= @array.length %> / <%= @users.size %></p>
+           <svg id="fillgauge3" width="80%" height="200"></svg>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-12">
           <% for i in (1..16) do  %>
@@ -59,6 +64,7 @@
           <% end %>
         </div>
       </div>
+
     </div>
     <div class="col-md-2"></div>
   </div>
@@ -107,6 +113,19 @@
   </div>
 
 </div>
+
+<%= javascript_tag do %>
+  var config2 = liquidFillGaugeDefaultSettings();
+  config2.circleColor = "#D4AB6A";
+  config2.textColor = "#553300";
+  config2.waveTextColor = "#805615";
+  config2.waveColor = "#AA7D39";
+  config2.circleThickness = 0.1;
+  config2.circleFillGap = 0.2;
+  config2.textVertPosition = 0.8;
+  config2.waveAnimateTime = 1000;
+  loadLiquidFillGauge("fillgauge3",<%= Corporation.percentage(@array, @users) %>, config2);
+<% end %>
 
 
 <%= javascript_tag do %>
