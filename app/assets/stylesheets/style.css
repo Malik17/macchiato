@@ -699,9 +699,9 @@ blockquote {
 12. section heading
 ========================================*/
 
-.section-heading {
+/*.section-heading {
   margin-bottom: 80px;
-}
+}*/
 
 .section-title:after {
   content: "";
