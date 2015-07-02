@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /fr|nl/ do
 
-    post "corporation",        to: "corporations#create", as: "corporations"
+    post "corporation",            to: "corporations#create", as: "corporations"
+
+
     get  "thank_you",          to: "home#thank_you"
     get  "corporation/:token", to: "corporations#show"
     post "corporation/:token", to: "users#create",        as: "new_corporation_user"
