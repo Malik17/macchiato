@@ -2,7 +2,6 @@
 
 <br>
 <br>
-<br>
 <h1 class = "text-center"><%= t('user_results_title') %></h1>
 <!-- <p>score_x: <%#= @result[0] %></p>
 <p>score_y: <%#= @result[1] %></p>
@@ -113,12 +112,14 @@
   <br>
 
   <div class="row">
-    <!-- <div class="col-md-2"></div> -->
-    <div class="col-md-12">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
       <%= link_to t('all_personnalities'), all_answers_path , :target => "_blank", :class => "btn btn-block btn-contact btn-cs"  %>
     </div>
-    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-3"></div>
   </div>
+
+  <br>
 
 </div>
 
@@ -127,7 +128,7 @@ var introverted = "<%= t('introverted') %>"
 var extraverted = "<%= t('extraverted') %>"
 var thoughtful  = "<%= t('thoughtful')  %>"
 var intuitive   = "<%= t('intuitive')   %>"
-var z = (<%= @result[0][1] %> < 0 ) ? 0 : 8;
+var z = (<%= @result[0][2] %> < 0 ) ? 0 : 8;
 
 var labels = ["<%= t('category1') %>",
               "<%= t('category2') %>",
@@ -183,7 +184,7 @@ var pie = new d3pie("pieChart", {
         "color": "#ff0000"
       },
       {
-        "opacity": 0.1,
+        "opacity": 0.9,
         "label": labels[0+z],
         "value": 12,
         "color": "#FFCF00"

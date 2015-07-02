@@ -143,7 +143,12 @@
   config2.circleFillGap = 0.2;
   config2.textVertPosition = 0.8;
   config2.waveAnimateTime = 1000;
-  loadLiquidFillGauge("fillgauge3",<%= Corporation.percentage(@array, @users) %>, config2);
+  var percentage = <%= Corporation.percentage(@array, @users) %>
+  if ( isNaN(percentage) ){
+    loadLiquidFillGauge("fillgauge3", 0, config2);
+  }else{
+    loadLiquidFillGauge("fillgauge3", percentage, config2);
+  }
 <% end %>
 
 
