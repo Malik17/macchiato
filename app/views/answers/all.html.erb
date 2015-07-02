@@ -3,44 +3,52 @@
 
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4"><h2 class="text-center"><%= t('all_personnalities') %></h2></div>
+    <div class="col-md-4"><h2 class="text-center" style="padding: 7px;color:#484e50"><%= t('all_personnalities') %></h2></div>
     <div class="col-md-4"></div>
   </div>
 
 
   <%= for i in (1..4) do %>
-    <div class="row text-center " style="padding-top: 20px;height:100px"><h3>Analystes</h3></div>
-    <div class="row" style="height:200px,">
-      <div class="col-md-3 pesro">
+    <div class="row text-center " style="padding-top: 20px;height:100px"><h2 style="color:#484e50"><%= t('meta_category' + i.to_s) %></h2></div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="perso" style="margin-right: 1%;height:350px;margin-left: 1%;width: 98%">
         <img class="personality img-responsive" src="http://lorempixel.com/400/200"/>
-        <h4 class = "text-center"><%= t('category' + i.to_s) %></h4>
-        <h5></h5>
+        <h4 class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + i.to_s) %></h4>
+        <h5 style="color:#484e50"></h5>
         <br>
-        <p class = "text-center"><%= t('category' + i.to_s + '_text') %></p>
+        <p class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + i.to_s + '_text') %></p>
+        </div>
       </div>
 
-      <div class="col-md-3 perso">
+      <div class="col-md-3" style="height:200px">
+        <div class="perso" style="margin-right: 1%;height:350px;margin-left: 1%;width: 98%">
         <img class="personality img-responsive" src="http://lorempixel.com/400/200" />
-        <h4 class = "text-center"><%= t('category' + (i+4).to_s) %></h4>
+        <h4 class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + (i+4).to_s) %></h4>
         <h5></h5>
         <br>
-        <p class = "text-center"><%= t('category' + (i+4).to_s + '_text') %></p>
+        <p class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + (i+4).to_s + '_text') %></p>
+        </div>
       </div>
 
-      <div class="col-md-3 perso">
+      <div class="col-md-3" style="height:200px">
+        <div class="perso" style="margin-right: 1%;height:350px;margin-left: 1%;width: 98%">
         <img class="personality img-responsive" src="http://lorempixel.com/400/200" />
-        <h4 class = "text-center"><%= t('category' + (i+8).to_s) %></h2>
-        <h5></h5>
+        <h4 class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + (i+8).to_s) %></h2>
+        <h5 style="color:#484e50"></h5>
         <br>
-        <p class = "text-center"><%= t('category' + (i+8).to_s + '_text') %></p>
+        <p class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + (i+8).to_s + '_text') %></p>
+        </div>
       </div>
 
-      <div class="col-md-3 perso">
+      <div class="col-md-3" style="height:200px">
+        <div class="perso" style="margin-right: 1%;height:350px;margin-left: 1%;width: 98%">
         <img class="personality img-responsive" src="http://lorempixel.com/400/200" />
-        <h4 class = "text-center"><%= t('category' + (i+12).to_s) %></h3>
-        <h5></h5>
+        <h4 class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + (i+12).to_s) %></h3>
+        <h5 style="color:#484e50"></h5>
         <br>
-        <p class = "text-center"><%= t('category' + (i+12).to_s + '_text') %></p>
+        <p class = "text-center" style="padding: 7px;color:#484e50"><%= t('category' + (i+12).to_s + '_text') %></p>
+        </div>
       </div>
 
     </div>

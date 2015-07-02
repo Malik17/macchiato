@@ -45,9 +45,9 @@
     <%= link_to image_tag("logo.png", :class => "logo"), root_path %>
     <!-- nav toggle -->
     <div class="language">
-      <p><%= link_to_unless I18n.locale == :fr, "fr", fr_path %></p>
-      <p><%= link_to_unless I18n.locale == :en, "en", en_path %></p>
-      <p><%= link_to_unless I18n.locale == :nl, "nl", nl_path %></p>
+      <p class="language_button" id="fr"><%= link_to_unless I18n.locale == :fr, "fr", root_path(params[:locale]=:fr) %></p>
+      <p class="language_button" id="en"><%= link_to_unless I18n.locale == :en, "en", root_path %></p>
+      <p class="language_button" id="nl"><%= link_to_unless I18n.locale == :nl, "nl", root_path(params[:locale]=:nl) %></p>
     </div>
     <div id="nav-toggle">
       <i class="fa fa-bars"></i>
@@ -477,4 +477,25 @@
   <!-- /video -->
 
 </div>
+
+<%= javascript_tag do %>
+
+  /*=================================================
+  hide the languages buttons not needed
+  =================================================*/
+
+  $(document).on('ready', function() {
+    $('.language_button').toggle().addClass('hidden');
+    var locale = <%= I18n.locale.to_s %>;
+    console.log(locale)
+    $(locale).toggle().addClass('shown').removeClass('hidden');
+    $('.shown').click(function(){
+      $('.hidden').fadeIn().addClass('shownOther').removeClass('hidden');
+      setTimeout(function(){ $('.shownOther').fadeOut().addClass('hidden').removeClass('shownOther'); }, 2000);
+      console.log('click')
+    });
+
+  });
+
+<% end %>
 
