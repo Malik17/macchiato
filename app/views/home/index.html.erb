@@ -42,7 +42,7 @@
 
       </div>
     </nav>
-    <%= link_to image_tag("logo.png", :class => "logo"), {:action => 'index', :controller => 'home'}%>
+    <%= link_to image_tag("logo.png", :class => "logo"), root_path %>
     <!-- nav toggle -->
     <div class="language">
       <p><%= link_to_unless I18n.locale == :fr, "fr", fr_path %></p>
