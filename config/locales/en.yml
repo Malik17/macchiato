@@ -72,6 +72,18 @@ en:
   category14: "The Minister"
   category15: "The Driver"
   category16: "The Educator"
+  meta_category1: "Strategist"
+  # 1,2,5,6
+  meta_category2: "Diplomat"
+  # 11,12,15,16
+  meta_category3: "Logistician"
+  # 7,8,13,14
+  meta_category4: "Tactician"
+  # 3,4,9,10
+  meta_category1_text: "meta text 1 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
+  meta_category2_text: "meta text  2 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
+  meta_category3_text: "meta text 3 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
+  meta_category4_text: "meta text 4 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
   category1_text: "Blabla"
   category2_text: "Blabla2"
   category3_text: "Blabla3"
@@ -81,7 +93,7 @@ en:
   category7_text: "Blabla7"
   category8_text: "Blabla8"
   category8_text: "Blabla  next 8ejbfihqfhoder"
-  category9_text: "Blabla  next e9jbfihqfhoon"
+  category9_text: "Extraordinarily caring, social and popular people, always eager to help."
   category10_text: "Blabla  next e10jbfihqfhoreneur"
   category11_text: "Blabla  next 11ejbfihqfhor"
   category12_text: "Blabla  next 12ejbfihqfho"
