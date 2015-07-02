@@ -1,4 +1,9 @@
-<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+<!-- <script src="liquidFillGauge.js" language="JavaScript"></script> -->
+<style>
+    .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+</style>
 
 <%= image_tag "logo.png", :class => "logo" %>
 
@@ -16,10 +21,12 @@
     <div class="col-md-2"></div>
   </div>
 
-
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <div class="col-md-6 text-center">
+      <p><%= t('percentage_taken') %></p>
+      <svg id="fillgauge3" width="80%" height="200"></svg>
+    </div>
+    <div class="col-md-6 text-center">
       <p><b><%= t('new_emails_box') %></b></p>
       <%= form_for [@corporation, User.new] do |f| %>
       <!-- was @user but doesn't help for showing results! -->
@@ -28,53 +35,71 @@
         <%= f.submit t('invite'), :class => "btn btn-block btn-contact btn-cs" %>
       <% end %>
     </div>
-    <div class="col-md-2"></div>
   </div>
 
   <br>
   <br>
 
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
-      <div class="row">
-        <div class="col-md-8">
-          <p><%= t('percentage_taken') %></p>
-        </div>
-        <div class="col-md-4">
-          <p><%= @array.length %> / <%= @users.size %></p>
-        </div>
+    <!-- <div class="col-md-4"></div> -->
+    <div class="col-md-12 text-center">
+      <div id="pieChart"></div>
+    </div>
+    <!-- <div class="col-md-4"></div> -->
+  </div>
+
+  <br>
+  <br>
+
+  <div class="row">
+    <% for i in (1..4) do  %>
+      <div class="col-md-3 col-sm-6 text-center">
+        <h3><%= t("meta_category#{i}") %></h3>
+        <p><%= t("meta_category#{i}_text") %></p>
       </div>
-      <div class="row">
+    <% end %>
+   <!--  <div class="col-md-4">
+      <p><%#= @array.count(i) %></p>
+    </div>
+
+
+    <div class="col-md-3 col-sm-6 text-center">
+
+    a
+    </div>
+    <div class="col-md-3 col-sm-6 text-center">
+
+    b
+    </div>
+    <div class="col-md-3 col-sm-6 text-center">
+
+    c
+    </div>
+    <div class="col-md-3 col-sm-6 text-center">
+
+    d
+    </div> -->
+  </div>
+
+     <!--  <div class="row">
         <div class="col-md-12">
-          <% for i in (1..16) do  %>
+          <%# for i in (1..16) do  %>
             <div class="row">
               <div class="col-md-8">
-                <p><%= t("category#{i}") %></p>
+                <p><%#= t("category#{i}") %></p>
               </div>
               <div class="col-md-4">
-                <p><%= @array.count(i) %></p>
+                <p><%#= @array.count(i) %></p>
               </div>
             </div>
-          <% end %>
+          <%# end %>
         </div>
-      </div>
-    </div>
-    <div class="col-md-2"></div>
-  </div>
-
+      </div> -->
   <br>
 
-  <div class="row ">
-    <!-- <div class="col-md-4"></div> -->
-    <div class="col-md-12">
-      <div id="pie" class="ct-chart" style="height:500px"></div>
-    </div>
-    <!-- <div class="col-md-4"></div> -->
-  </div>
+
 
   <br>
-
 
 
   <div class="row ">
@@ -108,119 +133,139 @@
 
 </div>
 
-
 <%= javascript_tag do %>
-  var introverted = "<%= t('introverted') %>"
-  var extraverted = "<%= t('extraverted') %>"
-  var thoughtful  = "<%= t('thoughtful')  %>"
-  var intuitive   = "<%= t('intuitive')   %>"
-
-  var nnw_count        = "<%= @array.count(1) %>"
-  var wnw_count        = "<%= @array.count(2) %>"
-  var wsw_count        = "<%= @array.count(3) %>"
-  var ssw_count        = "<%= @array.count(4) %>"
-  var sse_count        = "<%= @array.count(5) %>"
-  var ese_count        = "<%= @array.count(6) %>"
-  var ene_count        = "<%= @array.count(7) %>"
-  var nne_count        = "<%= @array.count(8) %>"
-  var nnw_z_plus_count = "<%= @array.count(9) %>"
-  var wnw_z_plus_count = "<%= @array.count(10)%>"
-  var wsw_z_plus_count = "<%= @array.count(11)%>"
-  var ssw_z_plus_count = "<%= @array.count(12)%>"
-  var sse_z_plus_count = "<%= @array.count(13)%>"
-  var ese_z_plus_count = "<%= @array.count(14)%>"
-  var ene_z_plus_count = "<%= @array.count(15)%>"
-  var nne_z_plus_count = "<%= @array.count(16)%>"
-
-
-  <!-- for (var i=1; i < 16; i++) { -->
-    <!-- if(<%#= @array.count(i) %> === 0){ -->
-      <!-- "<%#= t('category'+i.to_s) %>" = "" -->
-    <!-- } -->
-  <!-- } -->
-
-  console.log(<%#= @array.count(i) %>)
-  console.log(<%#= t('category'+1.to_s) %>)
-
-  var nnw        = "<%= t('category1') %>"
-  var wnw        = "<%= t('category2') %>"
-  var wsw        = "<%= t('category3') %>"
-  var ssw        = "<%= t('category4') %>"
-  var sse        = "<%= t('category5') %>"
-  var ese        = "<%= t('category6') %>"
-  var ene        = "<%= t('category7') %>"
-  var nne        = "<%= t('category8') %>"
-  var nnw_z_plus = "<%= t('category9') %>"
-  var wnw_z_plus = "<%= t('category10')%>"
-  var wsw_z_plus = "<%= t('category11')%>"
-  var ssw_z_plus = "<%= t('category12')%>"
-  var sse_z_plus = "<%= t('category13')%>"
-  var ese_z_plus = "<%= t('category14')%>"
-  var ene_z_plus = "<%= t('category15')%>"
-  var nne_z_plus = "<%= t('category16')%>"
-
-
-  var chart = new Chartist.Pie('#pie', {
-    series: [nnw_count, wnw_count, wsw_count, ssw_count, sse_count, ese_count, ene_count, nne_count, nnw_z_plus_count, wnw_z_plus_count, wsw_z_plus_count, ssw_z_plus_count, sse_z_plus_count, ese_z_plus_count, ene_z_plus_count, nne_z_plus_count],
-    labels: [nnw, wnw, wsw, ssw, sse, ese, ene, nne, nnw_z_plus, wnw_z_plus, wsw_z_plus, ssw_z_plus, sse_z_plus, ese_z_plus, ene_z_plus, nne_z_plus]
-  }, {
-    donut: true,
-    showLabel: true
-  });
-
-
-
-
-  chart.on('draw', function(data) {
-    if(data.type === 'slice') {
-      // Get the total path length in order to use for dash array animation
-      var pathLength = data.element._node.getTotalLength();
-
-      // Set a dasharray that matches the path length as prerequisite to animate dashoffset
-      data.element.attr({
-        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
-      });
-
-      // Create animation definition while also assigning an ID to the animation for later sync usage
-      var animationDefinition = {
-        'stroke-dashoffset': {
-          id: 'anim' + data.index,
-          dur: 1000,
-          from: -pathLength + 'px',
-          to:  '0px',
-          easing: Chartist.Svg.Easing.easeOutQuint,
-          // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
-          fill: 'freeze'
-        }
-      };
-
-      // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
-      if(data.index !== 0) {
-        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
-      }
-
-      // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
-      data.element.attr({
-        'stroke-dashoffset': -pathLength + 'px'
-      });
-
-      // We can't use guided mode as the animations need to rely on setting begin manually
-      // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
-      data.element.animate(animationDefinition, false);
-    }
-  });
-
-  // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-  chart.on('created', function() {
-    if(window.__anim21278907124) {
-      clearTimeout(window.__anim21278907124);
-      window.__anim21278907124 = null;
-    }
-    window.__anim21278907124 = setTimeout(chart.update.bind(chart), 20000);
-  });
-
+  var config2 = liquidFillGaugeDefaultSettings();
+  config2.circleColor = "#D4AB6A";
+  config2.textColor = "#553300";
+  config2.waveTextColor = "#805615";
+  config2.waveColor = "#AA7D39";
+  config2.circleThickness = 0.1;
+  config2.circleFillGap = 0.2;
+  config2.textVertPosition = 0.8;
+  config2.waveAnimateTime = 1000;
+  loadLiquidFillGauge("fillgauge3",<%= Corporation.percentage(@array, @users) %>, config2);
 <% end %>
 
 
 
 
+<%= javascript_tag do %>
+var series = [<%= @array.count(1) + @array.count(2) + @array.count(9) + @array.count(10)%>,
+              <%= @array.count(3) + @array.count(4) + @array.count(11)+ @array.count(12)%>,
+              <%= @array.count(5) + @array.count(6) + @array.count(13)+ @array.count(14)%>,
+              <%= @array.count(7) + @array.count(8) + @array.count(15)+ @array.count(16)%>];
+
+var total = series[0] + series[1] + series[2] + series[3]
+
+var percentages = [(series[0]/total)*100,
+                   (series[1]/total)*100,
+                   (series[2]/total)*100,
+                   (series[3]/total)*100];
+
+var labels = ["<%= t('meta_category1') %>",
+              "<%= t('meta_category2') %>",
+              "<%= t('meta_category3') %>",
+              "<%= t('meta_category4') %>"];
+
+var result =[]
+for (var i=0; i < labels.length; i++) {
+  result.push( series[i] + "x " + labels[i])
+}
+console.log(result)
+
+var pie = new d3pie("pieChart", {
+  "header": {
+    "title": {
+      "fontSize": 34,
+      "font": "courier"
+    },
+    "subtitle": {
+      "color": "#999999",
+      "fontSize": 10,
+      "font": "courier"
+    },
+    "location": "pie-center",
+    "titleSubtitlePadding": 10
+  },
+  "footer": {
+    "text": " ",
+    "color": "#999999",
+    "fontSize": 10,
+    "font": "open sans",
+    "location": "bottom-left"
+  },
+  "size": {
+    "canvasWidth": 590,
+    "pieInnerRadius": "60%",
+    "pieOuterRadius": "100%"
+  },
+  "data": {
+    "sortOrder": "label-desc",
+    "content": [
+      {
+        "label": result[0],
+        "value": series[0],
+        "color": "#FFCF00"
+      },
+      {
+        "label": result[1],
+        "value": series[1],
+        "color": "#007AC7"
+      },
+      {
+        "label": result[2],
+        "value": series[2],
+        "color": "#F42494"
+      },
+      {
+        "label": result[3],
+        "value": series[3],
+        "color": "#02B801"
+      }
+    ]
+  },
+  "labels": {
+    "outer": {
+      "format": "none",
+      "pieDistance": 20
+    },
+    "inner": {
+      "format": "label"
+    },
+    "mainLabel": {
+      "color": "#ffffff",
+      "fontSize": 17
+    },
+    "percentage": {
+      "color": "#999999",
+      "fontSize": 11,
+      "decimalPlaces": 0
+    },
+    "value": {
+      "color": "#02B801",
+      "fontSize": 11
+    },
+    "lines": {
+      "enabled": true,
+      "color": "#777777"
+    }
+  },
+  "tooltips": {
+    "enabled": true,
+    "type": "placeholder",
+    "string": "{label}: {percentage}%"
+  },
+  "effects": {
+    "pullOutSegmentOnClick": {
+      "effect": "elastic",
+      "speed": 400,
+      "size": 8
+    }
+  },
+  "misc": {
+    "colors": {
+      "segmentStroke": "#9d8a6b"
+    }
+  }
+});
+<% end %>
