@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:corporation_id, :email)
+    params.require(:user).permit(:corporation_id)
   end
 
   def find_corporation
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 
   def email_array
     emails = params[:user][:email]
-    emails.scan /([a-zA-Z0-9\-_]+@[a-zA-Z0-9\-_]+.\w+)/
+    emails.scan /([a-zA-Z0-9\-_\.]+@[a-zA-Z0-9\-_\.]+.\w+)/
   end
 
   def user_answers

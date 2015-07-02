@@ -37,7 +37,7 @@ en:
   mailer_corporate_3: "Do not transmit this link, it is your only way to log into your account !"
   mailer_corporate_4: "Our number one tip to get the most out of our personality test is to introduce it as a game and kindly inform your employees that they will receive an invitation to a short test as a part of an innovation program inside the company. It’ll make them relax about the process and keep the answer as truthful as possible."
   mailer_corporate_5: "Sincerely,"
-  mailer_user_header: "Hello,"
+  mailer_user_header: "Hello"
   mailer_user_1: "As part of an innovation program inside your company, you are invitated to pass a short personnality test."
   mailer_user_2: "The test will take less than 15 minutes and all your answers will be kept secret. We will just use them to calculate the potential of innovation inside your company based on the average results."
   mailer_user_3: "Do not transmit this link, it is your only way to log into your account !"
