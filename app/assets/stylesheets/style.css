@@ -140,7 +140,7 @@ body {
   height: 100%;
 
   /*was transparent but switched to something else*/
-  background-color: black;
+  background-color: #9D8B6B;
 
 }
 
@@ -418,6 +418,27 @@ blockquote {
   height: 50px;
   z-index: 1000;
   display: block;
+}
+
+.language {
+  position: fixed;
+  top: 15px;
+  right: 100px;
+  z-index: 1000;
+}
+
+.language p {
+  display: block;
+  float: left;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
 }
 
 #nav-toggle {

@@ -554,42 +554,6 @@ youtube video background header
   }
 
 /*=================================================
-audio
-=================================================*/
-
-  function _audioPlayer() {
-
-    if (__audio && isMobile) {
-      var $audioPlayer = document.getElementById('audio-player');
-      var $audioPlay = $('#audio-play');
-      $('#audio-control').show();
-      $audioPlay.addClass('fa-play');
-      $audioPlayer.pause();
-      $audioPlay.on('click', function() {
-        var $this = $(this);
-        $this.toggleClass('fa-play fa-pause', function() {
-          ($this.hasClass('fa-play')) ? $audioPlayer.pause() : $audioPlayer.play();
-        });
-      });
-    }
-
-    if (__audio && !__videoHeader && !isMobile) {
-      var $audioPlayer = document.getElementById('audio-player');
-      var $audioPlay = $('#audio-play');
-      $('#audio-control').show();
-      $audioPlay.addClass('fa-pause');
-      $audioPlayer.play();
-      $audioPlay.on('click', function() {
-        var $this = $(this);
-        $this.toggleClass('fa-play fa-pause', function() {
-          ($this.hasClass('fa-play')) ? $audioPlayer.pause() : $audioPlayer.play();
-        });
-      });
-    }
-
-  }
-
-/*=================================================
 window on load
 =================================================*/
 
@@ -616,7 +580,6 @@ document on ready
     _pricingTable();
     _navMenu();
     _clickLink();
-    _audioPlayer();
 
   });
 

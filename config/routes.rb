@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     # if adding edit and update to corpdon't use resources but use :token
     resources :corporations, only: [:new] do
 
+      get   "finish",              to: "corporations#finish"
+
       get   "users/:token",        to: "users#show",   as: "user_show"
       get   "users/:token/edit",   to: "users#edit",   as: "user_edit"
       patch "users/:token/update", to: "users#update", as: "user_update"
@@ -31,8 +33,8 @@ Rails.application.routes.draw do
 
     get 'home', to: "home#home"
 
-    get '/fr', to: "home#index", locale: "fr"
-    get '/nl', to: "home#index", locale: "nl"
+    get '/fr', to: "home#index", locale: "fr", as: "fr"
+    get '/nl', to: "home#index", locale: "nl", as: "nl"
     get '/',   to: "home#index", locale: "en", as: "en"
 
     root "home#index"

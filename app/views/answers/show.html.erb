@@ -1,12 +1,14 @@
-<h1 class = "text-center"><%= t('user_results_title') %></h1>>
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+<h1 class = "text-center"><%= t('user_results_title') %></h1>
 <!-- <p>score_x: <%#= @result[0] %></p>
 <p>score_y: <%#= @result[1] %></p>
 <p>score_z: <%#= @result[2] %></p>
 <p>angle: <%= @angle %></p>-->
 <p class = "text-center"> Your personnality type: </p>
-<h3 class = "text-center"><%= t("category#{@result.category}") %></h3>
+<h3 class = "text-center"><%= t('category' + @result.category.to_s) %></h3>
 <br>
-<p class = "text-center"><%= t("category#{@result.category}_text") %></p>
+<p class = "text-center"><%= t('category' + @result.category.to_s + '_text') %></p>
 
 
 <!-- <div class= "circle_user" style="background:
@@ -80,7 +82,7 @@
     </div>
     <div class="col-md-2"></div>
   </div>
-  <!--   <div class="row">
+    <!-- <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4">
         <p>score_x_max: <%#= @result[3] %></p>
@@ -88,45 +90,155 @@
         <p>score_z_max: <%#= @result[5] %></p>
       </div>
       <div class="col-md-4"></div>
+    </div> -->
+
+    <div class="row">
+      <!-- <div class="col-md-4"></div> -->
+      <div class="col-md-12">
+        <div id="pie" class="ct-chart" style="height:500px"></div>
+      </div>
+      <!-- <div class="col-md-4"></div> -->
     </div>
-  </div> -->
+
+  </div>
+
 
   <%= javascript_tag do %>
-    var callback = function(){
-      var background_bar_width = $('.background-bar-right').width()
-      var new_width_x = <%= @result.v.x / @result.vmax.x %> * background_bar_width * -1
-      var new_width_y = <%= @result.v.y / @result.vmax.y %> * background_bar_width
-      var new_width_z = <%= @result.v.z / @result.vmax.z %> * background_bar_width
+    var introverted = "<%= t('introverted') %>"
+    var extraverted = "<%= t('extraverted') %>"
+    var thoughtful  = "<%= t('thoughtful')  %>"
+    var intuitive   = "<%= t('intuitive')   %>"
+    var nnw        = "<%= t('category1') %>"
+    var wnw        = "<%= t('category2') %>"
+    var wsw        = "<%= t('category3') %>"
+    var ssw        = "<%= t('category4') %>"
+    var sse        = "<%= t('category5') %>"
+    var ese        = "<%= t('category6') %>"
+    var ene        = "<%= t('category7') %>"
+    var nne        = "<%= t('category8') %>"
+    var nnw_z_plus = "<%= t('category9') %>"
+    var wnw_z_plus = "<%= t('category10')%>"
+    var wsw_z_plus = "<%= t('category11')%>"
+    var ssw_z_plus = "<%= t('category12')%>"
+    var sse_z_plus = "<%= t('category13')%>"
+    var ese_z_plus = "<%= t('category14')%>"
+    var ene_z_plus = "<%= t('category15')%>"
+    var nne_z_plus = "<%= t('category16')%>"
 
-      if (new_width_x > 0) {
-        $('#x-right').html("<div class='ranking-bar' id='x-result'></div>")
-        $('#x-result').css({"width": new_width_x, "border-radius": "0 5px 5px 0"})
-      } else {
-        $('#x-left').html("<div class='ranking-bar' id='x-result'></div>")
-         new_width_x = new_width_x * -1
-        $('#x-result').css({"width": new_width_x, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
-      }
+    var category = "<%= t('category' + @result.category.to_s) %>"
 
-      if (new_width_y > 0) {
-        $('#y-right').html("<div class='ranking-bar' id='y-result'></div>")
-        $('#y-result').css({"width": new_width_y, "border-radius": "0 5px 5px 0"})
-      } else {
-        $('#y-left').html("<div class='ranking-bar' id='y-result'></div>")
-         new_width_y = new_width_y * -1
-        $('#y-result').css({"width": new_width_y, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
-      }
 
-      if (new_width_z > 0) {
-        $('#z-right').html("<div class='ranking-bar' id='z-result'></div>")
-        $('#z-result').css({"width": new_width_z, "border-radius": "0 5px 5px 0"})
-      } else {
-        $('#z-left').html("<div class='ranking-bar' id='z-result'></div>")
-         new_width_z = new_width_z * -1
-        $('#z-result').css({"width": new_width_z, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+    if(<%= @result[0][1] %> < 0 ) {
+
+      var chart = new Chartist.Pie('#pie', {
+        series: [0.5, 12, 12, 1, 12, 12, 1, 12, 12, 1, 12, 12, 0.5],
+        labels: [thoughtful, nnw, wnw, extraverted, wsw, ssw, intuitive, sse, ese, introverted, ene, nne,]
+      }, {
+        donut: true,
+        showLabel: true
+      });
+
+    }else{
+
+      var chart = new Chartist.Pie('#pie', {
+        series: [0.5, 12, 12, 1, 12, 12, 1, 12, 12, 1, 12, 12, 0.5],
+        labels: [thoughtful, nnw_z_plus, wnw_z_plus, extraverted, wsw_z_plus, ssw_z_plus, intuitive, sse_z_plus, ese_z_plus, introverted, ene_z_plus, nne_z_plus,]
+      }, {
+        donut: true,
+        showLabel: true
+      });
+
+    }
+
+
+
+    chart.on('draw', function(data) {
+      if(data.type === 'slice') {
+        // Get the total path length in order to use for dash array animation
+        var pathLength = data.element._node.getTotalLength();
+
+        // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+        data.element.attr({
+          'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+        });
+
+        // Create animation definition while also assigning an ID to the animation for later sync usage
+        var animationDefinition = {
+          'stroke-dashoffset': {
+            id: 'anim' + data.index,
+            dur: 1000,
+            from: -pathLength + 'px',
+            to:  '0px',
+            easing: Chartist.Svg.Easing.easeOutQuint,
+            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+            fill: 'freeze'
+          }
+        };
+
+        // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+        if(data.index !== 0) {
+          animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+        }
+
+        // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+        data.element.attr({
+          'stroke-dashoffset': -pathLength + 'px'
+        });
+
+        // We can't use guided mode as the animations need to rely on setting begin manually
+        // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+        data.element.animate(animationDefinition, false);
       }
-    };
-    $(document).ready(callback);
-    $(window).resize(callback);
+    });
+
+    // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+    chart.on('created', function() {
+      if(window.__anim21278907124) {
+        clearTimeout(window.__anim21278907124);
+        window.__anim21278907124 = null;
+      }
+      window.__anim21278907124 = setTimeout(chart.update.bind(chart), 13000);
+    });
+
+  <% end %>
+
+  <%= javascript_tag do %>
+    $(document).ready(function(){
+      setTimeout(function() {
+        var background_bar_width = $('.background-bar-right').width()
+        var new_width_x = <%= @result[0][0] / @result[1][0] %> * background_bar_width
+        var new_width_y = <%= @result[0][1] / @result[1][1] %> * background_bar_width
+        var new_width_z = <%= @result[0][2] / @result[1][2] %> * background_bar_width
+
+        if (new_width_x > 0) {
+          $('#x-right').html("<div class='ranking-bar stretchRight' id='x-result'></div>")
+          $('#x-result').css({"width": new_width_x, "border-radius": "0 5px 5px 0"})
+        } else {
+          $('#x-left').html("<div class='ranking-bar stretchLeft' id='x-result'></div>")
+           new_width_x = new_width_x * -1
+          $('#x-result').css({"width": new_width_x, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+        }
+
+        if (new_width_y > 0) {
+          $('#y-right').html("<div class='ranking-bar stretchRight' id='y-result'></div>")
+          $('#y-result').css({"width": new_width_y, "border-radius": "0 5px 5px 0"})
+        } else {
+          $('#y-left').html("<div class='ranking-bar stretchLeft' id='y-result'></div>")
+           new_width_y = new_width_y * -1
+          $('#y-result').css({"width": new_width_y, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+        }
+
+        if (new_width_z > 0) {
+          $('#z-right').html("<div class='ranking-bar stretchRight' id='z-result' ></div>")
+          $('#z-result').css({"width": new_width_z, "border-radius": "0 5px 5px 0"})
+        } else {
+          $('#z-left').html("<div class='ranking-bar stretchLeft' id='z-result'></div>")
+           new_width_z = new_width_z * -1
+          $('#z-result').css({"width": new_width_z, "border-radius": "5px 0 0 5px", "right": 0, "position" : "absolute"})
+        }
+      }, 500);
+    });
+
   <% end %>
 
   <div class="row ">

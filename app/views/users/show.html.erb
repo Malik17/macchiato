@@ -24,7 +24,7 @@
             <div class = "col-md-12 col-xs-12">
               <p><b><%= t('question') %> <%= question.id %></b>
               <br>
-              <%= question.text %></p>
+              <%= t(question.text) %></p>
             </div>
           </div>
           <div class = "row">
@@ -32,22 +32,7 @@
               <%= t('disagree') %>
             </div>
             <div class = "col-md-4 col-xs-4">
-              <div class='slider' id='designQuality'>
-                <ul role='presentation'>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <div></div>
-                <input class='answer' type='hidden' <% range_field_tag "question_result[#{question.id}]", nil, in: -2..2 %>/>
-              </div>
+              <%= range_field_tag "question_result[#{question.id}]", nil, in: -2..2 %>
             </div>
             <div class = "col-md-4 col-xs-4" style="color:green">
               <%= t('agree') %>
@@ -64,40 +49,10 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <%= submit_tag %>
+      <%= submit_tag t('submit'), :class => "btn btn-block btn-contact btn-cs" %>
       <% end %>
     </div>
     <div class="col-md-4"></div>
   </div>
 
 </div>
-
-
-<script>
-$(document).ready(function(){
-
-  var tooltipElement = $('<div class="ui-slider-tooltip" aria-hidden="true" />');
-  var tooltip;
-  var slider  = $('.slider > div').slider({
-    range: "min",
-    value: 7,
-    min: 1,
-    max: 10,
-    step: 1,
-    create: function ( event ) {
-      $( event.target ).find('.ui-slider-handle').append( tooltipElement );
-      tooltip = $('.ui-slider-tooltip');
-    },
-    change: function ( event, ui ) {
-      var input = $( event.target ).parent().find('input.answer');
-      input.val( ui.value );
-      window.tooltip.text( ui.value );
-      window.tooltip.attr('aria-hidden', 'false');
-    },
-    slide: function ( event, ui ) {
-      window.tooltip.attr('aria-hidden', 'true');
-    }
-  });
-});
-
-</script>

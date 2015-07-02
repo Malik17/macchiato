@@ -26,7 +26,7 @@ background style, set only one of below to true
 =================================================*/
 
 var __staticBackground = false; // set background image by css
-var __videoHeader = true; // video background toggle
+var __videoHeader = false; // video background toggle
 var __slideshowHeader = false; // image background toggle
 
 /*=================================================
