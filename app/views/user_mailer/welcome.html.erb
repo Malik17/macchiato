@@ -720,20 +720,15 @@
 
                                               <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
 
-                                                <p class="p1"><span style="font-size:15px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><%= t('mailer_corporate_header', first_name: @user.contact_first) %>,</span><br><br>
-                                                  <span style="font-family:arial,helvetica neue,helvetica,sans-serif; line-height:22px">
-                                                    <%= t('mailer_corporate_1') %></span></span></p>
-                                                  <span style="font-family:arial,helvetica neue,helvetica,sans-serif; line-height:22px">
-                                                    <%= t('mailer_corporate_2') %></span></span></p>
-                                                  <br style="box-sizing: border-box;">
-                                                  <span style="font-size:15px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="line-height:22px">To do so you only have to follow your private link below. Do not transmit this link, it is your only way to your account !</span><br>
-                                                  <br style="box-sizing: border-box;">
-                                                  <span style="line-height:22px">Our number one tip to get the most out of our personality test is to introduce it as a game and kindly inform your employees that they will receive an invitation to a short test as a part of an innovation program inside the company. It’ll make them relax about the process and keep the answer as truthful as possible.<br>
-                                                    <br>
+                                                <p><%= t('mailer_corporate_header', first_name: @user.contact_first) %>,<br></p>
+                                                <p><%= t('mailer_corporate_1') %></p>
+                                                <p><%= t('mailer_corporate_2') %></p>
+                                                <p><%= t('mailer_corporate_3') %></p>
+                                                <p><%= t('mailer_corporate_4') %></p>
                                                     Sincerely,</span><br>
                                                     <br>
-                                                    <br style="line-height: 20.7999992370605px; box-sizing: border-box;">
-                                                    <span style="line-height:22px">The Macchiato Team</span></span></span>
+                                                    <br>
+                                                    <span style="text-align: right">The Macchiato Team</span>
                                                   </td>
                                                 </tr>
                                               </tbody></table>
@@ -741,7 +736,8 @@
                                             </td>
                                           </tr>
                                         </tbody>
-                                      </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock">
+                                      </table>
+                                      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock">
                                       <tbody class="mcnButtonBlockOuter">
                                         <tr>
                                           <td style="padding-top:0; padding-right:18px; padding-bottom:18px; padding-left:18px;" valign="top" align="center" class="mcnButtonBlockInner">
@@ -805,7 +801,7 @@
 
 
                                                                                     <td align="left" valign="middle" class="mcnFollowTextContent" style="padding-left:5px;">
-                                                                                      <a href="http://www.facebook.com" target="" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 10px;text-decoration: none;color: #AAAAAA;font-weight: normal;line-height: 100%;">Facebook</a>
+                                                                                      <a href="http://www.facebook.com" target="" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 10px;text-decoration: none;color: #AAAAAA;font-weight: normal;line-height: 100%;"></a>
                                                                                     </td>
 
                                                                                   </tr>
@@ -873,7 +869,7 @@
 
 
                                     <td align="left" valign="middle" class="mcnFollowTextContent" style="padding-left:5px;">
-                                      <a href="http://www.linkedin.com" target="" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 10px;text-decoration: none;color: #AAAAAA;font-weight: normal;line-height: 100%;">LinkedIn</a>
+                                      <a href="http://www.linkedin.com" target="" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 10px;text-decoration: none;color: #AAAAAA;font-weight: normal;line-height: 100%;"></a>
                                     </td>
 
                                   </tr>
