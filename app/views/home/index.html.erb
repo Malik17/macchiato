@@ -14,12 +14,12 @@
 
         <!-- menu -->
         <ul id="menu">
-          <li data-menuanchor="home-section"><a href="#home-section">Home</a></li> <!-- home -->
-          <li data-menuanchor="service-section"><a href="#service-section">Services</a></li> <!-- service -->
-          <li data-menuanchor="process-section"><a href="#process-section">Process</a></li> <!--process-->
-          <li data-menuanchor="pricing-section"><a href="#pricing-section">Pricing</a></li> <!-- pricing -->
-          <li data-menuanchor="about-section"><a href="#about-section">About us</a></li> <!-- about -->
-          <li data-menuanchor="contact-section"><a href="#contact-section">Contact</a></li> <!-- contact -->
+          <li data-menuanchor="home-section"><a href="#home-section"><%= t('home') %></a></li> <!-- home -->
+          <li data-menuanchor="service-section"><a href="#service-section"><%= t('services') %></a></li> <!-- service -->
+          <li data-menuanchor="process-section"><a href="#process-section"><%= t('process') %></a></li> <!--process-->
+          <li data-menuanchor="pricing-section"><a href="#pricing-section"><%= t('pricing') %></a></li> <!-- pricing -->
+          <li data-menuanchor="about-section"><a href="#about-section"><%= t('about_us') %> </a></li> <!-- about -->
+          <li data-menuanchor="contact-section"><a href="#contact-section"><%= t('contact') %></a></li> <!-- contact -->
         </ul>
         <!-- /menu -->
 
@@ -65,10 +65,10 @@
             <div class="row">
               <div class="col-md-12">
                 <h1 class="section-title animate" data-delay="0">
-                  Macchiato is coming
+                  Macchiato
                 </h1>
                 <p class="section-sub-title animate" data-delay="50">
-                  Our Website Is Under Construction
+                  <%= t('spinoff_catchphrase') %>
                 </p>
               </div>
             </div>
@@ -80,24 +80,24 @@
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <!-- countdown -->
-                <ul id="countdown" class="row">
+                <!-- <ul id="countdown" class="row">
                   <li class="time-wrap col-xs-6 col-sm-3 animate" data-delay="100">
-                    <span class="time days">--</span>
+                    <span class="time days"></span>
                     <p class="unit days_ref"></p>
                   </li>
                   <li class="time-wrap col-xs-6 col-sm-3 animate" data-delay="150">
-                    <span class="time hours">--</span>
+                    <span class="time hours"></span>
                     <p class="unit hours_ref"></p>
                   </li>
                   <li class="time-wrap col-xs-6 col-sm-3 animate" data-delay="200">
-                    <span class="time minutes">--</span>
+                    <span class="time minutes"></span>
                     <p class="unit minutes_ref"></p>
                   </li>
                   <li class="time-wrap col-xs-6 col-sm-3 animate" data-delay="250">
-                    <span class="time seconds">--</span>
+                    <span class="time seconds"></span>
                     <p class="unit seconds_ref"></p>
                   </li>
-                </ul>
+                </ul> -->
                 <!-- /countdown -->
               </div>
             </div>
@@ -115,12 +115,12 @@
             <div class="row">
               <div class="col-md-6">
                 <h2 class="section-title animate" data-delay="0">
-                  Services
+                  <%= t('services') %>
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate" data-delay="50">
-                  Macchiato is a spinoff factory that helps companies rediscover the fire of their early days and reinvent their world !
+                  <%= t('micro_pitch') %>
                 </p>
               </div>
             </div>
@@ -132,36 +132,38 @@
             <div class="row gutter-row">
 
               <!-- service list -->
-              <div class="col-md-4 service-col animate" data-delay="100">
-                <div class="service-grid">
-                  <div class="service-icon">
-                    <i class="fa fa-rocket"></i>
-                  </div>
-                  <h3 class="service-title">
-                    New product development
-                  </h3>
-                  <p class="service-content">
-                    Donec non metus at lectus maximus sodales. Pellen dapibus neque ac tellus sodales, laoreet congue neque volutpat. Etiam odio ante, porta eu mattis in.
-                  </p>
-                </div>
-              </div>
-              <!-- /service list -->
-
-              <!-- service list -->
               <div class="col-md-4 service-col animate" data-delay="150">
                 <div class="service-grid">
                   <div class="service-icon">
                     <i class="fa fa-wrench"></i>
                   </div>
                   <h3 class="service-title">
-                    New business model
+                    <%= t('new_business_model') %>
                   </h3>
                   <p class="service-content">
-                    Donec non metus at lectus maximus sodales. Pellen dapibus neque ac tellus sodales, laoreet congue neque volutpat. Etiam odio ante, porta eu mattis in.
+                    <%= t('new_business_model_text') %>
                   </p>
                 </div>
               </div>
               <!-- /service list -->
+
+              <!-- service list -->
+              <div class="col-md-4 service-col animate" data-delay="100">
+                <div class="service-grid">
+                  <div class="service-icon">
+                    <i class="fa fa-rocket"></i>
+                  </div>
+                  <h3 class="service-title">
+                    <%= t('new_product_developement') %>
+                  </h3>
+                  <p class="service-content">
+                    <%= t('new_product_developement_text') %>
+                  </p>
+                </div>
+              </div>
+              <!-- /service list -->
+
+
 
               <!-- service list -->
               <div class="col-md-4 service-col animate" data-delay="200">
@@ -170,10 +172,10 @@
                     <i class="fa fa-recycle"></i>
                   </div>
                   <h3 class="service-title">
-                    Switch to digital
+                    <%= t('new_switch_to_digital') %>
                   </h3>
                   <p class="service-content">
-                    Donec non metus at lectus maximus sodales. Pellen dapibus neque ac tellus sodales, laoreet congue neque volutpat. Etiam odio ante, porta eu mattis in.
+                    <%= t('new_switch_to_digital_text') %>
                   </p>
                 </div>
               </div>
@@ -191,14 +193,14 @@
       <div class="section-entry">
         <div class="container">
           <div class="row">
-            <div class="col-md-6"> <!-- bootstrap col -->
+            <div class="col-md-6" style="padding-bottom:10px"> <!-- bootstrap col -->
               <h2 class="section-title animate" data-delay="0"> <!-- first element delay = 0 -->
-                Process
+                <%= t('process') %>
               </h2>
             </div>
             <div class="col-md-6"> <!-- bootstrap col -->
               <p class="section-sub-title animate" data-delay="0" style="text-align: right"> <!-- 2nd element delay + 50 = 50 -->
-                The Macchiato Journey
+                <%= t('macch_journey') %>
               </p>
             </div>
           </div>
@@ -225,12 +227,12 @@
             <div class="row">
               <div class="col-md-6">
                 <h2 class="section-title animate" data-delay="0">
-                  Pricing
+                  <%= t('pricing') %>
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate" data-delay="50">
-                  We offer flexible financial solutions, adapted to every situation to ensure the appropriate level of encentivization to all stakeholders.
+                  <%= t('pricing_text') %>
                 </p>
               </div>
             </div>
@@ -245,14 +247,14 @@
               <div class="col-md-4">
                 <div class="pricing-table animate" data-delay="100">
                   <div class="pricing-heading">
-                    <span class="plan">Stimulate</span>
-                    <span class="price">Free</span>
+                    <span class="plan"><%= t('stimulate') %></span>
+                    <span class="price"><%= t('free') %></span>
                   </div>
                   <ul>
-                    <li>Up to 100 employees</li>
-                    <li>Access to personality test</li>
-                    <li>Find your intrapreneurs</li>
-                    <li>Innovation report</li>
+                    <li><%= t('stimulate_1') %></li>
+                    <li><%= t('stimulate_2') %></li>
+                    <li><%= t('stimulate_3') %></li>
+                    <li><%= t('stimulate_4') %></li>
                   </ul>
                   <div class="pricing-footer">
                     <%= link_to t('sign_up'), new_corporation_path, class: "btn btn-cs btn-pricing" %>
@@ -265,17 +267,17 @@
               <div class="col-md-4">
                 <div class="pricing-table active animate" data-delay="150">
                   <div class="pricing-heading">
-                    <span class="plan">Ideation</span>
-                    <span class="price">$10.000</span>
+                    <span class="plan"><%= t('ideation') %></span>
+                    <span class="price">$20.000</span>
                   </div>
                   <ul>
-                    <li>8 sessions of training</li>
-                    <li>Up to 20 employees</li>
-                    <li>Creation of inovatives projects</li>
-                    <li>Pitches to the management</li>
+                    <li><%= t('ideation_1') %></li>
+                    <li><%= t('ideation_2') %></li>
+                    <li><%= t('ideation_3') %></li>
+                    <li><%= t('ideation_4') %></li>
                   </ul>
                   <div class="pricing-footer">
-                    <a href="#contact-section" class="btn btn-cs btn-pricing">Get in touch</a>
+                    <a href="#contact-section" class="btn btn-cs btn-pricing"><%= t('get_in_touch') %></a>
                   </div>
                 </div>
               </div>
@@ -285,17 +287,17 @@
               <div class="col-md-4">
                 <div class="pricing-table animate" data-delay="200">
                   <div class="pricing-heading">
-                    <span class="plan">Spin-off Creation</span>
-                    <span class="price">$100.000</span>
+                    <span class="plan"><%= t('spinoff_creation') %></span>
+                    <span class="price">$200.000</span>
                   </div>
                   <ul>
-                    <li>One or two employees</li>
-                    <li>Creation of a start-up</li>
-                    <li>Take it to the next level</li>
-                    <li>Making you rich</li>
+                    <li><%= t('spinoff_creation_1') %></li>
+                    <li><%= t('spinoff_creation_2') %></li>
+                    <li><%= t('spinoff_creation_3') %></li>
+                    <li><%= t('spinoff_creation_4') %></li>
                   </ul>
                   <div class="pricing-footer">
-                    <a href="#contact-section" class="btn btn-cs btn-pricing">Get in touch</a>
+                    <a href="#contact-section" class="btn btn-cs btn-pricing"><%= t('get_in_touch') %></a>
                   </div>
                 </div>
               </div>
@@ -316,12 +318,12 @@
             <div class="row">
               <div class="col-md-6">
                 <h2 class="section-title animate" data-delay="0">
-                  About
+                  <%= t('about') %>
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate" data-delay="50">
-                  We bring together the essential assets to ignite creativity, efficiency and professionalism in your company
+                  <%= t('about_text') %>
                 </p>
               </div>
             </div>
@@ -334,16 +336,16 @@
               <div class="col-md-4">
                 <blockquote class="animate" data-delay="100">
                   <p>
-                    Macchiato innovation has an amazing team of expert espicially their lead developer Antoine Magny that was wonderful on our project. We are now multi-billionaires.
+                   <%= t('testimony_1') %>
                   </p>
                   <footer>
-                    Jose C. McKinzie
+                    <%= t('testimony_1_signature') %>
                   </footer>
                 </blockquote>
               </div>
               <div class="col-md-4">
                 <p class="animate" data-delay="150">
-                  With a team mixing entrepreneurs, engineers and consultants we provide you with the full package. The interactions with our network of experts and advisors give us a outside perspective at key moment of the project.
+                  <%= t('team_description') %>
                 </p>
               </div>
               <div class="col-md-4 animate" data-delay="200">
@@ -351,19 +353,19 @@
                 <!-- pregress bar -->
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                    <h6>TEAM <span>92%</span></h6>
+                    <h6><%= t('team_bold') %> <span>92%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    <h6>NETWORK <span>88%</span></h6>
+                    <h6><%= t('network_bold') %> <span>88%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                    <h6>METHODOLOGIES <span>96%</span></h6>
+                    <h6><%= t('methodologies_bold') %> <span>96%</span></h6>
                   </div>
                 </div>
                 <!-- /pregress bar -->
@@ -383,14 +385,14 @@
             <div class="row">
               <div class="col-md-6">
                 <h2 class="section-title animate" data-delay="0">
-                  Contact
+                  <%= t('contact') %>
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate" data-delay="50">
-                  We're here for you, and we're wearing our thinking caps.
+                  <%= t('here_for_you') %>
                   <br>
-                  So let's get in touch !
+                  <%= t('so_get_in_touch') %>
                 </p>
               </div>
             </div>
@@ -401,7 +403,7 @@
           <div class="container">
             <div class="row gutter-row">
               <div class="col-md-6 contact-info">
-                <p class="animate" data-delay="100">You can also send us some love letters...</p>
+                <p class="animate" data-delay="100"><%= t('love_letters') %></p>
                 <address class="animate" data-delay="200">
                   <i class="fa fa-map-marker"></i>
                   <span>Avenue Louise, 523 - 1050 Ixelles</span>
@@ -417,7 +419,7 @@
 
                 <!-- social link -->
                 <p class="animate" data-delay="300">
-                  Or you can reach us on our social networks.
+                  <%= t('reach_social') %>
                 </p>
                 <ul class="social-icon animate" data-delay="350">
                   <li><a href="#" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li> <!-- change the link to social page and edit title-->
@@ -440,7 +442,7 @@
                   <div class="form-group">
                     <textarea name="message" id="contact-message" rows="5" placeholder="Message" class="form-control"></textarea>
                   </div>
-                  <button type="submit" name="contact-button" class="btn btn-block btn-contact btn-cs">Submit
+                  <button type="submit" name="contact-button" class="btn btn-block btn-contact btn-cs"><%= t('submit') %>
                     <i class="fa fa-close form-notice"></i>
                   </button>
                   <div class="contact-notice"></div>
