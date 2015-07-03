@@ -26,18 +26,15 @@ Rails.application.routes.draw do
       get   "users/:token/edit",   to: "users#edit",   as: "user_edit"
       patch "users/:token/update", to: "users#update", as: "user_update"
 
-      post  "users/:token/answers/create", to: "answers#create", as: "answer_create"
-      get   "users/:token/answers/show",   to: "answers#show",   as: "answer_show"
+      post  "users/:token/answers/create",     to: "answers#create",     as: "answer_create"
+      get   "users/:token/answers/open_ended", to: "answers#open_ended", as: "answer_open_ended"
+      get   "users/:token/answers/show",       to: "answers#show",       as: "answer_show"
 
       resources :users,      only: [ :new, :create ]
 
     end
 
     get 'home', to: "home#home"
-
-    get '/fr', to: "home#index", locale: "fr", as: "fr"
-    get '/nl', to: "home#index", locale: "nl", as: "nl"
-    get '/',   to: "home#index", locale: "en", as: "en"
 
     root "home#index"
 
