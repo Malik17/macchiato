@@ -147,7 +147,7 @@ fullpage
                   var itemSelector = "#"+selector;
                   var element = $("#Layer_1").find(itemSelector);
 
-                  $(element).delay(index * 500).queue(function(){
+                  $(element).delay(index * 400).queue(function(){
                       $(this).fadeIn(900).dequeue();
                   });
                 })
