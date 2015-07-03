@@ -50,7 +50,7 @@ en:
   user_welcome: "Welcome"
   user_details: "Please enter your name!"
   new_corp_intro: "After filling this form you will receive an access to your company's admin page and will be able to start inviting your colleagues to take our personnality test"
-  emails_placeholder: "test-email1@me.com, test-email2@me.com, test-email3@me.com ..."
+  emails_placeholder: "employee1@my-company.com, employee2@my-company.com..."
   invite: "Invite"
   user_do_the_test: "Please answer these questions sincerely. We will show you your entrepreneurial profile once you are done."
   question: "Question"
@@ -80,10 +80,10 @@ en:
   # 7,8,13,14
   meta_category4: "Tactician"
   # 3,4,9,10
-  meta_category1_text: "meta text 1 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
-  meta_category2_text: "meta text  2 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
-  meta_category3_text: "meta text 3 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
-  meta_category4_text: "meta text 4 blajlkhaejkfhahefohqoefhloqneflnqlefbkl"
+  meta_category1_text: "meta text 1 blajl khaejkfh ahefohqoefhl oqneflnq lefbkl"
+  meta_category2_text: "meta text  2 blajlkha ejkfhahe fohqoefhloqn eflnqlefbkl"
+  meta_category3_text: "meta text 3 blajlkhaej kfhahefoh qoefhloqnef lnqlefbkl"
+  meta_category4_text: "meta text 4 blajlkhaej kfhahefohqoefh loqne flnqlefbkl"
   category1_text: "Are clever and entrepreunariale. They dislike routine, wich can make it hard for them to commit longer term to an interest "
   category2_text: "Tend to attend leadership roles and organizational problems. They can be pushy when putting their ideas forward."
   category3_text: "Are bold and tactical, with an energy to problem-solving. They have a harder time focusing on concepts and theories."
