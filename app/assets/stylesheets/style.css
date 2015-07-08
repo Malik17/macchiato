@@ -97,11 +97,12 @@ button:focus {
   }
 
   .gutter .row [class*='col-'] {
-    padding-left: 40px;
+    padding-left: 60px;
     padding-right: 0;
   }
 
   .gutter .service-col,
+  .gutter .about-col,
   .gutter .work-col {
     padding-top: 40px;
   }
@@ -188,24 +189,28 @@ a:hover {
 ========================================*/
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  font-weight: 700;
+/*  font-weight: 700;*/
   line-height: 1.5;
   /*color: #000;*/
-  text-transform: uppercase;
   margin: 0;
 }
 
 h1 {
-  font-size: 44px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 52px;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 28px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 52px;
 }
 
 h3 {
-  font-size: 18px;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 h4 {
@@ -220,8 +225,8 @@ h6 {
   font-size: 14px;
 }
 
-h1, h2, h3 {
-  letter-spacing: 0.12em;
+h1, h2{
+  letter-spacing: 0.05em;
 }
 
 h4, h5, h6 {
@@ -717,8 +722,9 @@ h1.section-title:after {
 }
 
 .section-sub-title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Lora', 'Times New Roman', Times, serif;
   font-style: italic;
+  font-size: 18px;
 }
 
 @media (max-width:991px) { /* extra small devices - small devices */
@@ -873,7 +879,6 @@ h1.section-title:after {
 }
 
 .service-title {
-  font-size: 22px;
   margin-bottom: 5px;
 }
 
@@ -1106,8 +1111,20 @@ textarea.form-control {
 }
 
 address .fa {
-  font-size: 24px;
   width: 40px;
+  text-align: center;
+}
+
+address .fa-map-marker {
+  font-size: 20px;
+}
+
+address .fa-mobile {
+  font-size: 20px;
+}
+
+address .fa-envelope-o {
+  font-size: 12px;
 }
 
 address span {
@@ -1117,7 +1134,6 @@ address span {
 
 .social-icon {
   list-style: none;
-  padding: 0;
   margin: 0;
 }
 

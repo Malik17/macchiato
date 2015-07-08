@@ -435,8 +435,6 @@ countdown
       $countdownContainer.downCount({
         date: __countdownDate,
         offset: __countdownTimezone
-      }, function() {
-        alert('We Are Ready!'); // countdown callback
       });
     } else {
       $countdownContainer.hide();
