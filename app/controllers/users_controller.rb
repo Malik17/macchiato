@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     elsif @user.first_name == nil
       redirect_to corporation_user_edit_path(@corporation, @user.token)
     else
-      @questions = Question.not_answered_by(@user).first(6)
+      @questions = Question.not_answered_by(@user).first(5)
     end
   end
 
