@@ -18,7 +18,7 @@ for example : background: rgba(255, 255, 255, 0);
 }
 
 .nav-menu{
-  background: #000 url("bg/menu.jpg") no-repeat center; /* menu background */
+  /*background: #000 url("bg/menu.jpg") no-repeat center;*/
   background-size: cover;
 }
 
@@ -27,7 +27,7 @@ for example : background: rgba(255, 255, 255, 0);
 }
 
 .static-bg #home{
-  background: #000 url("bg/home.png") no-repeat center; /* home background */
+  background: url("http://wallpapers55.com/wp-content/uploads/2013/12/a-rocket-taking-off-and-lot-of-smoke.jpg") no-repeat center; /* home background */
   background-size: cover;
 }
 
@@ -36,48 +36,48 @@ for example : background: rgba(255, 255, 255, 0);
 }
 
 .static-bg #about{
-  background: #000 url("bg/about.jpg") no-repeat center; /* about background */
+  /*background: #000 url("bg/about.jpg") no-repeat center; */
   background-size: cover;
 }
 
 .static-bg #about:before {
-  background: rgba(0, 0, 0, 0.55); /* about overlay background */
+  background: rgba(0, 0, 0, 0); /* about overlay background */
 }
 
 .static-bg #service{
-  background: #000 url("bg/service.jpg") no-repeat center; /* service background */
+  /*background: #000 url("bg/service.jpg") no-repeat center; */
   background-size: cover;
 }
 
 .static-bg #service:before {
-  background: rgba(0, 0, 0, 0.55); /* service overlay background */
+  background: rgba(0, 0, 0, 0); /* service overlay background */
 }
 
 .static-bg #work{
-  background: #000 url("bg/work.jpg") no-repeat center; /* work background */
+ /* background: #000 url("bg/work.jpg") no-repeat center;*/
   background-size: cover;
 }
 
 .static-bg #work:before {
-  background: rgba(0, 0, 0, 0.55); /* work overlay background */
+  background: rgba(0, 0, 0, 0); /* work overlay background */
 }
 
 .static-bg #pricing{
-  background: #000 url("bg/pricing.jpg") no-repeat center; /* pricing background */
+  /*background: #000 url("bg/pricing.jpg") no-repeat center;*/
   background-size: cover;
 }
 
 .static-bg #pricing:before {
-  background: rgba(0, 0, 0, 0.55); /* pricing overlay background */
+  background: rgba(0, 0, 0, 0); /* pricing overlay background */
 }
 
 .static-bg #contact{
-  background: #000 url("bg/contact.jpg") no-repeat center; /* contact background */
+  /*background: #000 url("bg/contact.jpg") no-repeat center;*/
   background-size: cover;
 }
 
 .static-bg #contact:before {
-  background: rgba(0, 0, 0, 0.55); /* contact overlay background */
+  background: rgba(0, 0, 0, 0); /* contact overlay background */
 }
 
 /*========================================
@@ -131,7 +131,12 @@ nav toggle
 ========================================*/
 
 #nav-toggle {
-  background: #111; /* nav toggle background color */
+  background: transparent; /* nav toggle background color */
+}
+
+.language p:hover {
+  background: rgba(255, 255, 255, 0.25); /* social icon hover background color */
+  color: #fff; /* social icon hover color */
 }
 
 /*========================================
@@ -150,10 +155,10 @@ nav menu
 social
 ========================================*/
 
-.social-icon a {
-  background: rgba(255, 255, 255, 0.85); /* social icon background color */
-  color: #000; /* social icon color */
-}
+/*.social-icon a {
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+}*/
 
 .social-icon a:hover {
   background: rgba(255, 255, 255, 0.25); /* social icon hover background color */
@@ -214,7 +219,7 @@ pricing
 }
 
 .btn-pricing.active, .btn-pricing.focus, .btn-pricing:active, .btn-pricing:focus, .btn-pricing:hover {
-  color: #000;
+  color: #000 !important;
   background-color: #fff;
   border-color: #fff;
 }

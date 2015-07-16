@@ -20,7 +20,16 @@ class UserMailer < ApplicationMailer
     @email = email
     @name = name
     @message = message
-    mail(to: "m.dauber@me.com", subject: "contact")
+    mail(to: "m.dauber@me.com", subject: "New contact")
+  end
+
+  def finish(corporation)
+    @name = corporation.name
+    @id = corporation.id
+    @contact_first = corporation.contact_first
+    @contact_last = corporation.contact_last
+    @email = corporation.email
+    mail(to: "m.dauber@me.com", subject: "Finished campaign")
   end
 
 end

@@ -1,4 +1,11 @@
-<%= image_tag "logo.png", :class => "logo" %>
+<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+<!-- <script src="liquidFillGauge.js" language="JavaScript"></script> -->
+<style>
+    .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+</style>
+
+<%= link_to image_tag("logo.png", :class => "logo"), root_path %>
 
 
 <div id="new-corp" class="container">
@@ -14,12 +21,15 @@
     <div class="col-md-2"></div>
   </div>
 
-
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 text-center">
+    <div class="col-md-6 text-center">
+      <p class="text-center"><%= t('percentage_taken') %></p>
+      <svg id="fillgauge3" width="80%" height="200"></svg>
+    </div>
+    <div class="col-md-6 text-center">
       <p><b><%= t('new_emails_box') %></b></p>
-      <%= form_for [@corporation, @user] do |f| %>
+      <%= form_for [@corporation, User.new] do |f| %>
+      <!-- was @user but doesn't help for showing results! -->
         <!-- Don't use f. and define it as text_area emails -->
         <%= f.text_area :email, :placeholder => t('emails_placeholder'), :class => "form-control" %>
         <br>
@@ -27,28 +37,97 @@
         <%= f.submit t('invite'), :class => "btn btn-block btn-contact btn-cs" %>
       <% end %>
     </div>
-    <div class="col-md-2"></div>
   </div>
 
   <br>
   <br>
 
-  <div class="row ">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 text-center">
-      <p>Here, we will have company's stats for the personnality test</p>
+  <div class="row">
+    <!-- <div class="col-md-4"></div> -->
+    <div class="col-md-12 text-center">
+      <div id="pieChart"></div>
     </div>
-    <div class="col-md-4"></div>
-    </div>
+    <!-- <div class="col-md-4"></div> -->
   </div>
+
+  <br>
+  <br>
+
+  <div class="row">
+    <% for i in (1..4) do  %>
+      <div class="col-md-3 col-sm-6 text-center">
+        <h3 style="padding-bottom:10px"><%= t("meta_category#{i}") %></h3>
+        <p style="text-align:justify"><%= t("meta_category#{i}_text") %></p>
+      </div>
+    <% end %>
+   <!--  <div class="col-md-4">
+      <p><%#= @array.count(i) %></p>
+    </div>
+
+
+    <div class="col-md-3 col-sm-6 text-center">
+
+    a
+    </div>
+    <div class="col-md-3 col-sm-6 text-center">
+
+    b
+    </div>
+    <div class="col-md-3 col-sm-6 text-center">
+
+    c
+    </div>
+    <div class="col-md-3 col-sm-6 text-center">
+
+    d
+    </div> -->
+  </div>
+
+     <!--  <div class="row">
+        <div class="col-md-12">
+          <%# for i in (1..16) do  %>
+            <div class="row">
+              <div class="col-md-8">
+                <p><%#= t("category#{i}") %></p>
+              </div>
+              <div class="col-md-4">
+                <p><%#= @array.count(i) %></p>
+              </div>
+            </div>
+          <%# end %>
+        </div>
+      </div> -->
+  <br>
+
+
+
+  <br>
 
 
   <div class="row ">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <div class="btn btn-block btn-contact btn-cs">
-        <%= link_to t('home'), root_path %>
-      </div>
+      <%= link_to t('all_personnalities'), all_answers_path , :target => "_blank", :class => "btn btn-block btn-contact btn-cs"  %>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <br>
+
+  <div class="row ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= link_to t('finish_campaign'), corporation_finish_path(@corporation) , :target => "_blank", :class => "btn btn-block btn-contact btn-cs" %>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <br>
+
+  <div class="row ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= link_to t('home'), root_path, :class => "btn btn-block btn-contact btn-cs" %>
     </div>
     <div class="col-md-4"></div>
     </div>
@@ -56,6 +135,144 @@
 
 </div>
 
+<%= javascript_tag do %>
+  var config2 = liquidFillGaugeDefaultSettings();
+  config2.circleColor = "#D4AB6A";
+  config2.textColor = "#553300";
+  config2.waveTextColor = "#805615";
+  config2.waveColor = "#AA7D39";
+  config2.circleThickness = 0.1;
+  config2.circleFillGap = 0.2;
+  config2.textVertPosition = 0.8;
+  config2.waveAnimateTime = 1000;
+  var percentage = <%= Corporation.percentage(@array, @users) %>
+  if ( isNaN(percentage) ){
+    loadLiquidFillGauge("fillgauge3", 0, config2);
+  }else{
+    loadLiquidFillGauge("fillgauge3", percentage, config2);
+  }
+<% end %>
 
 
 
+
+<%= javascript_tag do %>
+var series = [<%= @array.count(1) + @array.count(2) + @array.count(9) + @array.count(10)%>,
+              <%= @array.count(3) + @array.count(4) + @array.count(11)+ @array.count(12)%>,
+              <%= @array.count(5) + @array.count(6) + @array.count(13)+ @array.count(14)%>,
+              <%= @array.count(7) + @array.count(8) + @array.count(15)+ @array.count(16)%>];
+
+var total = series[0] + series[1] + series[2] + series[3]
+
+var percentages = [(series[0]/total)*100,
+                   (series[1]/total)*100,
+                   (series[2]/total)*100,
+                   (series[3]/total)*100];
+
+var labels = ["<%= t('meta_category1') %>",
+              "<%= t('meta_category2') %>",
+              "<%= t('meta_category3') %>",
+              "<%= t('meta_category4') %>"];
+
+var result =[]
+for (var i=0; i < labels.length; i++) {
+  result.push( series[i] + "x " + labels[i])
+}
+console.log(result)
+
+var pie = new d3pie("pieChart", {
+  "header": {
+    "title": {
+      "fontSize": 34,
+      "font": "courier"
+    },
+    "subtitle": {
+      "color": "#999999",
+      "fontSize": 10,
+      "font": "courier"
+    },
+    "location": "pie-center",
+    "titleSubtitlePadding": 10
+  },
+  "footer": {
+    "text": " ",
+    "color": "#999999",
+    "fontSize": 10,
+    "font": "open sans",
+    "location": "bottom-left"
+  },
+  "size": {
+    "canvasWidth": 590,
+    "pieInnerRadius": "60%",
+    "pieOuterRadius": "100%"
+  },
+  "data": {
+    "sortOrder": "label-desc",
+    "content": [
+      {
+        "label": result[0],
+        "value": series[0],
+        "color": "#FFCF00"
+      },
+      {
+        "label": result[1],
+        "value": series[1],
+        "color": "#007AC7"
+      },
+      {
+        "label": result[2],
+        "value": series[2],
+        "color": "#F42494"
+      },
+      {
+        "label": result[3],
+        "value": series[3],
+        "color": "#02B801"
+      }
+    ]
+  },
+  "labels": {
+    "outer": {
+      "format": "none",
+      "pieDistance": 20
+    },
+    "inner": {
+      "format": "label"
+    },
+    "mainLabel": {
+      "color": "#ffffff",
+      "fontSize": 17
+    },
+    "percentage": {
+      "color": "#999999",
+      "fontSize": 11,
+      "decimalPlaces": 0
+    },
+    "value": {
+      "color": "#02B801",
+      "fontSize": 11
+    },
+    "lines": {
+      "enabled": true,
+      "color": "#777777"
+    }
+  },
+  "tooltips": {
+    "enabled": true,
+    "type": "placeholder",
+    "string": "{label}: {percentage}%"
+  },
+  "effects": {
+    "pullOutSegmentOnClick": {
+      "effect": "elastic",
+      "speed": 400,
+      "size": 8
+    }
+  },
+  "misc": {
+    "colors": {
+      "segmentStroke": "#9d8a6b"
+    }
+  }
+});
+<% end %>

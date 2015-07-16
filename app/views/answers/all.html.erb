@@ -1,0 +1,74 @@
+
+<div class = "container">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><h2 class="text-center" style="padding: 7px;color:#484e50"><%= t('all_personnalities') %></h2></div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <% big_four = [0,4,8,12] %>
+  <% array = [1,2,5,6,11,12,15,16,7,8,13,14,3,4,9,10] %>
+  <% pics = ["entp","entj","intp","intj","infp","infj","enfp","enfj","istp","istj","esfp","esfj","estp","estj","isfp","isfj"] %>
+
+
+  <% big_four.each_with_index do |big, index| %>
+    <div class="row text-center " style="padding-top: 20px;height:100px">
+      <u><h2 style="color:#484e50; padding-top:10px"><%= t('meta_category' + (index+1).to_s) %></h2></u>
+    </div>
+    <div class="row">
+      <% for i in (0..3) do %>
+        <div class="col-md-3">
+          <div class="perso" style="margin-right: 1%;height:450px;margin-left: 1%;width: 98%;background-color:rgba(0,0,0,0.4)">
+            <img class="personality img-responsive" src="http://www.16personalities.com/images/types/<%= pics[i+big] %>.png"/>
+            <h4 class = "text-center" style="padding: 7px">
+              <%= t('category' + (array[i+big]).to_s) %>
+            </h4>
+            <br>
+            <p class = "text-center" style="padding: 7px">
+              <%= t('category' + (array[i+big]).to_s + '_text') %>
+            </p>
+          </div>
+        </div>
+
+      <% end %>
+
+
+      <!--
+
+      <div class="col-md-3" style="height:200px">
+        <div class="perso" style="margin-right: 1%;height:350px;margin-left: 1%;width: 98%; background-color:rgba(0,0,0,0.4)">
+        <img class="personality img-responsive" src="http://lorempixel.com/400/200" />
+        <h4 class = "text-center" style="padding: 7px"><%#= t('category' + (i+4).to_s) %></h4>
+        <h5></h5>
+        <br>
+        <p class = "text-center" style="padding: 7px"><%#= t('category' + (i+4).to_s + '_text') %></p>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="height:200px">
+        <div class="perso" style="margin-right: 1%;height:350px;margin-left: 1%;width: 98%">
+        <img class="personality img-responsive" src="http://lorempixel.com/400/200" />
+        <h4 class = "text-center" style="padding: 7px;color:#484e50"><%#= t('category' + (i+8).to_s) %></h2>
+        <h5 style="color:#484e50"></h5>
+        <br>
+        <p class = "text-center" style="padding: 7px;color:#484e50"><%#= t('category' + (i+8).to_s + '_text') %></p>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="height:200px">
+        <div class="perso" style="margin-right: 1%;height:350px;margin-left: 1%;width: 98%">
+        <img class="personality img-responsive" src="http://lorempixel.com/400/200" />
+        <h4 class = "text-center" style="padding: 7px;color:#484e50"><%#= t('category' + (i+12).to_s) %></h3>
+        <h5 style="color:#484e50"></h5>
+        <br>
+        <p class = "text-center" style="padding: 7px;color:#484e50"><%#= t('category' + (i+12).to_s + '_text') %></p>
+        </div>
+      </div> -->
+
+    </div>
+  <% end %>
+
+</div>
+
+

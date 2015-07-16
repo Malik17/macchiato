@@ -1,4 +1,4 @@
-<%= image_tag "logo.png", :class => "logo" %>
+<%= link_to image_tag("logo.png", :class => "logo"), root_path %>
 
 
 <div id="new-corp" class="container">
@@ -8,6 +8,19 @@
       <p><%= t('user_details') %></p>
     </div>
     <div class="col-md-2"></div>
+  </div>
+
+
+  <div class="language">
+    <p class="language_button" id="fr">
+      <%= link_to_unless I18n.locale == :fr, "fr", corporation_user_edit_path(params[:locale]=:fr, params[:corporation_id], params[:token]) %>
+    </p>
+    <p class="language_button" id="en">
+      <%= link_to_unless I18n.locale == :en, "en", corporation_user_edit_path(params[:locale]="", params[:corporation_id], params[:token]) %>
+    </p>
+    <p class="language_button" id="nl">
+      <%= link_to_unless I18n.locale == :nl, "nl", corporation_user_edit_path(params[:locale]=:nl, params[:corporation_id], params[:token]) %>
+    </p>
   </div>
 
 
@@ -35,3 +48,25 @@
   <div class="col-md-4"></div>
   </div>
 </div>
+
+<%= javascript_tag do %>
+
+  /*=================================================
+  hide the languages buttons not needed
+  =================================================*/
+
+  $(document).ready(function() {
+    console.log('test')
+    $('.language_button').toggle().addClass('hidden');
+    var locale = <%= I18n.locale.to_s %>;
+    console.log(locale)
+    $(locale).toggle().addClass('shown').removeClass('hidden');
+    $('.shown').click(function(){
+      $('.hidden').fadeIn().addClass('shownOther').removeClass('hidden');
+      setTimeout(function(){ $('.shownOther').fadeOut().addClass('hidden').removeClass('shownOther'); }, 2000);
+      console.log('click')
+    });
+
+  });
+
+<% end %>

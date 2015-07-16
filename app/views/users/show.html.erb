@@ -1,4 +1,4 @@
-<%= image_tag "logo.png", :class => "logo" %>
+<%= link_to image_tag("logo.png", :class => "logo"), root_path %>
 
 
 <div id="new-corp" class="container">
@@ -24,7 +24,7 @@
             <div class = "col-md-12 col-xs-12">
               <p><b><%= t('question') %> <%= question.id %></b>
               <br>
-              <%= question.text %></p>
+              <%= t(question.text) %></p>
             </div>
           </div>
           <div class = "row">
@@ -32,8 +32,7 @@
               <%= t('disagree') %>
             </div>
             <div class = "col-md-4 col-xs-4">
-              <%#= hidden_field_tag "question_id", "#{question.id}" %>
-              <%= select_tag "question_result[#{question.id}]", "<option>-2</option><option selected='selected'>0</option><option>2</option>".html_safe %>
+              <%= range_field_tag "question_result[#{question.id}]", nil, in: -2..2 %>
             </div>
             <div class = "col-md-4 col-xs-4" style="color:green">
               <%= t('agree') %>
@@ -50,13 +49,10 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <%= submit_tag %>
+      <%= submit_tag t('submit'), :class => "btn btn-block btn-contact btn-cs" %>
       <% end %>
     </div>
     <div class="col-md-4"></div>
   </div>
 
 </div>
-
-
-
