@@ -65,7 +65,7 @@
             <div class="row">
               <div class="col-md-12">
                 <h1 class="section-title animate" data-delay="0">
-                  Macchiato is here
+                  Don't just stand there.<br>Innovate!
                 </h1>
                 <p class="section-sub-title animate" data-delay="50">
                   <%= t('spinoff_catchphrase') %>
@@ -129,6 +129,23 @@
 
         <div class="section-content text-center">
           <div class="container">
+              <div class="row gutter-row">
+
+              <!-- service list -->
+              <div class="col-md-12 service-col animate" data-delay="100">
+                <div class="service-grid">
+                  <h3 class="service-title">
+                    <%= t('new_business_model') %>
+                  </h3>
+                  <p class="service-content">
+                    <%= t('new_business_model_text') %>
+                  </p>
+                </div>
+              </div>
+              <!-- /service list -->
+
+            </div>
+
             <div class="row gutter-row">
 
               <!-- service list -->
@@ -182,6 +199,7 @@
               <!-- /service list -->
 
             </div>
+
           </div>
         </div>
       </div>
@@ -189,18 +207,18 @@
     <!-- service end -->
 
     <!-- process start -->
-    <div class="section" id="process">
+<!--     <div class="section" id="process">
       <div class="section-entry">
         <div class="container">
           <div class="row">
-            <div class="col-md-6" style="padding-bottom:10px"> <!-- bootstrap col -->
-              <h2 class="section-title animate" data-delay="0"> <!-- first element delay = 0 -->
-                <%= t('process') %>
+            <div class="col-md-6" style="padding-bottom:10px">
+              <h2 class="section-title animate" data-delay="0">
+                <#%= t('process') %>
               </h2>
             </div>
-            <div class="col-md-6"> <!-- bootstrap col -->
-              <p class="section-sub-title animate" data-delay="0" style="text-align: right"> <!-- 2nd element delay + 50 = 50 -->
-                <%= t('macch_journey') %>
+            <div class="col-md-6">
+              <p class="section-sub-title animate" data-delay="0" style="text-align: right">
+                <%#= t('macch_journey') %>
               </p>
             </div>
           </div>
@@ -209,30 +227,30 @@
         <div class="section-content">
           <div class="container">
             <div class="row">
-              <div class="col-md-12"> <!-- bootstrap col -->
+              <div class="col-md-12">
                 <%= render "circle_schema" %>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- promote end -->
 
     <!-- pricing start -->
-    <div class="section" id="pricing">
+    <!-- <div class="section" id="pricing">
       <div class="section-entry">
         <div class="section-heading">
           <div class="container">
             <div class="row">
               <div class="col-md-6">
                 <h2 class="section-title animate" data-delay="0">
-                  <%= t('pricing') %>
+                  <%#= t('pricing') %>
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate" data-delay="50">
-                  <%= t('pricing_text') %>
+                  <%#= t('pricing_text') %>
                 </p>
               </div>
             </div>
@@ -243,87 +261,81 @@
           <div class="container">
             <div class="row">
 
-              <!-- pricing table -->
               <div class="col-md-4">
                 <div class="pricing-table animate" data-delay="100">
                   <div class="pricing-heading">
-                    <span class="plan"><%= t('stimulate') %></span>
-                    <span class="price"><%= t('free') %></span>
+                    <span class="plan"><%#= t('stimulate') %></span>
+                    <span class="price"><%#= t('free') %></span>
                   </div>
                   <ul>
-                    <li><%= t('stimulate_1') %></li>
-                    <li><%= t('stimulate_2') %></li>
-                    <li><%= t('stimulate_3') %></li>
-                    <li><%= t('stimulate_4') %></li>
+                    <li><%#= t('stimulate_1') %></li>
+                    <li><%#= t('stimulate_2') %></li>
+                    <li><%#= t('stimulate_3') %></li>
+                    <li><%#= t('stimulate_4') %></li>
                   </ul>
                   <div class="pricing-footer">
-                    <%= link_to t('sign_up'), new_corporation_path, class: "btn btn-cs btn-pricing" %>
+                    <%#= link_to t('sign_up'), new_corporation_path, class: "btn btn-cs btn-pricing" %>
                   </div>
                 </div>
               </div>
-              <!-- /pricing table -->
 
-              <!-- pricing table -->
               <div class="col-md-4">
                 <div class="pricing-table active animate" data-delay="150">
                   <div class="pricing-heading">
-                    <span class="plan"><%= t('ideation') %></span>
+                    <span class="plan"><%#= t('ideation') %></span>
                     <span class="price">$20.000</span>
                   </div>
                   <ul>
-                    <li><%= t('ideation_1') %></li>
-                    <li><%= t('ideation_2') %></li>
-                    <li><%= t('ideation_3') %></li>
-                    <li><%= t('ideation_4') %></li>
+                    <li><%#= t('ideation_1') %></li>
+                    <li><%#= t('ideation_2') %></li>
+                    <li><%#= t('ideation_3') %></li>
+                    <li><%#= t('ideation_4') %></li>
                   </ul>
                   <div class="pricing-footer">
-                    <a href="#contact-section" class="btn btn-cs btn-pricing"><%= t('get_in_touch') %></a>
+                    <a href="#contact-section" class="btn btn-cs btn-pricing"><%#= t('get_in_touch') %></a>
                   </div>
                 </div>
               </div>
-              <!-- /pricing table -->
 
-              <!-- pricing table -->
               <div class="col-md-4">
                 <div class="pricing-table animate" data-delay="200">
                   <div class="pricing-heading">
-                    <span class="plan"><%= t('spinoff_creation') %></span>
+                    <span class="plan"><%#= t('spinoff_creation') %></span>
                     <span class="price">$200.000</span>
                   </div>
                   <ul>
-                    <li><%= t('spinoff_creation_1') %></li>
-                    <li><%= t('spinoff_creation_2') %></li>
-                    <li><%= t('spinoff_creation_3') %></li>
-                    <li><%= t('spinoff_creation_4') %></li>
+                    <li><%#= t('spinoff_creation_1') %></li>
+                    <li><%#= t('spinoff_creation_2') %></li>
+                    <li><%#= t('spinoff_creation_3') %></li>
+                    <li><%#= t('spinoff_creation_4') %></li>
                   </ul>
                   <div class="pricing-footer">
-                    <a href="#contact-section" class="btn btn-cs btn-pricing"><%= t('get_in_touch') %></a>
+                    <a href="#contact-section" class="btn btn-cs btn-pricing"><%#= t('get_in_touch') %></a>
                   </div>
                 </div>
               </div>
-              <!-- /pricing table -->
 
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- pricing end -->
 
     <!-- about start -->
-    <div class="section" id="about" data-tooltip="about">
+    <!-- <div class="section" id="about" data-tooltip="about">
       <div class="section-entry">
         <div class="section-heading">
           <div class="container">
             <div class="row">
               <div class="col-md-6">
                 <h2 class="section-title animate" data-delay="0">
-                  <%= t('about') %>
+                  <%#= t('about') %>
                 </h2>
               </div>
               <div class="col-md-6">
                 <p class="section-sub-title animate" data-delay="50">
-                  <%= t('about_text') %>
+                  <%#= t('about_text') %>
                 </p>
               </div>
             </div>
@@ -336,45 +348,45 @@
               <div class="col-md-4 about-col">
                 <blockquote class="animate" data-delay="100">
                   <p>
-                   <%= t('testimony_1') %>
+                   <%#= t('testimony_1') %>
                   </p>
                   <footer>
-                    <%= t('testimony_1_signature') %>
+                    <%#= t('testimony_1_signature') %>
                   </footer>
                 </blockquote>
               </div>
               <div class="col-md-4 about-col">
                 <p class="animate" data-delay="150">
-                  <%= t('team_description') %>
+                  <%#= t('team_description') %>
                 </p>
               </div>
               <div class="col-md-4 about-col animate" data-delay="200">
 
-                <!-- pregress bar -->
+
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                    <h6><%= t('team_bold') %> <span>92%</span></h6>
+                    <h6><%#= t('team_bold') %> <span>92%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    <h6><%= t('network_bold') %> <span>88%</span></h6>
+                    <h6><%#= t('network_bold') %> <span>88%</span></h6>
                   </div>
                 </div>
 
                 <div class="progress progress-lite">
                   <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                    <h6><%= t('methodologies_bold') %> <span>96%</span></h6>
+                    <h6><%#= t('methodologies_bold') %> <span>96%</span></h6>
                   </div>
                 </div>
-                <!-- /pregress bar -->
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- about end -->
 
     <!-- contact start -->
@@ -418,15 +430,15 @@
                 </address>
 
                 <!-- social link -->
-                <p class="animate" data-delay="300">
-                  <%= t('reach_social') %>
+                <!-- <p class="animate" data-delay="300">
+                  <%#= t('reach_social') %>
                 </p>
                 <ul class="social-icon animate" data-delay="350">
-                  <li><a href="#" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li> <!-- change the link to social page and edit title-->
+                  <li><a href="#" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
                   <li><a href="#" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
                   <li><a href="#" title="google plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                   <li><a href="#" title="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
+                </ul> -->
                 <!-- /social link -->
 
               </div>
@@ -453,7 +465,7 @@
               <div class="col-md-12">
                 <!-- copyright -->
                 <p class="copyright animate" data-delay="350">
-                  @2015 Antoine 'El Magnifico' Magny !
+                  @2015 Macchiato Dev Team
                 </p>
                 <!-- /copyright -->
               </div>
