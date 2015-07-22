@@ -108,7 +108,8 @@ button:focus {
   }
 
   .gutter #service .section-heading,
-  .gutter #work .section-heading {
+  .gutter #work .section-heading,
+  .gutter #contact .section-heading {
     margin-bottom: 40px;
   }
 
@@ -559,7 +560,7 @@ blockquote {
 #menu {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-bottom: 40px;
 }
 
 #menu li {
@@ -596,7 +597,7 @@ blockquote {
 
 #menu li a:hover:before,
 #menu li.active a:before {
-  visibility: visible;
+  /*visibility: visible;*/
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
@@ -884,6 +885,11 @@ h1.section-title:after {
 
 .service-content {
   margin-bottom: 0;
+}
+
+.service-intro {
+  position: relative;
+  text-align: left
 }
 
 @media (max-width:991px) { /* extra small devices - small devices */
