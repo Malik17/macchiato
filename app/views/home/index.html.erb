@@ -36,6 +36,12 @@
             </div>
           </div>
           <label class="subscribe-notice" for="email"></label>
+          <% if notice %>
+              <div class="alert alert-info alert-dismissible" role="alert" style="padding-top: 80px;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <%= notice %>
+              </div>
+            <% end %>
         <% end %>
         <p class="subscribe-heading">subscribe to be notified</p>
         <!-- /subscribe-form -->
@@ -65,7 +71,7 @@
             <div class="row">
               <div class="col-md-12">
                 <h1 class="section-title animate" data-delay="0">
-                  Don't just stand there.<br>Innovate!
+                  <%= t('landing') %>
                 </h1>
                 <p class="section-sub-title animate" data-delay="50">
                   <%= t('spinoff_catchphrase') %>

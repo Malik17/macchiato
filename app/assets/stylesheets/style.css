@@ -97,14 +97,14 @@ button:focus {
   }
 
   .gutter .row [class*='col-'] {
-    padding-left: 60px;
+    padding-left: 40px;
     padding-right: 0;
   }
 
   .gutter .service-col,
   .gutter .about-col,
   .gutter .work-col {
-    padding-top: 40px;
+    padding-top: 30px;
   }
 
   .gutter #service .section-heading,
@@ -142,7 +142,7 @@ body {
   height: 100%;
 
   /*was transparent but switched to something else*/
-  background-color: #9D8B6B;
+  background-color: #4F4E56;
 
 }
 
@@ -192,7 +192,6 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
 /*  font-weight: 700;*/
   line-height: 1.5;
-  /*color: #000;*/
   margin: 0;
 }
 
@@ -205,6 +204,7 @@ h1 {
 h2 {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 52px;
+  color: #AF986C;
 }
 
 h3 {
@@ -605,7 +605,7 @@ blockquote {
 }
 
 #menu li a {
-  color: #fff;
+  color:#AF986C;
   font-size: 28px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
@@ -883,8 +883,9 @@ h1.section-title:after {
   margin-bottom: 5px;
 }
 
-.service-content {
-  margin-bottom: 0;
+.service-content p {
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
 
 .service-intro {

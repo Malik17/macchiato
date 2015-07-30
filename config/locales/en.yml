@@ -20,23 +20,45 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  new_manager: "Create a new manger"
-  thank_you_registration: "Thank you for your registration,"
-  thank_you_registration_2: "Your registration is currently being processed. You will receive an email shortly with your personal access. If you have any questions, please contact us by email at info@macchiatoinnovation.com We look forward to seeing you at the event."
-  services: "Services"
-  process: "Process"
-  here_for_you: "We're here for you, and we're wearing our thinking caps."
-  so_get_in_touch: "So let's get in touch!"
+
+  # Home
+  landing: "Let's rock your world!"
+  spinoff_catchphrase: "We bring together the essential assets to ignite creativity in your company"
+
+  # Nav & Newsletter
+
+  home: "Home"
+  services: "What we do"
   pricing: "Pricing"
   about_us: "About Us"
   contact: "Contact"
+
+  # What we do
+
+  service_intro: "We can support you with any innovation project. Here are some examples."
+  new_product_developement: "Product development"
+  new_product_developement_text: "Identify unmet needs in the market and turn them into brand new products or services"
+  new_business_model: "New business model"
+  new_business_model_text: "Reinvent your business model, whether it’s new sources of revenue, new partnerships, a new delivery model or something else."
+  new_switch_to_digital: "Switch to Digital"
+  new_switch_to_digital_text: "Transform your communication, delivery or even business model through a switch from old to new tech"
+  micro_pitch: "Macchiato is a spinoff factory helping companies rediscover the fire of their early days, and reinvent their world !"
+
+  # Contact
+
+  here_for_you: "We're here for you, and we have or innovation toolbox with us."
+  so_get_in_touch: "So let's get in touch!"
+  love_letters: "Don't hesitate to step by and grab a coffe or send us some letters..."
+  reach_social: "You can also reach us on social networks"
+
+  process: "Process"
+
   corp_name: "Company Name"
   division: "Division"
   first_name: "First Name"
   last_name: "Last Name"
   thanks: "Thank you"
   welcome: "Welcome to Macchiato"
-  home: "Home Page"
   enroll: "Subscribe"
   process: "Process"
   pricing: "Pricing"
@@ -67,15 +89,9 @@ en:
   spinoff_creation_4: "Making you rich"
   pricing_text: "We offer flexible financial solutions, adapted to every situation to ensure the appropriate level of encentivization to all stakeholders."
   macch_journey: "The Macchiato Journey"
-  service_intro: "We can support you in any innovation project. Here are examples of what we do for our clients."
-  new_product_developement: "New product development"
-  new_product_developement_text: "Transformation of a market opportunity into a brand new product, available for sale"
-  new_business_model: "New business model"
-  new_business_model_text: "Instead of looking for additional outlets for existing offerings, identify unmet needs."
-  new_switch_to_digital: "Switch to Digital"
-  new_switch_to_digital_text: "Transforming an entire communications system, moving from old tech to new, and educating customers."
-  micro_pitch: "Macchiato is a spinoff factory helping companies rediscover the fire of their early days, and reinvent their world !"
-  spinoff_catchphrase: "The Macchiato Team"
+
+  # Mailing
+
   mailer_corporate_header: "Hello %{first_name}"
   mailer_corporate_1: "Thank you for joining us, you’re now on your way to super-innovation !"
   mailer_corporate_2: "The first step of your journey will be to invite all your colleagues to pass our personality test. To do so you only have to follow your private link below. "
@@ -92,15 +108,24 @@ en:
   mailer_user: "Your manager would like you to pass our little test to pre-assess your potential as an entrepreneur. Follow the link (no virus my friend!):"
   link_corporate: "Let\'s go"
   new_emails_box: "Please enter the emails of the employees who should be invited to pass the test"
+
+  # Manager
+
   user_welcome: "Welcome"
   user_details: "Please enter your name!"
   new_corp_intro: "After filling this form you will receive an access to your company\'s admin page and will be able to start inviting your colleagues to take our personnality test"
   emails_placeholder: \"employee1@my-company.com employee2@my-company.com..."
   invite: "Invite"
+
+  # Test
+
   user_do_the_test: "Please answer these questions sincerely. We will show you your entrepreneurial profile once you are done."
   question: "Question"
   agree: "Agree"
   disagree: "Disagree"
+
+  # Result
+
   category1: "The Creator"
   category2: "The Captain"
   category3: "The Executer"
@@ -159,10 +184,8 @@ en:
   finished_campaign: "The Macchiato Team will process your corporation's data and get back to you very soon."
   submit: "Submit"
   sign_up: "Sign up"
-  love_letters: "You can also send us some love letters..."
-  reach_social: "Or you can reach us on social networks"
-
-
+  thank_you_registration: "Thank you for your registration,"
+  thank_you_registration_2: "Your registration is currently being processed. You will receive an email shortly with your personal access. If you have any questions, please contact us by email at info@macchiatoinnovation.com We look forward to work with you."
 
   question_1: "You find it easy to introduce yourself to other people"
   question_2: "You often get so lost in thoughts that you ignore or forget your surroundings."

@@ -104,7 +104,7 @@ fullpage
       menu: '#menu',
       anchors: __menuanchor,
       navigation: __navigation,
-      navigationPosition: 'left',
+      navigationPosition: 'right',
       showActiveTooltips: false,
       scrollingSpeed: __scrollingSpeed,
       autoScrolling: __autoScrolling,
